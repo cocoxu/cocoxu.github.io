@@ -4,6 +4,6 @@
    journal = {Transactions of the Association for Computational Linguistics},
    volume = {4},
    year = {2016},
-   url = {http://www.cis.upenn.edu/~ccb/publications/optimizing-machine-translation-for-text-simplifciation.pdf},
+   url = {https://cocoxu.github.io/publications/tacl2016-smt-simplification.pdf},
    pages = {401--415}
  }
