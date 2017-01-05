@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSE 5525: Speech and Language Processing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="../bootstrap-3.2.0-dist/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../bootstrap-3.2.0-dist/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+<div id="Content">
+    <h1>CSE 5525: Speech and Language Processing</h1>
+
+
+<p>
+  Fundamentals of natural language processing, automatic speech recognition and speech synthesis; lab projects
+  concentrating on building systems to process written and/or spoken language.
+</p>
+    </div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Details</div>
+
+<ul class="list-group">
+<li class="list-group-item">Instructor: <a href="http://web.cse.ohio-state.edu/~weixu/">Wei Xu</a></li>
+<li class="list-group-item">Time: Wednesday and Friday, 12:45PM- 2:05PM (Spring 2017)</li>
+<li class="list-group-item">Place: <a href="https://www.osu.edu/map/google.php?buildingIn=146">Bolz Hall</a> 317</li>
+<li class="list-group-item">Instructor's Office Hours: Wednesdays 4:30-5:30pm, Dreese 495</li>
+<li class="list-group-item">TA: <a href="http://web.cse.ohio-state.edu/~lanw/">Wuwei Lan</a></li>
+
+
+</ul>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">Topics:</div>
+<ul class="list-group">
+<li class="list-group-item">Text Classification</li>
+<li class="list-group-item">Language Modeling</li>
+<li class="list-group-item">Hidden Markov Models and Discriminative Sequence Models</li>
+<li class="list-group-item">Part of Speech Tagging and Named Entity Recognition</li>
+<li class="list-group-item">Parsing</li>
+<li class="list-group-item">Speech Recognition</li>
+<li class="list-group-item">Machine Translation</li>
+<li class="list-group-item">Information Extraction</li>
+<li class="list-group-item">Lexical Semantics</li>
+<li class="list-group-item">Other topics, time permitting</li>
+</li>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">Textbook:</div>
+<ul class="list-group">
+  <li class="list-group-item">Dan Jurafsky and James H. Martin.  <i>Speech and Language Processing (<a href="https://www.cs.colorado.edu/~martin/slp.html">2nd Edition</a> and <a href="https://web.stanford.edu/~jurafsky/slp3/">3rd Edition Draft)</a></i>.</li>
+  <li class="list-group-item">(There will be other readings as well)</li>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Grading</div>
+
+  <div class="panel-body">
+    <p>
+      <h4>In-class Participation and Quizes (10%)</h4>
+      You will receive credit for asking and answering questions related to the homework on Piazza, engaging in class discussion and participating in the in-class exercises.      
+      
+      <h4>Homeworks (50%)</h4>
+
+      The homeworks will include written assignments and three programming assignments. Everyone can have 3 free late days without penalty for the whole semester. After you have used your free late days, you will lose 20% per day that your assignment is submitted late. Please carefully check your submitted homework - if wrong files are submitted for a homework, you may lose all the credits of that homework.  
+      
+
+      <h4>Midterm (20%)</h4>
+      There will be an in-class midterm on March 8th (tentative).
+      
+      <h4>Final Projects (20%)</h4>
+      The final project is an open-ended assignment, with the goal of gaining experience applying the techniques presented in class to real-world datasets.  
+      Students should work in groups of 3-4. The final project report should be 4 pages. The report should describe the problem you are solving, what data is being used, the proposed technique you are applying in addition to
+      what baseline is used to compare against.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Resources</div>
+
+  <div class="panel-body">
+    <list>
+      <li>Piazza (discussion and announcements) </li>
+      <li>Carmen (restricted resources, homework submission + grades)</li>
+    </list>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Academic Integrity</div>
+
+  <div class="panel-body">
+    <list>
+      Any assignment or exam that you hand in must be your own work (with the exception of group projects). Talking with others to better understand the material is strongly encouraged.
+      However, copying a solution or letting someone copy your solution is cheating. Code you hand in must be written by you, with the exception of any code provided
+      as part of the assignment. <a href="http://www-edlab.cs.umass.edu/cs230/weeks/w01/moss-in-practice.pdf">Moss (Measure of Software Similarity)</a> will be used routinely to detect plagiarism on programming assignments. 
+      
+      
+      Any collaboration during an exam is considered cheating.  Any student who
+      is caught cheating will be reported to the Committee on Academic Misconduct and will receive a grade F.  Do not take a chance - if you are having trouble understanding the material, please take advantage of office hours and know that we will be happy to help.
+    </list>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Homeworks</div>
+ 
+  <div class="panel-body">
+    <list>
+      <li><a href='5525_hw/hw1.pdf'>Example Homework 0</a> (subject to change)</li>
+      <li><a href='5525_hw/hw2.pdf'>Example Homework 1</a> (subject to change)</li>
+      <li><a href='5525_hw/hw3.pdf'>Example Homework 2</a> (subject to change)</li>
+      <li><a href='5525_hw/hw4.pdf'>Example Homework 3</a> (subject to change)</li>       
+    </list>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Anonymous Feedback</div>
+  <div class="panel-body">
+    <list>
+      <a href='http://goo.gl/forms/bc6zU8K0Et'>http://goo.gl/forms/bc6zU8K0Et</a>
+    </list>
+  </div>  
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Schedule (subject to change; slides will be updated as the term progresses) </div>
+
+  <!-- Table -->
+  <table class="table">
+      <thead>
+	<tr>
+	  <th>Date</th>
+	  <th>Topic</th>
+	  <th>Required Reading</th>
+	  <th>Suggested Reading</th>
+	</tr>
+      </thead>
+    <tr>
+      <td>1/11</td>
+      <td><a href='5525_slides/introduction.pdf'>Course Overview</a></td>
+      <td>J+M, 2nd Edition <a href='http://www.cs.colorado.edu/~martin/SLP/Updates/1.pdf'>Chapter 1</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/probability_nb.pdf'>Probability Review and Naive Bayes</a></td>
+      <td>Mackay Book <a href='https://piazza.com/osu/spring2016/5525/resources'>2.1-2.3</a> (Probability), J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>7.1</a> (Naive Bayes)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/probability_nb.pdf'>More Text Classification</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>7.2-7.3</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/logistic_regression.pdf'>Logistic Regression</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>7.4</a></td>
+      <td><a href='http://www.cs.columbia.edu/~mcollins/loglinear.pdf'>Michael Collins' notes on Log-Linear Models</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/logistic_regression.pdf'>More Logistic Regression</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>4.1-4.3</a></td>
+      <td><a href='http://www.ciml.info/dl/v0_8/ciml-v0_8-ch03.pdf'>CIML Chapter 3</a> (Perceptron Algorithm)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/language models.pdf'>Language Modeling</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>4.4-4.5</a></td>
+      <td><a href='http://www.cs.columbia.edu/~mcollins/lm-spring2013.pdf'>Michael Collins' notes on Language Models</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/language models.pdf'>Kneser-Ney Smoothing</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>4.4-4.5</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/pos1.pdf'>Parts of Speech and Hidden Markov Models</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>9.1-9.3 and 8.1-8.2</a></td>
+      <td><a href='http://www.cs.columbia.edu/~mcollins/hmms-spring2013.pdf'>Michael Collins' notes on Hidden Markov Models</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/hmm1.pdf'>The Viterbi Algorithm</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>8.3-8.4,9.4</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/memm.pdf'>Maximum Entropy Markov Models</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>9.5</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/memm.pdf'>Maximum Entropy Markov Models</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>9.5</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/crf.pdf'>Conditional Random Fields</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>9.6</a></td>
+      <td><a href='http://homepages.inf.ed.ac.uk/csutton/publications/crftut-fnt.pdf'>CRF Tutorial (Sutton and McCallum)</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/cfg.pdf'>Parsing</a></td>
+      <td>J+M, 2nd Edition 12.1-12.7</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/pcfg.pdf'>Parsing</a></td>
+      <td>J+M, 2nd Edition 13.1-13.5</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/brown.pdf'>Brown Clustering</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>19.1-19.3</a></td>
+      <td><a href="http://people.csail.mit.edu/imcgraw/links/research/pubs/ClassBasedNGrams.pdf">Class-Based n-gram Models of Natural Language</a> (Brown et. al. 1993)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/relation_extraction.pdf'>Relation Extraction</a></td>
+      <td>J+M, 3rd Edition <a href='https://piazza.com/osu/spring2016/5525/resources'>20.2</a></td>
+      <td><a href="http://web.stanford.edu/~jurafsky/mintz.pdf">Distant supervision for relation extraction without labeled data</a> (Mintz et. al. 2009)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/mt.pdf'>Machine Translation</a></td>
+      <td>J+M, 2nd Edition 25.1-25.3</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/mt.pdf'>Machine Translation</a></td>
+      <td>J+M, 2nd Edition 25.4-25.7</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/mt.pdf'>Machine Translation</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/mt.pdf'>Machine Translation</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/dl_nlp.pdf'>Deep Learning in NLP</a></td>
+      <td></td>
+      <td><a href='http://u.cs.biu.ac.il/~yogo/nnlp.pdf'>Yoav Goldberg's Tutorial on Neural Networks in NLP</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/asr.pdf'>Speech Recognition</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href='5525_slides/asr.pdf'>Speech Recognition</a></td>      
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Project Presentations 12-1:30pm</td>
+      <td></td>
+      <td></td>
+    </tr>
+	
+
+
+    
+  </table>
+</div>
+
+
+</div> <!-- End Content -->
+
+
+    <script src="../bootstrap-3.2.0-dist/js/bootstrap-min.js"></script>
+
+  </body>
+</html>
