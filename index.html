@@ -56,7 +56,7 @@
 		    My research lies at the intersections of <b>machine learning</b>,
 			<b>natural language processing</b>, and <b>social media</b>. I am particularly
 			interested in designing learning algorithms for gleaning semantic and
-			structured knowledge from massive social media and web data. My work enables deeper analysis of text meaning and better natural language generation. I received my PhD in Computer Science from New York University, MS and BS from Tsinghua University. Prior to joining OSU, I was a postdoc at the University of Pennsylvania. I am a workshop chair for <a href="https://www.aclweb.org/website/node/456">ACL 2017</a>, an area chair for <a href="http://www.emnlp2016.net/committees.html">EMNLP 2016</a> and the publicity chair for <a href="http://naacl.org/naacl-hlt-2016/org.html">NAACL 2016</a>. I also wrote the <strong><a href="http://socialmedia-class.org/twittertutorial.html">Twitter API tutorial</a></strong>.	
+			structured knowledge from massive social media and web data. My work enables deeper analysis of text meaning and better natural language generation. I received my PhD in Computer Science from New York University, MS and BS from Tsinghua University. Prior to joining OSU, I was a postdoc at the University of Pennsylvania. I am a workshop chair for <a href="https://www.aclweb.org/website/node/456">ACL 2017</a>, an area chair for <a href="http://www.emnlp2016.net/committees.html">EMNLP 2016</a> and the publicity chair for <a href="http://naacl.org/naacl-hlt-2016/org.html">NAACL 2016</a> and <a href="http://naacl2018.org/">2018</a>. I also wrote the <strong><a href="http://socialmedia-class.org/twittertutorial.html">Twitter API tutorial</a></strong>.	
 			
 			<br><br> 
 			
@@ -251,18 +251,15 @@
 					</p>
 
 
-					<h5><strong>Natural Language Understanding and Semantics</strong>
+					<h5><strong>Natural Language Understanding / Semantics</strong>
 					</h5>
 
 
-					<p>My group create machine learning models to extract semantic or structured knowledge from large volumes of data. I 
-					designed the first succesful models to extract paraphrases from
-					Twitter that can scale up to billions of sentences. These web-scale
-					paraphrases enable natural language systems to handle errors (e.g.
+					<p>We design machine learning algorithms to extract semantic or structured knowledge from large volumes of data. We have a series of work on learning web-scale paraphrases from Twitter that can enable natural language systems to handle errors (e.g.
 					“everytime” ↔ “every time”), lexical variations (e.g. “oscar nom’d
 					doc” ↔ “Oscar-nominated documentary”), rare words (e.g “NetsBulls
 					series” ↔ “Nets and Bulls games”), and language shifts (e.g. “is
-					bananas” ↔ “is great”) <a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf">[BUCC2013]</a> <a href="publications/semeval_pit_2015_overview.pdf">[SemEval2015]</a><a href="publications/Wuwei_EMNLP_2017_preprint.pdf">[EMNLP2017]</a>. But it is difficult to capture such lexically divergent paraphrases by the conventional similarity-based approaches. I designed the <a href="multip.html">multi-instance learning paraphrase (MultiP) model</a> <a href=			"publications/tacl2014-extracting-paraphrases-from-twitter.pdf">[TACL2014]</a>, which jointly infers latent word-sentence relations and relaxes the reliance on human annotation. It is a conditional random field model with latent variables <a href="https://aclweb.org/anthology/D16-1030.pdf">[EMNLP 2016]</a><a href="http://aclweb.org/anthology/P14-2119.pdf">[ACL2014]</a><a href="http://aclweb.org/anthology/P/P13/P13-2117.pdf">[ACL2013]</a>, and the current state-of-the-art, outperforming deep leaning and latent space methods.
+					bananas” ↔ “is great”) <a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf">[BUCC2013]</a> <a href="publications/semeval_pit_2015_overview.pdf">[SemEval2015]</a>. It is difficult to capture such lexically divergent paraphrases by the conventional similarity-based approaches. We design <a href="multip.html">multi-instance learning models</a> <a href=			"publications/tacl2014-extracting-paraphrases-from-twitter.pdf">[TACL2014]</a>, which jointly infers latent word-sentence relations <a href="https://aclweb.org/anthology/D16-1030.pdf">[EMNLP 2016]</a> and relaxes the reliance on human annotation, and neural network models for sentence pair modeling <a href="publications/Wuwei_EMNLP_2017_preprint.pdf">[EMNLP2017]</a>.
 </p>
 				</div>
 				<!-- end boxed-->
@@ -274,7 +271,7 @@
 					</p>
 
 
-					<h5 style="text-align: right"><strong>Natural Language Generation</strong>
+					<h5 style="text-align: right"><strong>Natural Language Generation / Stylistics</strong>
 					</h5>
 
 
@@ -298,7 +295,7 @@
 				<li>
 					<a href="publications/Wuwei_EMNLP_2017_preprint.pdf"
 					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">A Continuously Growing Dataset of Sentential Paraphrases</a> [<a href="bib/bib_emnlp2017_paraphrase.txt">bib</a>][<a href="https://github.com/lanwuwei/paraphrase-dataset">data/code</a>] <br>
+					"font-style: italic; text-decoration: none">A Continuously Growing Dataset of Sentential Paraphrases</a> [<a href="bib/bib_emnlp2017_paraphrase.txt">bib</a>][<a hreg="https://github.com/lanwuwei/paraphrase-dataset">data/code</a>] <br>
 					Wuwei Lan, Siyu Qiu, Hua He, Wei Xu <br>
 					Proceedings of EMNLP 2017 
 				</li>
@@ -322,7 +319,7 @@
 					id="smt-simple" name="smt-simple" style=
 					"font-style: italic; text-decoration: none">Results of the WNUT16 Named Entity Recognition Shared Task</a> [<a href="bib/bib_wnut2016_sharedtask.txt">bib</a>] <br>
 					Benjamin Strauss, Bethany Toma, Alan Ritter, Marie-Catherine de Marneffe and Wei Xu <br>
-					Proceedings of COLING 2016 Workshop on Noisy User-generated Text (WNUT)
+					Proceedings of COLING 2016 Workshop on Noisy User-generated Text 
 				</li>
 								
 				<li>
@@ -354,7 +351,7 @@
 					id="wnut" name="wnut" style=
 					"font-style: italic; text-decoration: none">Shared Tasks of the 2015 Workshop on Noisy User-generated Text: Twitter Lexical Normalization and Named Entity Recognition</a> [<a href="bib/bib_wnut2015_overview.txt">bib</a>]<br>
 					Timothy Baldwin, Marie-Catherine de Marneffe, Bo Han, Young-Bum Kim, Alan Ritter, Wei Xu<br>
-					Proceedings of ACL 2015 Workshop on Noisy User-generated Text (WNUT)
+					Proceedings of ACL 2015 Workshop on Noisy User-generated Text 
 				</li>
 				
 				<li>
@@ -368,7 +365,7 @@
 				<li>
 					<a href="publications/semeval_pit_2015_overview.pdf"
 					id="semeval2015" name="semeval2015" style=
-					"font-style: italic; text-decoration: none">SemEval-2015 Task 1: Paraphrase and Semantic Similarity in Twitter (PIT)</a> [<a href="bib/bib_semeval2015_pit.txt">bib</a>] [data/code - email me]<br>
+					"font-style: italic; text-decoration: none">SemEval-2015 Task 1: Paraphrase and Semantic Similarity in Twitter (PIT)</a> [<a href="bib/bib_semeval2015_pit.txt">bib</a>] [data & code - email me]<br>
 					Wei Xu, Chris Callison-Burch, William B. Dolan<br>
 					Proceedings of SemEval 2015
 				</li>
@@ -393,7 +390,7 @@
 					Rhyming Verse</a> [<a href="bib/bib_crowdpoem.txt">bib</a>]<br>
 					Quanze Chen, Chenyang Lei, Wei Xu, Ellie Pavlick, Chris
 					Callison-Burch<br>
-					Proceedings of HCOMP 2014
+					Proceedings of HCOMP 2014 (work-in-progress)
 				</li>
 
 
@@ -405,7 +402,7 @@
 					Extraction</a> [<a href=
 					"bib/bib_guidedsupervision.txt">bib</a>]<br>
 					Maria Pershina, Bonan Min, Wei Xu, Ralph Grishman<br>
-					Proceedings of ACL 2014
+					Proceedings of ACL 2014 (short paper)
 				</li>
 
 
@@ -429,7 +426,7 @@
 					"ftp://cs.nyu.edu/pub/nlp/xuwei/relation/">data</a>]
 					<br>
 					Wei Xu, Raphael Hoffmann, Le Zhao, Ralph Grishman<br>
-					Proceedings of ACL 2013
+					Proceedings of ACL 2013  (short paper)
 				</li>
 
 
@@ -443,7 +440,7 @@
 					<br>
 					Wei Xu, Alan Ritter, Ralph Grishman<br>
 					Proceedings of ACL 2013 Workshop on Building and Using
-					Comparable Corpora (BUCC)
+					Comparable Corpora 
 				</li>
 
 
@@ -457,7 +454,7 @@
 					<br>
 					Wei Xu, Ralph Grishman, Adam Meyers, Alan Ritter<br>
 					Proceedings of NAACL 2013 Workshop on Language Analysis in
-					Social Media (LASM)
+					Social Media 
 				</li>
 
 
@@ -466,8 +463,7 @@
 					id="shakespeare" name="shakespeare" style=
 					"font-style: italic; text-decoration: none">Paraphrasing
 					for Style</a> [<a href="bib/bib_paraphrasestyle.txt">bib</a>][<a href=
-					"https://github.com/cocoxu/Shakespeare">data &
-					code</a>]<br>
+					"https://github.com/cocoxu/Shakespeare">data/code</a>]<br>
 					Wei Xu, Alan Ritter, Bill Dolan, Ralph Grishman, Colin
 					Cherry<br>
 					Proceedings of COLING 2012
