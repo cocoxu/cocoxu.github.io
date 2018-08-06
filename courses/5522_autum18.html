@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSE 5522 Artificial Intelligence II: Advanced Techniques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="../bootstrap-3.2.0-dist/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../bootstrap-3.2.0-dist/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../bootstrap-3.2.0-dist/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+<div id="Content">
+    <h1>CSE 5522 Artificial Intelligence II: Advanced Techniques</h1>
+
+
+<p>
+  Advanced concepts, techniques, and applications of artificial intelligence, including knowledge
+  representation, learning, natural language understanding, and vision.
+</p>
+    </div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Details</div>
+
+<ul class="list-group">
+<li class="list-group-item">Wednesday & Friday, 2:20 - 3:40pm </li>
+<li class="list-group-item">Place: Caldwell 120</li>
+<li class="list-group-item">Instructor: <a href="http://web.cse.ohio-state.edu/~weixu/">Wei Xu</a> (Office Hours: Wednesday 4:00-5:00pm, Dreese 495)</li>
+<li class="list-group-item">TA: TBA</li>
+
+</ul>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">Textbook:</div>
+<ul class="list-group">
+  <li class="list-group-item">Stuart Russell and Peter Norvig.  <i><a href='http://aima.cs.berkeley.edu/'>Artificial Intelligence: A Modern Approach (3rd Edition)</a></i>, Prentice Hall, 2009.
+  <li class="list-group-item">(There will be other readings as well)</li>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Grading</div>
+
+  <div class="panel-body">
+    <p>
+      <h4>Participation (5%)</h4>
+      You will receive credit for engaging in class discussion, asking and answering questions related to the homework on Piazza online discussion board. I realize some people do not like asking questions or participating, and while I can empathize with this, it is a useful skill you should learn and practice. If you have questions that you'd like answered but don't want to post them or ask them yourself, just write the question down on a scrap of paper and hand it to me before class. If you put your name on it, then that's counts too.
+      
+      <h4>Homeworks (12%)</h4>
+      
+      Written homeworks will be very short (one or two exam-style questions) and will be graded in a good/mediocre/incomplete basis. You should be prepared to do regular work each week to keep up with the material and the assignments.  Homework assignments may <b>NOT</b> be turned in late. Homeworks are <b>NOT</b> accepted by email. There will be one grace homework grade per semester, that is, each student receiving full credit for the lowest or a missing homework grade.
+      
+      
+      <h4>Projects (40%)</h4>
+
+      Programming projects will be in Python.  Homework should be submitted to <a href='https://carmen.osu.edu/'>Carmen</a> by 11:59pm on the day it is due (unless otherwise instructed).  Each student will have 3 flexible days to turn in late homework throughout the semester.  As an example, you could turn in the first homework 2 days late and the second homework 1 day late without any penalty.  After that you will loose 20% for each day the homework is late. Please email your homework to the instructor in case there are any technical issues with submission.
+
+      <h4>Midterm (18%)</h4>
+      Midterm will be close book and notes.
+      
+      <h4>Final Exam (25%)</h4>
+      Final exam will be close book and notes. 
+      
+      <br>
+      <br>
+      
+      
+      <b>Regrade Policy</b>: If you believe an error has been made in the grading of your exam, you may resubmit it for a regrade - submit a detailed explanation of which problems you think we marked incorrectly and why. Because we will examine your entire submission in detail, your grade can go up or down as a result of a regrade request.
+      <br>
+      <b>Grading Scale</b>: Numerical grades will be mapped to letter grades using the standard OSU policy: 93-100 (A), 90-92.9 (A-), 87-89.9 (B+), 83-86.9 (B), 80-82.9 (B-), 77-79.9 (C+), 73-76.9 (C), 70-72.9 (C-), 67-69.9 (D+), 60-66.9 (D), below 60 (E). These cutoffs represent grade minimums. We may adjust grades upward based on class grade distribution curve.
+      <br>
+      <b>Drop or Withdraw</b>: detailed OSU policy and instructions <a href="http://advising.osu.edu/drop_class.shtml">here</a> 
+    </p>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Resources</div>
+
+  <div class="panel-body">
+    <list>
+      <li><a href="https://piazza.com/class/jkhrwmipgno194"><b>Piazza</a> (QA, discussion, and announcements)</b> </li>
+      <li><a href="https://carmen.osu.edu"><b>Carmen</b></a> (project submission and restricted resources)</li>
+    </list>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Academic Integrity</div>
+
+  <div class="panel-body">
+    <list>
+      Any assignment or exam that you hand in must be your own work (with the exception of group projects). However, talking with others to better understand the material is strongly encouraged. Copying a solution or letting someone copy your solution is cheating.  Everything you hand in must be your own words.  Code you hand in must be written by you, with the exception of any code provided as part of the assignment.  <a href="http://www-edlab.cs.umass.edu/cs230/weeks/w01/moss-in-practice.pdf">MOSS (Measure of Software Similarity)</a> will be used routinely to detect plagiarism on programming assignments. Any collaboration during an exam is considered cheating.  Any student who is caught cheating will be reported to the Committee on Academic Misconduct.  Please don't take a chance - if you are having trouble understanding the material, let us know (asking on Piazza, in class or during office hours), and we will be happy to help.
+    </list>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Programming Projects</div>
+
+  <div class="panel-body">
+    <list>
+
+      <li><a href='5522_hw/project1.html'>Project 1 - Search </a> (optional)</li>
+      <li><a href='5522_hw/project2.html'>Project 2 - Multi-Agent Search </a> (subject to change; likely optional)</li>
+      <li><a href='5522_hw/project3.html'>Project 3 - Reinforcement Learning </a> (subject to change) </li>
+      <li><a href='5522_hw/project4.html'>Project 4 - Ghostbusters</a> (subject to change) </li>
+      <li>Project 5 - Classification (subject to change) </li>
+    </list>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Homework Assignments</div>
+
+  <div class="panel-body">
+    <list>
+      <li><a href='5522_hw/quiz0.pdf'>Homework 0</a> background survey (subject to change)</li>
+      <li><a href='5522_hw/quiz1.pdf'>Homework 1</a> A* Search and Minimax (subject to change)</li>
+      <li><a href='http://inst.eecs.berkeley.edu/~cs61b/fa14/ta-materials/apps/ab_tree_practice/'>Interactive Practice</a> Alpha-Beta Pruning</li>
+      <li><a href='5522_hw/quiz2.pdf'>Homework 2</a> Markov Decision Processes (subject to change)</li>
+      <li><a href='5522_hw/quiz3.pdf'>Homework 3</a> Reinforcement Learning: Q-learning (subject to change)</li>
+      <li><a href='5522_hw/quiz4.pdf'>Homework 4</a> Reinforcement Learning: Feature-based Representations (subject to change) </li>
+      <li><a href='5522_hw/quiz5.pdf'>Homework 5</a> Probability Review (subject to change)</li>
+      <li><a href='5522_hw/prac_midterm.pdf'>Practice Midterm:</a> Search, A* Heuristics, Game Trees, MDPs, Probability (2% bonus credit - subject to change) </li>
+      <li><a href='5522_hw/quiz6.pdf'>Homework 6</a> Hidden Markov Models (subject to change)</li>
+      <li><a href=''>Homework 7</a> Bayes Nets (subject to change)</li>
+      <li><a href=''>Homework 8</a> Naive Bayes (subject to change)</li>
+      <li><a href='5522_hw/prac_final.pdf'>Practice Final:</a> MDPs, Reinforcement Learning, Markov Model, HMM, Bayes Nets (2% bonus credit - subject to change)</li>
+    </list>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Anonymous Feedback</div>
+  <div class="panel-body">
+    <list>
+      <a href='https://goo.gl/forms/iV3rOU6MzarlxXEr1'>https://goo.gl/forms/iV3rOU6MzarlxXEr1</a>
+    </list>
+  </div>  
+</div>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Schedule (subject to change as the autumn 2018 term progresses.) </div>
+
+  <!-- Table -->
+  <table class="table">
+      <thead>
+	<tr>
+	  <th>Date</th>
+	  <th>Topic</th>
+	  <th>Required Reading</th>
+	  <th>Suggested Reading</th>
+	</tr>
+      </thead>
+    <tr>
+      <td>TBD</td>
+      <td>Course Overview</td>
+      <td>Russel & Norvig <a href='http://aima.cs.berkeley.edu/'>Chapter 1,2</a></td>
+      <td><a href="https://blogs.microsoft.com/ai/divide-conquer-microsoft-researchers-used-ai-master-ms-pac-man/">Microsoft Ms. PacMan</a></td>
+      </td>
+    <tr>
+      <td>TBD</td>
+      <td><a href='5522_slides/informed_search.pdf'>Search Review</a></td>
+      <td>3.1-3.6</td>
+      <td><a href="https://en.wikipedia.org/wiki/Pancake_sorting">Pancake Sorting<a></td>
+      </td>
+    </tr>
+   <tr>
+      <td>TBD</td>
+      <td><a href='5522_slides/advesarial_search.pdf'>Game Playing 1 - Minimax</a></td>
+      <td>5.1, 5.2, 5.3, 5.4</td>
+      <td>Machine Translation <a href='http://mt-class.org/'>class</a> and <a href='http://mt-class.org/jhu/assets/nmt-book.pdf'>book</a></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td><a href='5522_slides/expectimax_utilities.pdf'>Game Playing 2 - Expectimax and Utilities</a></td>
+      <td>5.5, 13.1, 13.2, 16.1, 16.2, 16.3</td>
+      <td>Rosen's <a href='http://web.cs.ucla.edu/~rosen/161/notes/alphabeta.html'>note</a> on Alpha Beta Pruning</td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Reinforcement Learning</b></td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td><a href='5522_slides/mdp1.pdf'>Reinforcement Learning 1 - Markov Decision Processes</a></td>
+      <td>17.1, 17.2</td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td><a href='5522_slides/mdp2.pdf'>Reinforcement Learning 2 - Value Iteration and Policy Iteration</a></td>
+      <td>17.3</td>
+      <td>Real-life <a href='https://stats.stackexchange.com/questions/145122/real-life-examples-of-markov-decision-processes'>examples</a> of Markov Decision Processes</td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td><a href='5522_slides/rl1.pdf'>Reinforcement Learning 3 - Temporal Difference Learning</a></td>
+      <td>21.1, 21.2, 21.3</td>
+      <td><a href='https://deepmind.com/research/alphago/'>Google AlphaGo</a></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/rl1.pdf'>Reinforcement Learning 4 - Q-Learning</a></td>
+      <td>21.1, 21.2, 21.3</td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/rl2.pdf'>Reinforcement Learning 5 - Function Approximation</a></td>
+      <td>21.4</td>
+      <td>Sutten & Barto's new <a href='http://incompleteideas.net/book/bookdraft2018jan1.pdf'> reinforcement learning book</a> (Ch. 5, 6, 13)</td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/rl3.pdf'>Reinforcement Learning 6 - Policy Gradient Methods</a></td>
+      <td>21.5, 21.6</td>
+      <td><a href='http://www.davidqiu.com:8888/research/nature14236.pdf'>Deep Q-Learning</a></td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Reasoning Under Uncertainty</b></td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/probability.pdf'>Probability Review</a></td>
+      <td>13.3, 13.4, 13.5, 13.6</td>
+      <td>Andrew Moore's <a href='http://www.cs.cmu.edu/~./awm/tutorials/prob18.pdf'>tutorial</a> and Jean Walrand's <a href='http://inst.eecs.berkeley.edu/~cs70/sp16/notes/n25.pdf'>note</a> on Probability </td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/markov.pdf'>Markov Models</a></td>
+      <td>15.1, 15.2</td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td>Midterm Review</td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td>Midterm (In class - close book and notes)</td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/hmm.pdf'>Hidden Markov Models 1 - Monitoring and robot localization</a></td>
+      <td>15.1, 15.2</td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/hmm2.pdf'>Hidden Markov Models 2 - Particle filtering and resampling</a></td>
+      <td>15.3, 15.5</td>
+      <td></td>
+      </td>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/bn.pdf'>Bayes Nets 1 - Probabilistic Representations</a></td>
+      <td>14.1, 14.2</td>
+      <td></td>
+      </td>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/bn2.pdf'>Bayes Nets 2 - D-Seperation</a></td>
+      <td>14.1, 14.2</td>
+      <td>Olivier Chapelle's <a href='https://www.youtube.com/watch?v=gvGfpc7dtMg&t=1745s'>talk</a> on Bayesian Network Click Model for Web Search</td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/bn3.pdf'>Bayes Nets 3 - Inference</a></td>
+      <td>14.4</td>
+      <td>David Blei's <a href='https://www.youtube.com/watch?v=FkckgwMHP2s'>talk</a> on Topic Models and User Behavior</td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td>Bayes Nets 4 - Sampling</td>
+      <td>14.5</td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Machine Learning and Special Topics</b></td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td>Perceptron and Naive Bayes</td>
+      <td>18.6</td>
+      <td></td>
+      </td>
+    </tr> 
+    <tr>
+      <td>TBD</td> 
+      <td><a href='5522_slides/cv.pdf'>Computer Vision 1 - Applications and CNNs</a></td>
+      <td></td>
+      <td><a href="https://www.engadget.com/2016/07/13/behind-facebooks-efforts-to-make-its-site-accessible-to-all/">Facebook Accessibility</a></td>
+      </td>
+    </tr>
+
+    <tr>
+      <td>TBD</td>
+      <td><a href='5522_slides/cv.pdf'>Computer Vision 2 - Visualization</a></td>
+      <td>20.1, 20.2.1, 20.2.2</td>
+      <td><a href="https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">Google DeepDream</a></td>
+      </td>
+    </tr>
+    <tr>
+      <td>TBD</td>
+      <td>Robotics Research</td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr> 
+    <tr>
+      <td>TBD</td>
+      <td>Guest Lecture (Natural Language Processing Research)</td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>     
+    <tr>
+      <td>TBD</td>
+      <td>Final Review</td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>
+    <tr>
+      <td><a href='https://registrar.osu.edu/scheduling/finals/finals.asp'>TBD<a></td>
+      <td>Final Exam (close book and notes)</td>
+      <td></td>
+      <td></td>
+      </td>
+    </tr>
+
+    
+  </table>
+</div>
+
+
+</div> <!-- End Content -->
+
+
+    <script src="../bootstrap-3.2.0-dist/js/bootstrap-min.js"></script>
+
+  </body>
+</html>
