@@ -29,14 +29,14 @@
 
 <div class="project">
 <h3><a name="Introduction"></a>Introduction</h3>
-<p>The projects for this class assume you use Python 2.6 or 2.7. <!--Python 2.6 is already installed on the instructional machines, but you are also free to use your own machine. Whether you work on an instructional machine or your own, the project submission for grading will always be through the edX website.--></p>
+<p>The projects for this class assume you use Python 2.7. <!--Python 2.6 is already installed on the instructional machines, but you are also free to use your own machine. Whether you work on an instructional machine or your own, the project submission for grading will always be through the edX website.--></p>
 <p>Homework 1 will cover the following:</p>
 <ul>
 <li>A mini-UNIX tutorial (particularly important if you work on instructional machines),</li>
 <li>A mini-Python tutorial,</li>
 <li>Project grading: <!--all projects in this course will be autograded after you submit your code through the edX website. For all projects you can submit as many times as you like until the deadline.--> Every project's release includes its autograder for you to run yourself. <!--This is the recommended, and fastest, way to test your code, but keep in mind you need to submit into the edX system to get your grade registered.--></li>
 </ul>
-<p><strong>Files to Edit and Submit:</strong> You will fill in portions of <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/tutorial/docs/addition.html">addition.py</a></code>, <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/tutorial/docs/buyLotsOfFruit.html">buyLotsOfFruit.py</a></code>, and <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/tutorial/docs/shopSmart.html">shopSmart.py</a></code> during the assignment. You should submit these files with your code and comments. Please <em>do not</em> change the other files in this distribution or submit any of our original files other than these files.</p>
+<p><strong>Files to Edit and Submit:</strong> You will fill in portions of <code>addition.py</code>, <code>buyLotsOfFruit.py</code>, and <code>shopSmart.py</code> in <a href="./tutorial.zip">tutorial.zip</a> during the assignment. You should submit these files with your code and comments. Please <em>do not</em> change the other files in this distribution or submit any of our original files other than these files.</p>
 <p><strong>Evaluation:</strong> Your code will be autograded for technical correctness. Please <em>do not</em> change the names of any provided functions or classes within the code, or you will wreak havoc on the autograder. However, the correctness of your implementation -- not the autograder's judgements -- will be the final judge of your score. If necessary, we will review and grade assignments individually to ensure that you receive due credit for your work.</p>
 <p><strong>Academic Dishonesty:</strong> We will be checking your code against other submissions in the class for logical redundancy. If you copy someone else's code and submit it with minor changes, we will know. These cheat detectors are quite hard to fool, so please don't try. We trust you all to submit your own work only; <em>please</em> don't let us down. If you do, we will pursue the strongest consequences available to us.</p>
 <p><strong>Getting Help:</strong> You are not alone! If you find yourself stuck on something, contact the instructor or TA for help. Office hours, and the Piazza forum are there for your support; please use them.  We want these projects to be rewarding and instructional, not frustrating and demoralizing. But, we don't know when or how to help unless you ask.</p>
@@ -55,7 +55,7 @@
 <div class="code_snippet"><code> [cs188-ta@nova ~]$ mkdir foo<br> [cs188-ta@nova ~]$ cd foo<br> [cs188-ta@nova ~/foo]$ </code></div>
 <p>Use <code>ls</code> to see a listing of the contents of a directory, and <code>touch</code> to create an empty file:</p>
 <div class="code_snippet"><code> [cs188-ta@nova ~/foo]$ ls<br> [cs188-ta@nova ~/foo]$ touch hello_world<br> [cs188-ta@nova ~/foo]$ ls<br> hello_world<br> [cs188-ta@nova ~/foo]$ cd ..<br> [cs188-ta@nova ~]$ <br> </code></div>
-<p>Download <a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/tutorial/python_basics.zip">python_basics.zip</a> into your home directory (note: the zip file's name may be slightly different when you download it). Use <code>unzip</code> to extract the contents of the zip file:</p>
+<p>Download <a href="./python_basics.zip">python_basics.zip</a> into your home directory (note: the zip file's name may be slightly different when you download it). Use <code>unzip</code> to extract the contents of the zip file:</p>
 <div class="code_snippet"><code> [cs188-ta@nova ~]$ ls *.zip<br> python_basics.zip<br> [cs188-ta@nova ~]$ unzip python_basics.zip<br> [cs188-ta@nova ~]$ cd python_basics<br> [cs188-ta@nova ~/python_basics]$ ls<br> foreach.py<br> helloWorld.py<br> listcomp.py<br> listcomp2.py<br> quickSort.py<br> shop.py<br> shopTest.py<br> </code></div>
 <p>Some other useful Unix commands:</p>
 <ul>
@@ -93,7 +93,7 @@
 <div class="project">
 <h3><a name="PythonBasics"></a>Python Basics</h3>
 <h4>Required Files</h4>
-<p>You can download all of the files associated with the Python mini-tutorial as a zip archive: <a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/tutorial/python_basics.zip">python_basics.zip</a>. If you did the unix tutorial in the previous tab, you've already downloaded and unzipped this file.</p>
+<p>You can download all of the files associated with the Python mini-tutorial as a zip archive: <a href="./python_basics.zip">python_basics.zip</a>. If you did the unix tutorial in the previous tab, you've already downloaded and unzipped this file.</p>
 <h4>Table of Contents</h4>
 <ul>
 <li><a href="#Invoking the Interpreter">Invoking the Interpreter</a></li>
@@ -453,7 +453,7 @@ If you are editing a file in a window different from the one you are using to ex
 <h4><a name="More References"></a>More References</h4>
 <ul>
 <li>The place to go for more Python information: <a href="http://www.python.org/">www.python.org</a></li>
-<li>A good reference book: <a href="http://oreilly.com/catalog/9780596513986/">Learning Python</a> (From the UCB campus, you can read the whole book online)</li>
+<li>A good reference book: <a href="http://oreilly.com/catalog/9780596513986/">Learning Python</a></li>
 </ul>
 </div>
 
@@ -463,7 +463,7 @@ If you are editing a file in a window different from the one you are using to ex
 <h3><a name="Autograding"></a>Autograding</h3>
 <!--<p>All projects in this course will be autograded after you submit your code through the edX website. For all projects you can submit as many times as you like until the deadline. Every project's release includes its autograder for you to run yourself. This is the recommended, and fastest, way to test your code, but keep in mind you need to submit into the edX system to get your grade registered.</p>-->
 <p>To get you familiarized with the autograder, we will ask you to code, test, and submit solutions for three questions. <!--You will submit your files on the last tab in this sequence (scroll up and click on the right most tab).--></p>
-<p>You can download all of the files associated the autograder tutorial as a zip archive: <a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/tutorial/tutorial.zip">tutorial.zip</a> (note this is <b>different</b> from the zip file used in the UNIX and Python mini-tutorials, python_basics.zip). Unzip this file and examine its contents:</p>
+<p>You can download all of the files associated the autograder tutorial as a zip archive: <a href="./tutorial.zip">tutorial.zip</a> (note this is <b>different</b> from the zip file used in the UNIX and Python mini-tutorials, python_basics.zip). Unzip this file and examine its contents:</p>
 <div class="code_snippet">
 <pre>[cs188-ta@nova ~]$ unzip tutorial.zip
 [cs188-ta@nova ~]$ cd tutorial
@@ -671,7 +671,7 @@ Question q1
 
 <div class="project">
 <h3><a name="Q3"></a> Question 3: shopSmart function</h3>
-<p>Fill in the function <code>shopSmart(orders,shops)</code> in <code>shopSmart.py</code>, which takes an <code>orderList</code> (like the kind passed in to <code>FruitShop.getPriceOfOrder</code>) and a list of <code>FruitShop</code> and returns the <code>FruitShop</code> where your order costs the least amount in total. Don't change the file name or variable names, please. Note that we will provide the <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/tutorial/docs/shop.html">shop.py</a></code> implementation as a "support" file, so you don't need to submit yours.</p>
+<p>Fill in the function <code>shopSmart(orders,shops)</code> in <code>shopSmart.py</code>, which takes an <code>orderList</code> (like the kind passed in to <code>FruitShop.getPriceOfOrder</code>) and a list of <code>FruitShop</code> and returns the <code>FruitShop</code> where your order costs the least amount in total. Don't change the file name or variable names, please. Note that we will provide the <code>shop.py</code> implementation as a "support" file, so you don't need to submit yours.</p>
 <p>Run <code>python autograder.py</code> until question 3 passes all tests and you get full marks. Each test will confirm that <code>shopSmart(orders,shops)</code> returns the correct answer given various possible inputs. For example, with the following variable definitions:</p>
 <div class="code_snippet">
 <pre>orders1 = [('apples',1.0), ('oranges',3.0)]
