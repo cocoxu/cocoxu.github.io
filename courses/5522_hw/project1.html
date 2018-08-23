@@ -29,7 +29,7 @@
     <hr/>
 
     <div class="project">
-      <blockquote><center><img src="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/maze.png" width="400px" /></center>
+      <blockquote><center><img src="./maze.png" width="400px" /></center>
         <p></p>
         <center>All those colored walls,<br /> Mazes give Pacman the blues,<br /> So teach him to search.</center>
         <p></p>
@@ -39,7 +39,7 @@
       <p>As in Project 0, this project includes an autograder for you to grade your answers on your machine. This can be run with the command:</p>
       <pre>python autograder.py</pre>
       <p>See the autograder tutorial in Project 0 for more information about using the autograder.</p>
-      <p>The code for this project consists of several Python files, some of which you will need to read and understand in order to complete the assignment, and some of which you can ignore. You can download all the code and supporting files as a <a href="search.zip">zip archive</a>.</p>
+      <p>The code for this project consists of several Python files, some of which you will need to read and understand in order to complete the assignment, and some of which you can ignore. You can download all the code and supporting files as a <a href="./search.zip">zip archive</a>.</p>
       <table class="intro" border="0" cellpadding="10">
         <tbody>
           <tr>
@@ -129,7 +129,7 @@
 
     <div class="project">
       <h3><a name="Welcome"></a>Welcome to Pacman</h3>
-      <p>After downloading the code (<a href="files/search.zip">search.zip</a>), unzipping it, and changing to the directory, you should be able to play a game of Pacman by typing the following at the command line:</p>
+      <p>After downloading the code (<a href="./search.zip">search.zip</a>), unzipping it, and changing to the directory, you should be able to play a game of Pacman by typing the following at the command line:</p>
       <pre>python pacman.py</pre>
       <p>Pacman lives in a shiny blue world of twisting corridors and tasty round treats. Navigating this world efficiently will be Pacman's first step in mastering his domain.</p>
       <p>The simplest agent in searchAgents.py is called the <code>GoWestAgent</code>, which always goes West (a trivial reflex agent). This agent can occasionally win:</p>
@@ -184,7 +184,7 @@
 
     <div class="project">
       <h3><a name="Q3"></a>Question 3 (3 points): Varying the Cost Function</h3>
-      <p>While BFS will find a fewest-actions path to the goal, we might want to find paths that are "best" in other senses. Consider <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/layouts/mediumDottedMaze.lay">mediumDottedMaze</a></code> and <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/layouts/mediumScaryMaze.lay">mediumScaryMaze</a></code>.</p>
+      <p>While BFS will find a fewest-actions path to the goal, we might want to find paths that are "best" in other senses. Consider <code>mediumDottedMaze</code> and <code>mediumScaryMaze</code>.</p>
       <p>By changing the cost function, we can encourage Pacman to find different paths. For example, we can charge more for dangerous steps in ghost-ridden areas or less for steps in food-rich areas, and a rational Pacman agent should adjust its behavior in response.</p>
 
       <p>Implement the uniform-cost graph search algorithm in the <code>uniformCostSearch</code> function in <code>search.py</code>. We encourage you to look through <code>util.py</code> for some data structures that may be useful in your implementation. You should now observe successful behavior in all three of the following layouts, where the agents below are all UCS agents that differ only in the cost function they use (the agents and cost functions are written for you):</p>
@@ -209,14 +209,14 @@
     <div class="project">
       <h3><a name="Q5"></a>Question 5 (3 points): Finding All the Corners</h3>
       <p>The real power of A* will only be apparent with a more challenging search problem. Now, it's time to formulate a new problem and design a heuristic for it.</p>
-      <p>In <em>corner mazes</em>, there are four dots, one in each corner. Our new search problem is to find the shortest path through the maze that touches all four corners (whether the maze actually has food there or not). Note that for some mazes like <a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/layouts/tinyCorners.lay">tinyCorners</a>, the shortest path does not always go to the closest food first! <em>Hint</em>: the shortest path through <code>tinyCorners</code> takes 28 steps.</p>
+      <p>In <em>corner mazes</em>, there are four dots, one in each corner. Our new search problem is to find the shortest path through the maze that touches all four corners (whether the maze actually has food there or not). Note that for some mazes like <code>tinyCorners</code>, the shortest path does not always go to the closest food first! <em>Hint</em>: the shortest path through <code>tinyCorners</code> takes 28 steps.</p>
       <p><i>Note: Make sure to complete Question 2 before working on Question 5, because Question 5 builds upon your answer for Question 2.</i></p>
       <p>Implement the <code>CornersProblem</code> search problem in <code>searchAgents.py</code>. You will need to choose a state representation that encodes all the information necessary to detect whether all four corners have been reached. Now, your search agent should solve:</p>
       <pre>python pacman.py -l tinyCorners -p SearchAgent -a fn=bfs,prob=CornersProblem</pre>
       <pre>python pacman.py -l mediumCorners -p SearchAgent -a fn=bfs,prob=CornersProblem</pre>
       <p>To receive full credit, you need to define an abstract state representation that <em>does not</em> encode irrelevant information (like the position of ghosts, where extra food is, etc.). In particular, do not use a Pacman <code>GameState</code> as a search state. Your code will be very, very slow if you do (and also wrong).</p>
       <p><em>Hint:</em> The only parts of the game state you need to reference in your implementation are the starting Pacman position and the location of the four corners.</p>
-      <p>Our implementation of <code>breadthFirstSearch</code> expands just under 2000 search nodes on <a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/layouts/mediumCorners.lay">mediumCorners</a>. However, heuristics (used with A* search) can reduce the amount of searching required.</p>
+      <p>Our implementation of <code>breadthFirstSearch</code> expands just under 2000 search nodes on <code>mediumCorners</code>. However, heuristics (used with A* search) can reduce the amount of searching required.</p>
     </div>
 
     <hr/>
@@ -261,10 +261,10 @@
 
     <div class="project">
       <h3><a name="Q7"></a>Question 7 (4 points): Eating All The Dots</h3>
-      <p>Now we'll solve a hard search problem: eating all the Pacman food in as few steps as possible. For this, we'll need a new search problem definition which formalizes the food-clearing problem: <code>FoodSearchProblem</code> in <code>searchAgents.py</code> (implemented for you). A solution is defined to be a path that collects all of the food in the Pacman world. For the present project, solutions do not take into account any ghosts or power pellets; solutions only depend on the placement of walls, regular food and Pacman. (Of course ghosts can ruin the execution of a solution! We'll get to that in the next project.) If you have written your general search methods correctly, <code>A*</code> with a null heuristic (equivalent to uniform-cost search) should quickly find an optimal solution to <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/layouts/testSearch.lay">testSearch</a></code> with no code change on your part (total cost of 7).</p>
+      <p>Now we'll solve a hard search problem: eating all the Pacman food in as few steps as possible. For this, we'll need a new search problem definition which formalizes the food-clearing problem: <code>FoodSearchProblem</code> in <code>searchAgents.py</code> (implemented for you). A solution is defined to be a path that collects all of the food in the Pacman world. For the present project, solutions do not take into account any ghosts or power pellets; solutions only depend on the placement of walls, regular food and Pacman. (Of course ghosts can ruin the execution of a solution! We'll get to that in the next project.) If you have written your general search methods correctly, <code>A*</code> with a null heuristic (equivalent to uniform-cost search) should quickly find an optimal solution to <code>testSearch</code> with no code change on your part (total cost of 7).</p>
       <pre>python pacman.py -l testSearch -p AStarFoodSearchAgent</pre>
       <p><em>Note:</em><code> AStarFoodSearchAgent</code> is a shortcut for <code>-p SearchAgent -a fn=astar,prob=FoodSearchProblem,heuristic=foodHeuristic</code>.</p>
-      <p>You should find that UCS starts to slow down even for the seemingly simple <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/layouts/tinySearch.lay">tinySearch</a></code>. As a reference, our implementation takes 2.5 seconds to find a path of length 27 after expanding 5057 search nodes.</p>
+      <p>You should find that UCS starts to slow down even for the seemingly simple <code>tinySearch</code>. As a reference, our implementation takes 2.5 seconds to find a path of length 27 after expanding 5057 search nodes.</p>
       <p><i>Note: Make sure to complete Question 4 before working on Question 7, because Question 7 builds upon your answer for Question 4.</i></p>
       <p>Fill in <code>foodHeuristic</code> in <code>searchAgents.py</code> with a <emph> consistent </emph> heuristic for the <code>FoodSearchProblem</code>. Try your agent on the <code>trickySearch</code> board:</p>
       <pre>python pacman.py -l trickySearch -p AStarFoodSearchAgent</pre>
@@ -296,7 +296,7 @@
         </tbody>
       </table>
       <p></p>
-      <p><em>Remember:</em> If your heuristic is inconsistent, you will receive <em>no</em> credit, so be careful! Can you solve <code><a href="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/sp14/search/layouts/mediumSearch.lay">mediumSearch</a></code> in a short time? If so, we're either very, very impressed, or your heuristic is inconsistent.</p>
+      <p><em>Remember:</em> If your heuristic is inconsistent, you will receive <em>no</em> credit, so be careful! Can you solve <code>mediumSearch</code> in a short time? If so, we're either very, very impressed, or your heuristic is inconsistent.</p>
     </div>
 
     <hr/>
