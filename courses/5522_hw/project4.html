@@ -29,7 +29,7 @@
     <hr/>
 
     <div class="project">
-      <blockquote><center><img src="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/release/tracking/v1/001/busters.png" alt="GHOSTBUSTERS" width="400px" /></center>
+      <blockquote><center><img src="p4-busters.png" alt="GHOSTBUSTERS" width="400px" /></center>
         <p></p>
         <center>I can hear you, ghost.<br /> Running won't save you from my<br /> Particle filter!</center>
         <p></p>
@@ -217,7 +217,7 @@
       <h3><a name="Q6"></a>Question 6 (4 points): Joint Particle Filter Observation</h3>
       <p>So far, we have tracked each ghost independently, which works fine for the default <code>RandomGhost</code> or more advanced <code>DirectionalGhost</code>. However, the prized <code>DispersingGhost</code> chooses actions that avoid other ghosts. Since the ghosts' transition models are no longer independent, all ghosts must be tracked jointly in a dynamic Bayes net!</p>
       <p>The Bayes net has the following structure, where the hidden variables G represent ghost positions and the emission variables E are the noisy distances to each ghost. This structure can be extended to more ghosts, but only two (a and b) are shown below.</p>
-      <center><img src="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/release/tracking/v1/001/dbn.png" width="500px" /></center>
+      <center><img src="p4-dbn.png" width="500px" /></center>
       <p>You will now implement a particle filter that tracks multiple ghosts simultaneously. Each particle will represent a tuple of ghost positions that is a sample of where all the ghosts are at the present time. The code is already set up to extract marginal distributions about each ghost from the joint inference algorithm you will create, so that belief clouds about individual ghosts can be displayed.</p>
       <p>Complete the <code>initializeParticles</code>, <code>getBeliefDistribution</code>, and <code>observeState</code> method in <code>JointParticleFilter</code> to weight and resample the whole list of particles based on new evidence. As before, a correct implementation should also handle two special cases. (1) When all your particles receive zero weight based on the evidence, you should resample all particles from the prior to recover. (2) When a ghost is eaten, you should update all particles to place that ghost in its prison cell, as described in the comments of <code>observeState</code>.</p>
       <p>You should now effectively track dispersing ghosts. To run the autograder for this question and visualize the output:</p>
@@ -231,7 +231,7 @@
       <p>Complete the <code>elapseTime</code> method in <code>JointParticleFilter</code> in <code>inference.py</code> to resample each particle correctly for the Bayes net. In particular, each ghost should draw a new position conditioned on the positions of all the ghosts at the previous time step. The comments in the method provide instructions for support functions to help with sampling and creating the correct distribution.</p>
       <p>Note that completing this question involves removing the call to util.raiseNotDefined(). This means that the autograder will now grade both question 6 and question 7. Since these questions involve joint distributions, they require more computational power (and time) to grade, so please be patient!</p>
       <p>As you run the autograder note that <code>q7/1-JointParticleElapse</code> and <code>q7/2-JointParticleElapse</code> test your <code>elapseTime</code> implementations only, and <code>q7/3-JointParticleElapse</code> tests both your <code>elapseTime</code> and <code>observe</code> implementations. Notice the difference between test 1 and test 3. In both tests, pacman knows that the ghosts will move to the sides of the gameboard. What is different between the tests, and why?</p>
-      <center><img src="https://s3-us-west-2.amazonaws.com/cs188websitecontent/projects/release/tracking/v1/001/disperse.png" width="500px" /></center>
+      <center><img src="p4-disperse.png" width="500px" /></center>
       <p>To run the autograder for this question use:</p>
       <pre>python autograder.py -q q7</pre>
       <p>Congratulations!  You are now a ghostbuster!</p>
