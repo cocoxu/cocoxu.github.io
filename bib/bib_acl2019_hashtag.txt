@@ -1,0 +1,8 @@
+@inproceedings{maddela19acl,
+    title = {Multi-task Pairwise Neural Ranking for Hashtag Segmentation},
+    author = "Maddela, Mounica and Xu, Wei and Preo{\c t}iuc-Pietro, Daniel",
+    booktitle = {The 57th Annual Meeting of the Association for Computational Linguistics (ACL)},
+    address = {Florence, Italy},
+    month = {July},
+    year = {2019}
+}

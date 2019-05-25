@@ -1,0 +1,10 @@
+@inproceedings{maddela-xu-2018-word,
+    title = "A Word-Complexity Lexicon and A Neural Readability Ranking Model for Lexical Simplification",
+    author = "Maddela, Mounica and Xu, Wei",
+    booktitle = "Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing",
+    year = "2018",
+    address = "Brussels, Belgium",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/D18-1410",
+    pages = "3749--3760",
+}
