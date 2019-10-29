@@ -153,6 +153,7 @@
 				</li>
 
 			<!-- <ul class="news"> -->
+			    <li>Nov 2019, serving as the Senior Area Chair (generation) for ACL 2020.  
 			    <li>Nov 2019, organizing the 5th <a href="http://noisy-text.github.io/">Workshop on Noisy User-generated Text</a> at EMNLP 2019.
 				<li>July 2019, releasing <a href="https://mounicam.github.io/hashtag_master">#HashtagMaster</a> - a semantic analysis tool for hashtags. 
 			    <li>May 2019, paper on <a href="publications/ACL2019_HashtagMaster.pdf">"Multi-task Pairwise Neural Ranking for Hashtag Segmentation"</a> is accepted at ACL 2019. Congrats to my phd student <a href="https://mounicam.github.io/">Mounica Maddela</a>!</li>
@@ -218,10 +219,10 @@
 			<div class="projects" style="margin-left: 1em; margin-right: 1em" >
 				<div class="boxed">
 					<p><a href=
-					"files/twitter_paraphrase_multip_crop.png"><img border=
+					"files/pic_semantics.png"><img border=
 					"1px" hspace="10" src=
-					"files/twitter_paraphrase_multip_crop.png" style=
-					"float: right;" vspace="5" width="340px"></a>
+					"files/pic_semantics.png" style=
+					"float: right;" vspace="5" width="320px"></a>
 					</p>
 
 
@@ -229,19 +230,15 @@
 					</h5>
 
 
-					<p>We design machine learning algorithms to extract semantic or structured knowledge from large volumes of data. We have a series of work on learning web-scale paraphrases from Twitter that can enable natural language systems to handle errors (e.g.
-					“everytime” ↔ “every time”), lexical variations (e.g. “oscar nom’d
-					doc” ↔ “Oscar-nominated documentary”), rare words (e.g “NetsBulls
-					series” ↔ “Nets and Bulls games”), and language shifts (e.g. “is
-					bananas” ↔ “is great”). It is difficult to capture such lexically divergent paraphrases by the conventional similarity-based approaches. We design large-scale data <a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf">[BUCC'13]</a> <a href="publications/semeval_pit_2015_overview.pdf">[SemEval'15]</a> <a href="publications/EMNLP2017_growing_dataset.pdf">[EMNLP'17]</a>, neural network models for sentence pair modeling <a href="publications/EMNLP2017_growing_dataset.pdf">[NAACL'18a]</a> <a href="publications/COLING_2018_sentence_pair_modeling.pdf">[COLING'18]</a> and multi-instance learning models <a href=			"publications/tacl2014-extracting-paraphrases-from-twitter.pdf">[TACL'14]</a> <a href="https://aclweb.org/anthology/D16-1030.pdf">[EMNLP'16]</a>, which jointly infers latent word-sentence relations.
-</p>
+					<p>My approach to natural language understanding is learning and modeling paraphrases on a much larger scale and with a much broader range than previous work, essentially by developing more robust machine learning models and leveraging social media data. These paraphrase can enable natural language systems to handle errors (e.g., “everytime” ↔ “every time”), lexical variations (e.g., “oscar nom’d doc” ↔ “Oscar-nominated documentary”), rare words (e.g “NetsBulls series” ↔ “Nets and Bulls games”), and language shifts (e.g. “is bananas” ↔ “is great”). We designed a series of unsupervised and supervised learning approaches for paraphrase identification in social media data (also applicable to question/answer pairs [COLING'18] for QA systems), ranging from neural network models <a href="publications/COLING_2018_sentence_pair_modeling.pdf">[COLING'18]</a> <a href="publications/EMNLP2017_growing_dataset.pdf">[NAACL'18a]</a> to multi-instance learning <a href="publications/tacl2014-extracting-paraphrases-from-twitter.pdf">[TACL'14]</a> <a href="https://aclweb.org/anthology/D16-1030.pdf">[EMNLP'16]</a>, and creating large-scale datasets <a href="publications/semeval_pit_2015_overview.pdf">[SemEval'15]</a> <a href="publications/EMNLP2017_growing_dataset.pdf">[EMNLP'17]</a>. 
+
 				</div>
 				<!-- end boxed-->
 
 				<div class="boxed">
-					<p><a href="files/pic_simp.png"><img border="1px"
-					hspace="10" src="files/pic_simp.png" style=
-					"float: left;" vspace="5" width="240px"></a>
+					<p><a href="files/pic_readability.png"><img border="1px"
+					hspace="10" src="files/pic_readability.png" style=
+					"float: left;" vspace="5" width="260px"></a>
 					</p>
 
 
@@ -249,7 +246,7 @@
 					</h5>
 
 
-					<p>Many text-to-text generation problems can be thought of as sentential paraphrasing or monolingual machine translation. It faces an exponential search space larger than bilingual translation, but a much smaller optimal solution space due to specific task requirements. I advocate for a text-to-text generation framework, building on top of machine translation technologies. My recent work uncovered multiple serious problems in <a href="publications/tacl2015-text-simplification-opinion.pdf">text simplification [TACL'15]</a> research between 2010 and 2014, designed automatic evaluation metrics to optimize syntax-based machine translation models <a href="publications/tacl2016-smt-simplification.pdf">[TACL'16]</a>, and created neural ranking models to achieve new state-of-the-art results for lexical simplification <a href="publications/EMNLP2018_neural_ranking_and_word_complexity_lexicon_preprint.pdf">[EMNLP'18]</a>. I am interested in text generation with different language styles (e.g. historic ↔ modern <a href="http://aclweb.org/anthology/C/C12/C12-1177.pdf">[COLING'12]</a>, non-standard ↔ standard <a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf">[BUCC'13]</a>, feminine ↔ masculine <a href="publications/AAAI_2016_gender_paraphrase.pdf">[AAAI'16]</a>).
+					<p>Many text-to-text generation problems can be thought of as sentential paraphrasing or monolingual machine translation. It faces an exponential search space larger than bilingual translation, but a much smaller optimal solution space due to specific task requirements. I advocate for a text-to-text generation framework, building on top of machine translation technologies. My recent work uncovered multiple serious problems in previous research (2010 and 2014) on <a href="publications/tacl2015-text-simplification-opinion.pdf">text simplification [TACL'15]</a> , designed a new tunable metric SARI <a href="publications/tacl2016-smt-simplification.pdf">[TACL'16]</a> which is effective for evaluation and as a learning objective for training (now implemented by the Google AI group <a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/utils/sari_hook.py">in TensorFlow</a>  ), optimized syntax-based machine translation models <a href="publications/tacl2016-smt-simplification.pdf">[TACL'16]</a>, and created pairwise neural ranking models to achieve new state-of-the-art performance on lexical simplification <a href="publications/EMNLP2018_neural_ranking_and_word_complexity_lexicon_preprint.pdf">[EMNLP'18]</a>. I am interested in text generation with different language styles (e.g. historic ↔ modern <a href="http://aclweb.org/anthology/C/C12/C12-1177.pdf">[COLING'12]</a>, non-standard ↔ standard <a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf">[BUCC'13]</a>, feminine ↔ masculine <a href="publications/AAAI_2016_gender_paraphrase.pdf">[AAAI'16]</a>).
 					</p>
 				</div>
 				<!-- end boxed-->
