@@ -1,0 +1,6 @@
+@inproceedings{zhong2020discourse,
+  author    = {Yang Zhong and Chao Jiang and Wei Xu and Junyi Jessy Li},
+  title     = {Discovering User Attribute Stylistic Differences via Paraphrasing},
+  booktitle = {Proceedings of the 34th AAAI Conference on Artificial Intelligence (AAAI)},
+  year = {2020}
+}
