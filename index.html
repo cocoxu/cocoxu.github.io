@@ -155,7 +155,7 @@
 				</li>
 
 			<!-- <ul class="news"> -->
-			    <li>April 2020, three long papers accepted to ACL 2020! We are releasing (1) the best-to-date dataset and Transformer-based generation model for text simplification; (2) fine-grained named entity and code recognition for StackOverflow; (3) a unified span-based neural network framework and benchmark leaderboard for 10+ NLP tasks.  
+			    <li>April 2020, three long papers accepted to ACL 2020! We are releasing (1) new high-quality dataset and Transformer-based model for <a href="publications/ACL2020_sentence_alignment.pdf">text simplification</a>; (2) fine-grained <a href="publications/ACL2020_stackoverflow_NER.pdf">named entity and code recognition for StackOverflow</a>; (3) a unified span-based neural network framework and benchmark leaderboard for 10+ NLP tasks.  
 			    <li>March 2020, serving as the Area Chair (generation) for EMNLP 2020.
 			    <li>Jan 2020, <a href="publications/tacl2016-smt-simplification.pdf">the SARI score</a> I designed for evaluating text generation models is now part of the official release of the <a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/utils/sari_hook.py">TensorFlow tensor2tensor</a> library. Thanks to Afroz, Alexander, Lukasz! 
 			    <li>Nov 2019, our paper on <a href='publications/AAAI-ZhongY.9975.pdf'>document-level text simplification</a> was accepted by AAAI 2020 as an oral presentation!   
@@ -251,7 +251,7 @@
 					</h5>
 
 
-					<p>Many text-to-text generation problems can be thought of as sentential paraphrasing or monolingual machine translation. It faces an exponential search space larger than bilingual translation, but a much smaller optimal solution space due to specific task requirements. I advocate for a text-to-text generation framework, building on top of machine translation technologies. My recent work uncovered multiple serious problems in previous research (2010 and 2014) on <a href="publications/tacl2015-text-simplification-opinion.pdf">text simplification [TACL'15]</a> , designed a new tunable metric SARI <a href="publications/tacl2016-smt-simplification.pdf">[TACL'16]</a> which is effective for evaluation and as a learning objective for training (now added by the Google AI group to <a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/utils/sari_hook.py">TensorFlow</a>), optimized syntax-based machine translation models <a href="publications/tacl2016-smt-simplification.pdf">[TACL'16]</a>, created pairwise neural ranking models to achieve new state-of-the-art performance on lexical simplification <a href="publications/EMNLP2018_neural_ranking_and_word_complexity_lexicon_preprint.pdf">[EMNLP'18]</a>, and studied document-level simplification <a href="">[AAAI'20]</a>. I am interested in text generation for <a href="http://aclweb.org/anthology/C/C12/C12-1177.pdf">style transfer [COLING'12]</a> and stylistics in general (e.g. historic ↔ modern, non-standard ↔ standard <a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf">[BUCC'13]</a>, feminine ↔ masculine <a href="publications/AAAI_2016_gender_paraphrase.pdf">[AAAI'16]</a>).
+					<p>Many text-to-text generation problems can be thought of as sentential paraphrasing or monolingual machine translation. It faces an exponential search space larger than bilingual translation, but a much smaller optimal solution space due to specific task requirements. I advocate for a text-to-text generation framework, building on top of machine translation technologies. My recent work uncovered multiple serious problems in previous research (2010 and 2014) on <a href="publications/tacl2015-text-simplification-opinion.pdf">text simplification [TACL'15]</a> , designed a new tunable metric SARI <a href="publications/tacl2016-smt-simplification.pdf">[TACL'16]</a> which is effective for evaluation and as a learning objective for training (now added by the Google AI group to <a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/utils/sari_hook.py">TensorFlow</a>), optimized syntax-based machine translation models <a href="publications/tacl2016-smt-simplification.pdf">[TACL'16]</a>, created pairwise neural ranking models to for lexical simplification <a href="publications/EMNLP2018_neural_ranking_and_word_complexity_lexicon_preprint.pdf">[EMNLP'18]</a>, and studied document-level simplification <a href="">[AAAI'20]</a>. Our newest Transformer-based model initialized with BERT is the current state-of-the-art for automatic text simplification <a href="publications/ACL2020_sentence_alignment.pdf">[ACL'20a]</a>. I am interested in text generation for <a href="http://aclweb.org/anthology/C/C12/C12-1177.pdf">style transfer [COLING'12]</a> and stylistics in general (e.g. historic ↔ modern, non-standard ↔ standard <a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf">[BUCC'13]</a>, feminine ↔ masculine <a href="publications/AAAI_2016_gender_paraphrase.pdf">[AAAI'16]</a>).
 					</p>
 				</div>
 				<!-- end boxed-->
@@ -270,14 +270,14 @@
 				<li>
 					<b><a href="publications/ACL2020_sentence_alignment.pdf"
 					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Neural CRF Model for Sentence Alignment in Text Simplification</a></b> [code/data - coming soon!] <br>
+					"font-style: italic; text-decoration: none">Neural CRF Model for Sentence Alignment in Text Simplification</a></b> [<a href="https://github.com/chaojiang06/wiki-auto">code/data</a>] <br>
 					Chao Jiang, Mounica Maddela, Wuwei Lan, Yang Zhong, Wei Xu<br>
 					ACL 2020
 				</li>
 
 				<li>
-					<b><a href="" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">An Empirical Study of Named Entity Recognition in StackOverflow</a></b> [preprint/code/data - coming soon!] <br>
+					<b><a href="publications/ACL2020_stackoverflow_NER.pdf" name="smt-simple" style=
+					"font-style: italic; text-decoration: none">Code and Named Entity Recognition in StackOverflow</a></b> [<a href="https://github.com/jeniyat/StackOverflowNER/">code/data</a>] <br>
 					Jeniya Tabassum, Mounica Maddela, Wei Xu, Alan Ritter<br>
 					ACL 2020
 				</li>
@@ -285,11 +285,18 @@
 				<li>
 					<b><a href="https://arxiv.org/abs/1911.03822"
 					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Generalizing Natural Language Analysis through Span-relation Representations</a></b> <br>
+					"font-style: italic; text-decoration: none">Generalizing Natural Language Analysis through Span-relation Representations</a></b> [code/data/leaderboard coming soon!] <br>
 					Zhengbao Jiang, Wei Xu, Jun Araki, Graham Neubig<br>
 					ACL 2020
 				</li>
-														
+				<li>
+					<a href=""
+					id="smt-simple" name="smt-simple" style=
+					"font-style: italic; text-decoration: none">Learning Relation Entailment with Structured and Textual Information</a> [preprint coming soon] <br>
+					Zhengbao Jiang, Jun Araki, Donghan Yu, Ruohong Zhang, Wei Xu, Yiming Yang, Graham Neubig<br>
+					AKBC 2020
+				</li>
+													
 				<li>
 					<a href="publications/AAAI-ZhongY.9975.pdf"
 					id="smt-simple" name="smt-simple" style=
@@ -668,7 +675,7 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
 			"http://yangzhongcs.com/">Yang Zhong</a> (PhD student, 2019 -- ; stylistics <a href="publications/AAAI-ZhongY.9975.pdf">AAAI'20</a> <a href="https://aaai.org/ojs/index.php/AAAI/article/view/4605">AAAI'19</a>) <br>
             &nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://sites.google.com/site/jeniyatabassum/">Jeniya Tabassum</a> (PhD student; social media/information extraction <a href="">ACL'20b</a> <a href="https://aclweb.org/anthology/D16-1030.pdf">EMNLP'16</a> - co-advisor: <a href="http://aritter.github.io">Alan Ritter</a>) <br>
+			"https://sites.google.com/site/jeniyatabassum/">Jeniya Tabassum</a> (PhD student; social media/information extraction <a href="publications/ACL2020_stackoverflow_NER.pdf">ACL'20b</a> <a href="https://aclweb.org/anthology/D16-1030.pdf">EMNLP'16</a> - co-advisor: <a href="http://aritter.github.io">Alan Ritter</a>) <br>
 			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
 			"">Ethan Lee</a> (Undergraduate, spring 2020 -- ) <br>
 			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
