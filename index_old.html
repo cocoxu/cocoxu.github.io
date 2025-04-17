@@ -55,7 +55,7 @@
 
 
 		    <br><br>
-		    I am a faculty member of the <a href="https://ic.gatech.edu/">School of Interactive Computing</a> and <a href="https://ml.gatech.edu/">Machine Learning Center</a> at Georgia Tech. My research lies at the intersections of <b>machine learning</b>, <b>natural language processing</b>, and <b>social media</b>. I direct the <a href="">NLP X Lab</a> which currently focuses on (1) large language models, such as cultural bias, multilingual capability, temporal shifts, and personalization; (2) text generation, such as constrained decoding and learnable evaluation metric; and (3) interdisciplinary NLP applications that can make impact in education, security, accessibility, etc. I received the NSF CAREER Award, Faculty Research Awards from Google, Sony, and Criteo, CrowdFlower AI for Everyone Award, Best Paper Awards at COLING'18 and ACL'24, as well as research funds from DARPA and IARPA. I am a member of NAACL executive board. I was a postdoctoral researcher at the University of Pennsylvania. I received my PhD in Computer Science from New York University, BSMS from Tsinghua University. 
+		    I am a faculty member of the <a href="https://ic.gatech.edu/">School of Interactive Computing</a> and <a href="https://ml.gatech.edu/">Machine Learning Center</a> at Georgia Tech. My research lies at the intersections of <b>machine learning</b>, <b>natural language processing</b>, and <b>social media</b>. I direct the <a href="">NLP X Lab</a> which currently focuses on (1) large language models, such as cultural bias, multilingual capability, temporal shifts, and personalization; (2) text generation, such as constrained decoding and learnable evaluation metric; and (3) interdisciplinary NLP applications that can make impact in education, accessibility, etc. I received the NSF CAREER Award, Faculty Research Awards from Google, Sony, and Criteo, CrowdFlower AI for Everyone Award, Best Paper Awards at COLING'18 and ACL'24, as well as research funds from DARPA and IARPA. I am a member of NAACL executive board. I was a postdoctoral researcher at the University of Pennsylvania. I received my PhD in Computer Science from New York University, MS and BS from Tsinghua University. 
 		    
 		    <br>
 			<br>
@@ -264,37 +264,33 @@
 			<div class="projects" style="margin-left: 1em; margin-right: 1em" >
 				<div class="boxed">
 					<p><a href=
-					"pics/pic_culturalbias_2.png"><img border=
+					"files/pic_lens.gif"><img border=
 					"1px" hspace="10" vspace="10" src=
-					"pics/pic_culturalbias_2.png" style=
-					"float: right;" width="450px"></a>
+					"files/pic_lens.gif" style=
+					"float: right;" width="370px"></a>
 					</p>
 
-<h5><strong>Multilingual Multicultural LLMs</strong>
+<h5><strong>Controllability, Stylistics, and Evaluation in Text Generation</strong>
 					</h5>
 
 
-<p> While LLMs have demonstrated impressive performance, their success is largely concentrated in English and other high-resource languages. In contrast, many non-English languages remain underrepresented and underserved. Moreover, these models often reflect Western cultural biases and struggle to capture the nuances of non-Western cultural contexts <a href="https://arxiv.org/pdf/2305.14456">(Naous et al., ACL 2024;</a> <a href="https://arxiv.org/pdf/2501.04662">Naous et al., NAACL 2025)</a>. We work on identifying and closing these gaps in performance and cultural adaptation. Addressing these challenges calls for a deeper analysis of pre-training data to identify and mitigate representational gaps, as well as alignment <a href="https://arxiv.org/pdf/2504.05154">(Guo et al., arXiv 2025)</a> and inference-time algorithms <a href="https://arxiv.org/pdf/2402.03131">(Le at al., ICLR 2024)</a> that can dynamically adapt model behavior to diverse linguistic and cultural contexts. </p>
+<p> We recently published one of the earliest works on formally evaluating the impressive text rewriting capability of GPT-3.5 and GPT-4, in particular, for paraphrase generation <a href="https://arxiv.org/abs/2210.03235">[EMNLP’22a]</a> and text simplification <a href="https://arxiv.org/pdf/2305.14458.pdf">[EMNLP’23a]</a>. Our new LENS metric <a href="https://arxiv.org/pdf/2212.09739.pdf">[ACL’23a]</a> is the first learned automatic evaluation metric for text simplification, which, when used as objective in minimum Bayes risk decoding (MBR), also set the newest state-of-the-art of open-sourced generation models, on par of GPT-3.5 and GPT-4. We also work on instruction-finetuning for style <a href="https://arxiv.org/pdf/2305.14592.pdf">[ACL’24a]</a>, edit-level text generation evaluation <a href="https://arxiv.org/pdf/2305.14458.pdf">[EMNLP’23a]</a>, document-grounded instructional dialog <a href="https://arxiv.org/pdf/2305.17280.pdf">[ACL’23b]</a>, document editing analysis for scientific writing <a href="publications/EMNLP_2022_arXiv_Edits.pdf">[EMNLP’22b]</a>. </p>
 
 
 				</div>
 				<!-- end boxed-->
 
 				<div class="boxed">
+					<p><a href="pics/pic_culturalbias_2.png"><img border="1px"
+					hspace="10" src="pics/pic_culturalbias_2.png" style=
+					"float: left;" vspace="10" width="500px"></a>
+					</p>
 
-					<h5 style="text-align: left"><strong>Robustness and Reasoning of LLMs</strong>
+					<h5 style="text-align: right"><strong>Fairness, Multilingual, and Cross-cultural Capability of LLMs</strong>
 					</h5>
 
-					<p><a href="pics/pic_branch.jpeg"><img border="1px"
-					hspace="10" src="pics/pic_branch.jpeg" style=
-					"float: right;" width="400px"></a>
-					</p>
-					
-<p> Artificial General Intelligence (AGI) benchmarks seek to assess an AI system’s capacity to perform tasks that require human-level intelligence, including reasoning, learning, and adapting to novel situations <a href="https://arxiv.org/pdf/2503.09674">(Zheng et al., ACL 2024;</a> <a href="https://arxiv.org/pdf/2407.04952">Mendes et al., EMNLP 2024)</a>. While current systems fall short of true AGI, there is growing interest in moving beyond static benchmarks toward more realistic, dynamic evaluations. Our research focuses on designing real-world tasks that better reflect practical challenges faced by LLMs, and on developing innovative methods <a href="https://arxiv.org/pdf/2503.09674">(Zheng et al., arXiv 2025)</a> to enhance their robustness and performance in these complex settings. </p>					
-	
-	
-	
-	
+
+<p> We analyze monolingual and multilingual LLMs for cultural adaptation <a href="https://arxiv.org/pdf/2305.14456.pdf">[ACL’24b]</a>, distillation <a href="https://arxiv.org/pdf/2305.01645.pdf">[ACL’23c]</a>, cost efficiency <a href="https://aclanthology.org/2021.emnlp-main.409.pdf">[EMNLP’21]</a>, robustness <a href="https://arxiv.org/pdf/2402.12261.pdf">[ACL’24d]</a>, and any other strengths/weaknesses that may lead to further development of better, fairer, smaller models. We also develop effective methods, such as label projection <a href="https://arxiv.org/pdf/2402.03131.pdf">[ICLR’24]</a>, for cross-lingual transfer learning. That is, with only English annotated data, we directly train multilingual language models that can perform tasks (e.g., entity recognition, question answer) in non-English languages. </p>					
 					
 				</div>
 				<!-- end boxed-->
@@ -304,14 +300,14 @@
 					"pics/pic_medical_readability.png"><img border=
 					"1px" hspace="10" src=
 					"pics/pic_medical_readability.png" style=
-					"float: right;" vspace="5" width="400px"></a>
+					"float: right;" vspace="5" width="480px"></a>
 					</p>
 
-<h5><strong>Interdisciplinary NLP+X Research</strong>
+<h5><strong>NLP + X (social media, accessibility, privacy) Interdisciplinary Research</strong>
 					</h5>
 
 
-					<p> We actively collaborate with researchers to explore impactful real-world applications of large language models in Human-Computer Interaction, Security and Privacy, Healthcare, and Law <a href="https://arxiv.org/pdf/2503.09674">(Jiang et al., EMNLP 2024;</a> <a href="https://arxiv.org/pdf/2311.09538">Dou et al., ACL 2024)</a>. As LLMs continue to advance, they offer exciting new capabilities across specialized domains. There are a lot of opportunities, as LLMs often exhibit promising but inconsistent performance in domain-specific tasks, where precision, context sensitivity, and domain knowledge are critical. </p>
+					<p> We work on a range of interesting and useful applications that aim to improve human life and society. A lot of our research has focused on text simplification <a href="https://arxiv.org/pdf/2212.09739.pdf">[ACL’23a,</a> <a href="https://arxiv.org/pdf/2305.15678.pdf">ACL’23d,</a> <a href="https://aclanthology.org/2021.emnlp-main.500.pdf">EMNLP’21]</a>, which simplifies texts and improves readability, making knowledge accessible to all. We also recently started to develop document-grounded instructional dialog for personal assistance (e.g., cooking) <a href="https://arxiv.org/pdf/2305.17280.pdf">[ACL’23b]</a>. We also take a great interest in social media data, including work on human-in-the-loop detection of misinformation <a href="https://arxiv.org/pdf/2212.09683.pdf">[ACL’23e]</a> and stance classification towards multilingual multi-cultural misinformation claims <a href="https://cocoxu.github.io/publications/EMNLP_2022_Stanceosaurus.pdf">[EMNLP’22b]</a>. One of our current ongoing collaborative projects is looking at the privacy protection of users on social media.  </p>
 
 
 
