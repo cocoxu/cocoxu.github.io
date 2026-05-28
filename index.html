@@ -1,1805 +1,843 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<meta content="width=840, initial-scale=1.0" name="viewport">
-	<meta content="Wei Xu" name="author">
-	<meta content="Homepage" name="description">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wei Xu</title>
+  <meta name="description" content="Wei Xu — academic homepage" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    :root {
+      --text: #222;
+      --muted: #666;
+      --border: #ddd;
+      --link: #DB7069;
+      --bg: rgba(255, 255, 255, 0.5);
+      --soft: rgba(255, 255, 255, 0.25);
+    }
 
-	<title>Wei Xu - Georgia Tech - College of Computing</title>
-	<link rel="shortcut icon" href="https://www.ic.gatech.edu/sites/all/themes/coc_sub_theme/favicon.ico" type="image/vnd.microsoft.icon" />
-	<!-- Bootstrap core CSS -->
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Bootstrap theme -->
-	<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-	<!-- Bootstrap icon -->
-	<link href="bootstrap/css/bootstrap.icon-large.min.css" rel="stylesheet">
-	<!-- Custom styles for this template -->
-	<link href="theme.css" rel="stylesheet">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+    body {
+      margin: 0;
+    }
+
+    .page {
+      width: min(92vw, 920px);
+      margin: 0 auto;
+      padding: clamp(28px, 5vw, 48px) clamp(18px, 4vw, 32px) 64px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #e08680;
+      text-decoration: underline;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) clamp(190px, 24vw, 240px);
+      gap: clamp(22px, 4vw, 40px);
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .portrait {
+      width: clamp(185px, 23vw, 225px);
+      height: clamp(185px, 23vw, 225px);
+      object-fit: cover;
+      border-radius: 50%;
+      margin-left: -42px;
+      margin-top: -18px;
+    }
+
+    h1 {
+      font-size: 33px;
+      line-height: 1.15;
+      font-weight: 500;
+      margin: 0 0 4px;
+    }
+
+    .pronunciation {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .audio-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fffdfd;
+      color: var(--link);
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .audio-btn:hover {
+      background: #fff8f8;
+      text-decoration: none;
+    }
+
+    .contact {
+      margin: 18px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: 22px;
+      row-gap: 10px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-transform: none;
+    }
+
+    .contact-links a {
+      color: var(--muted);
+      opacity: 0.95;
+    }
+
+    .contact-links a:hover {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .links {
+      margin: 8px 0 0;
+    }
+
+    .links a:not(:last-child)::after {
+      content: " ·";
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 3px 0 5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      margin: 8px 0 30px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(116, 106, 155, 0.22);
+      border-bottom: 1px solid rgba(116, 106, 155, 0.22);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: var(--link);
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
+
+    section {
+      margin: 36px 0 40px;
+    }
+
+    .keywords {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: 0.01em;
+    }
+
+    .student-list {
+      columns: 2;
+      column-gap: 42px;
+      margin-top: 12px;
+    }
+
+    .student-list ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .student-list li {
+      break-inside: avoid;
+      margin: 6px 0;
+    }
+
+    .student-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .student-photos img {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.94;
+      filter: saturate(0.92) contrast(0.97);
+    }
+
+    
+
+    .awards-highlight {
+      margin: 18px 0 20px;
+      max-width: 760px;
+      padding: 12px 14px;
+      border-left: 2px solid rgba(219, 112, 105, 0.34);
+      background: rgba(219, 112, 105, 0.05);
+      border-radius: 0 8px 8px 0;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    
+
+    .joining-note {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-left: 2px solid rgba(219, 112, 105, 0.32);
+      background: rgba(219, 112, 105, 0.045);
+      color: #4d4747;
+      font-size: 14px;
+      line-height: 1.7;
+      border-radius: 0 8px 8px 0;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--link);
+      margin: 0 0 14px;
+    }
+
+    h2::after {
+      content: "";
+      display: inline-block;
+      width: 34px;
+      height: 1px;
+      background: var(--border);
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .news li {
+      margin-bottom: 6px;
+    }
+
+    .pub {
+      margin-bottom: 14px;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+    }
+
+    
+
+    details.publication-toggle {
+      margin-top: 10px;
+    }
+
+    details.publication-toggle summary {
+      cursor: pointer;
+      color: var(--link);
+      font-size: 14px;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    details.publication-toggle summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.publication-toggle summary::after {
+      content: "+";
+      font-size: 16px;
+      line-height: 1;
+      color: var(--muted);
+    }
+
+    details.publication-toggle[open] summary::after {
+      content: "–";
+    }
+
+    .full-publication-list {
+      margin-top: 22px;
+    }
+
+    .note {
+      color: var(--muted);
+    }
+
+    .funding {
+      margin-top: 14px;
+      padding-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      opacity: 0.96;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    .funding-label {
+      margin-right: 2px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .funding img {
+      height: 26px;
+      width: auto;
+      filter: grayscale(100%);
+      transition: opacity 0.2s ease;
+    }
+
+    .funding img:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 34px;
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: auto;
+        padding: 28px 18px 46px;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .portrait {
+        width: 185px;
+        height: 185px;
+        margin-left: 0;
+        margin-top: 0;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      nav a {
+        width: auto;
+        margin: 0;
+      }
+
+      .student-list {
+        columns: 1;
+      }
+
+      
+    }
+  </style>
 </head>
-
 <body>
-    <script>
-  function play1(){
-       var audio = document.getElementById("audio1");
-       audio.play();}
-  function play2(){
-       var audio = document.getElementById("audio2");
-       audio.play();}
-   </script>
-   
-	<div class="container-narrow">
-		<div class="title">
+  <main class="page">
+    <header>
+      <div>
+        <h1>Wei Xu</h1>
+        <div class="pronunciation">
+          <span>
+            phonetic pronunciation: <em>way</em>
+            <span class="audio-btn" onclick="document.getElementById('way-audio').play()">♪</span>
+            <em>shoo</em>
+            <span class="audio-btn" onclick="document.getElementById('shoo-audio').play()">♪</span>
+          </span>
 
-			<h4><strong>Wei Xu</strong> &nbsp;&nbsp;&nbsp;&nbsp; 
-			
-			<img class="img-thumbnail-wei" height="202" hspace=
-			"10" src="files/weixu_profile_2024.jpg" style="float:right"> 
-			
-			<p style="font-size:12px">[phonetic pronunciation: way <a onclick="play1()" class="button"><audio id="audio1" src="files/Wei_4153.mp3"></audio><span class="glyphicon glyphicon-volume-up"></span></a> shoo <a onclick="play2()" class="button"><audio id="audio2" src="files/Xu_5351.mp3"></audio><span class="glyphicon glyphicon-volume-up"></span></a>]</p></h4>
-			Associate Professor<br>
-			<a href="https://www.cc.gatech.edu/">College of Computing</a> <br>
-			<a href="http://www.gatech.edu/">Georgia Institute of Technology</a><br>
-			<!-- <span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp; <a href="https://www.tripadvisor.com/Attractions-g60898-Activities-a_allAttractions.true-Atlanta_Georgia.html">Atlanta, GA</a><br> -->
-			<span class="glyphicon glyphicon-envelope"></span>&nbsp; wei.xu@cc.gatech.edu<br>
-			
-			<i class="fa fa-twitter"></i>&nbsp; <a href="https://twitter.com/cocoweixu?ref_src=twsrc%5Etfw" style="text-decoration: none">@cocoweixu</a><!-- &nbsp;&nbsp;&nbsp;  <i class="fa fa-github"></i>&nbsp; <a href="https://github.com/cocoxu/" style="text-decoration: none">@cocoxu</a>-->
+          <audio id="way-audio">
+            <source src="https://cocoxu.github.io/files/pronounce_wei.mp3" type="audio/mpeg">
+          </audio>
 
+          <audio id="shoo-audio">
+            <source src="https://cocoxu.github.io/files/pronounce_xu.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <p>
+          Associate Professor<br />
+          College of Computing &amp; Machine Learning Center<br />
+          Georgia Institute of Technology
+        </p>
 
-		    <br><br>
-		    I am a faculty member in Computer Science at Georgia Tech’s <a href="https://ic.gatech.edu/">School of Interactive Computing</a> (one of four schools in <a href="https://www.cc.gatech.edu/">College of Computing</a>) and <a href="https://ml.gatech.edu/">Machine Learning Center</a>. My research focuses on advancing large language models across three areas: 
-		    <ul>
-		    <li style="list-style: none">(1) reinforcement learning & post-training: multilinguality, cultural adaptation, reasoning, temporal robustness;</li>
-			<li style="list-style: none"> (2) evaluation: long-context, multi-turn interactions, agent/user simulation, and personalization;
-			<li style="list-style: none">(3) interdisciplinary AI+X applications: education, privacy, law, healthcare, and beyond.</li>
-			</ul>
-
-
-		    My work has been recognized with the NSF CAREER Award; Faculty Research Awards from Google, Sony, and Criteo; the CrowdFlower AI for Everyone Award; and Paper Awards at COLING’18 and ACL’24. My research lab is supported by grants from NSF, NIH, DARPA, and IARPA. I received my Ph.D. in Computer Science from New York University and my B.S./M.S. from Tsinghua University.
-		    
-		    <br>
-			<br>
-						
-			<span class="glyphicon glyphicon-star"></span>&nbsp; I plan to recruit 1–2 PhD students for Fall 2026 (please apply to the <a href="https://gradapp.gatech.edu/portal/program-info?cmd=view-program&program=d4d36cbd-0756-8283-48a1-3f5413851f4a">Machine Learning or CS PhD</a> program and list me as a potential advisor). I also recruit research-oriented MS students (apply to the <a href="https://www.cc.gatech.edu/degree-programs/master-science-computer-science">MSCS</a> program and email me) and motivated undergraduates with sufficient time to commit to research. Although I do not normally respond to admission inquiries given the volume, a brief email after you submit your application can help ensure I don’t miss it in the system.<br> 
-		    
-			
-						
-
-			</span>
-			
-	<!--	
-	        Learn more about <a href="#advise">my group</a> and life in Columbus Ohio.
-	
-	        Check out the <a href="https://sites.google.com/site/osunlpcl/">NLP speaker series</a> at OSU. 
-			
-			Particularly, I am interested in paraphrase research which concerns phrases or
-			sentences that convey the same meaning with different wordings (i.e. synonyms)
-			, and which is fundamental for a wide range of natural language
-			applications, including generation, information extraction, machine 
-			translation, summarization, question answering, etc. 
-	-->		
-
-		</div>
-
-<div class="navbar navbar-default" role="navigation">
-		
-   		<div class="container">
         
-				<div class="navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li>
-						<a href="#research">Research</a>
-					</li>
+        <div class="contact">
+          <a class="contact-email" href="mailto:wei.xu@cc.gatech.edu">wei.xu@cc.gatech.edu</a>
+          <div class="contact-links">
+            <a href="https://x.com/cocoweixu">X @cocoweixu</a>
+            <a href="">LinkedIn</a>
+            <a href="#">Google Scholar</a>
+            <a href="https://dblp.org/pid/32/1213-4.html">DBLP</a>
+            <a href="#">CV</a>
+            
+          </div>
+        </div>
+        <p class="links" style="display:none; margin-top: 10px;">
+          <a href="https://x.com/cocoweixu">X</a>
+          <a href="https://www.linkedin.com/in/wei-coco-xu-82092217/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=BfOdG-oAAAAJ&hl=en">Google Scholar</a>
+          <a href="https://dblp.org/pid/32/1213-4.html">DBLP</a>
+          <a href="https://cocoxu.github.io/files/CV_WeiXu_GaTech.pdf">CV</a>
+        </p>
+      </div>
+      <img class="portrait" src="https://cocoxu.github.io/files/weixu_profile.jpg" alt="Wei Xu" />
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#students">Students</a>
+      <a href="#teaching">Teaching</a>
+    </nav>
+
+    <section id="home">
+      <p>
+        I am an Associate Professor in the <a href="https://www.cc.gatech.edu/">College of Computing</a> (School of Interactive Computing) and the <a href="https://ml.gatech.edu/">Machine Learning Center</a> at <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>. My research focuses on natural language processing, machine learning, and large language models, with interests in multilingual and cross-cultural AI, reinforcement learning and post-training, reasoning, long-context and interactive evaluation, and interdisciplinary AI applications.
+      </p>
+      <p>
+        My group studies how to build language technologies that are robust, useful, and accessible across languages, cultures, domains, and users. Our research is supported by NSF, NIH, DARPA, IARPA, Google, Sony, and other sponsors.
+      </p>
+      <p class="keywords">
+        multilingual NLP · LLM reasoning · evaluation · user simulation · interdisciplinary AI+X research
+      </p>
+
+      
+
+      <p class="joining-note" style="max-width: 760px;">
+        I typically recruit one or two new Ph.D. students each year, along with several research-oriented M.S. students and motivated undergraduates. My lab also host visiting students and research interns. If you apply to Georgia Tech and are interested in working with me, feel free to reach out.
+      </p>
+      
+      
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p>
+        We work on language models, evaluation, and AI systems that interact with people and complex real-world information.
+      </p>
+      <ul>
+        <li>Multilingual and multicultural large language models (<a href="https://arxiv.org/pdf/2504.05154"><em>CARE</em></a>, EMNLP 2025; <a href="https://arxiv.org/pdf/2605.25360"><em>LRPO</em></a>, 2026)</li>
+        <li>Reinforcement learning and post-training for LLMs (<a href="https://arxiv.org/pdf/2605.20740v1"><em>DAR</em></a>, 2026; <a href="https://arxiv.org/pdf/2605.25360"><em>LRPO</em></a>, ICML 2026)</li>
+        <li>Evaluation of long-context, multi-turn, and agentic systems (<a href="https://arxiv.org/pdf/2601.04424"><em>GAVEL</em></a>, 2026; <a href="https://arxiv.org/pdf/2510.05444"><em>SimulatorArena</em></a>, EMNLP 2025)</li>
+        <li>Learning and reasoning over evolving knowledge and probabilistic inference (<a href="https://arxiv.org/pdf/2402.12261.pdf"><em>NeoBench</em></a>; <a href="https://arxiv.org/pdf/2503.09674"><em>BRANCH</em></a>, NeurIPS 2025)</li>
+        <li>AI applications in education, privacy, law, healthcare, and science (<a href="https://openreview.net/pdf?id=64Ea2Dx0JJ"><em>GeoPrivacy</em></a>, ICLR 2026; <a href="https://arxiv.org/pdf/2405.02144"><em>MedReadMe</em></a>)</li>
+      </ul>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+
+      <ul class="news">
+        <li>[Ongoing] Co-organizing the Workshop on Natural User-generated Text at EMNLP 2026.</li>
+        <li>[2026-05] 🏆 Received the Sony Faculty Innovation Award.</li>
+        
+        <li>[2026-05] Jonathan to start summer intern at Bloomberg; Tarek to start summer intern at Google Research.</li>
+        <li>[2026-05] Paper accepted to ICML 2026 on multilingual post-training and language-routed policy optimization.</li>
+        <li>[2026-04] Human-centered Evaluation and Auditing of LLMs (AI Agents in the Loop) Workshop at CHI 2026.</li>
+        <li>[2026-04] Talk at Oracle's Distinguished Lecture Series.</li>
+        <li>[2026-01] 2 papers accepted to ICLR 2026 and 1 paper to CHI 2026.</li>
+        <li>[2025-12] Talk at NeurIPS 2025 Workshop on Efficient Reasoning.</li>
+        <li>[2025-08] Talk at Apple ML research.</li>
+        <li>[2025-07] Talk at JPMorgan AI Research.</li>
+        <li>[2025-05] Talk at Sungkyunkwan University, South Korea.</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2605.25360">Learning to Route Languages for Multilingual Preference Optimization</a></span><br />
+        <span>Geyang Guo, Hiromi Wakaki, Yuki Mitsufuji, Alan Ritter, Wei Xu</span><br />
+        <span class="pub-meta">ICML 2026</span>
+      </div>
+
+      <div class="pub">
+        <span class="pub-title"><a href="https://openreview.net/pdf?id=ykSmkVqzn4">Flipping the Dialogue: Training and Evaluating User Language Models</a></span><br />
+        <span>Tarek Naous, Philippe Laban, Wei Xu, Jennifer Neville</span><br />
+        <span class="pub-meta">ICLR 2026</span>
+      </div>
+
+      <div class="pub">
+        <span class="pub-title"><a href="https://openreview.net/pdf?id=64Ea2Dx0JJ">Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?</a></span><br />
+        <span>Ruixin Yang, Ethan Mendes, Arthur Wang, James Hays, Sauvik Das, Wei Xu, Alan Ritter</span><br />
+        <span class="pub-meta">ICLR 2026</span>
+      </div>
+
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2601.20161">Supporting Informed Self-Disclosure: Design Principles for Presenting AI-Estimates of Privacy Risks to Users</a></span><br />
+        <span>Isadora Krsek, Meryl Ye, Wei Xu, Alan Ritter, Laura Dabbish, Sauvik Das</span><br />
+        <span class="pub-meta">CHI 2026</span>
+      </div>
+      
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2601.21278">GeoRC: A Benchmark for Geolocation Reasoning Chains
+</a></span><br />
+        <span>Mohit Talreja, Joshua Diao, Jim Thannikary James, Radu Casapu, Tejas Santanam, Ethan Mendes, Alan Ritter, Wei Xu, James Hays</span><br />
+        <span class="pub-meta">ACL 2026</span>
+      </div>
+            
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2601.04424">Gavel: Agent Meets Checklist for Evaluating LLMs on Long-Context Legal Summarization</a></span><br />
+        <span>Yao Dou, Wei Xu</span><br />
+        <span class="pub-meta">arXiv preprint 2026</span>
+      </div>
+
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2605.20740v1">Distribution-Aware Reward: Reinforcement Learning over Predictive Distributions for LLM Regression</a></span><br />
+        <span>Jungsoo Park, Hyungjoo Chae, Ethan Mendes, Jay DeYoung, Varsha Kishore, Wei Xu, Alan Ritter</span><br />
+        <span class="pub-meta">arXiv preprint 2026</span>
+      </div>
 
 
-					<li>
-						<a href="#publications">Publications</a>
-					</li>
+      <div class="pub">
+        <span class="pub-title"><a href="#">Camellia: Benchmarking Cultural Biases in LLMs for Asian Languages</a></span><br />
+        <span>Tarek Naous, Anagha Savit, Carlos Rafael Catalan, Geyang Guo, Jaehyeok Lee, Kyungdon Lee, Lheane Marie Dizon, Mengyu Ye, Neel Kothari, Sahajpreet Singh, Sarah Masud, Tanish Patwa, Trung Thanh Tran, Zohaib Khan, Alan Ritter, Tanmoy Chakraborty, Yuki Arase, Keisuke Sakaguchi, JinYeong Bak, Wei Xu</span><br />
+        <span class="pub-meta">arXiv preprint 2026</span>
+      </div>
+            
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2503.09674">BRANCH: Probabilistic Reasoning with LLMs for Privacy Risk Estimation</a></span><br />
+        <span>Jonathan Zheng, Sauvik Das, Alan Ritter, Wei Xu</span><br />
+        <span class="pub-meta">NeurIPS 2025</span>
+      </div>
+
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2504.05154">CARE: Multilingual Human Preference Learning for Cultural Awareness</a></span><br />
+        <span>Geyang Guo, Tarek Naous, Hiromi Wakaki, Yukiko Nishimura, Yuki Mitsufuji, Alan Ritter, Wei Xu</span><br />
+        <span class="pub-meta">EMNLP 2025</span>
+      </div>
+
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2510.05444">SimulatorArena: Are User Simulators Reliable Proxies for Multi-Turn Evaluation of AI Assistants?</a></span><br />
+        <span>Yao Dou, Michel Galley, Baolin Peng, Chris Kedzie, Weixin Cai, Alan Ritter, Chris Quirk, Wei Xu, Jianfeng Gao</span><br />
+        <span class="pub-meta">EMNLP 2025</span>
+      </div>
 
 
-					<li>
-						<a href="#advise">Students</a>
-					</li>
+      <details class="publication-toggle">
+        <summary>Full publication list</summary>
 
-					<li>
-						<a href="#teach">Teaching</a>
-					</li>
-					
-					
-					<li>
-						<a href="files/CV_WeiXu_GaTech.pdf">CV</a>
-					</li>
+        <div class="full-publication-list">
 
 
-					<li>
-						<a href="#publications">Code & Data</a>
-					</li>
-				</ul>
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2503.09598">How to Protect Yourself from 5G Radiation? Investigating LLM Responses to Implicit Misinformation</a></span><br />
+        <span>Ruohao Guo, Wei Xu, Alan Ritter</span><br />
+        <span class="pub-meta">EMNLP 2025</span>
+      </div>      
 
-          
-			</div>
-		
-		</div>
-		</div>
+      <div class="pub">
+        <span class="pub-title"><a href="https://arxiv.org/pdf/2502.18583">What are Foundation Models Cooking in the Post-Soviet World?</a></span><br />
+        <span>Anton Lavrouk, Tarek Naous, Alan Ritter, Wei Xu</span><br />
+        <span class="pub-meta">EMNLP 2025</span>
+      </div>   
+      
 
-<!-- 
-		<div class="content">			
-					<p><a href="files/wordcloud_paraphrase_research.png"><img 
-					border="1px" hspace="3"
-					src="files/wordcloud_paraphrase_research.png" style=
-					"float: right;" width="400px"></a>
-					</p>											
-		</div>-->
-
-
-		<div class="content">
-			<h5 class="text-primary" id="news">What's New</h5>
-
-<!-- 
-			<span class="glyphicon glyphicon-star"></span>&nbsp; Apr 2025, talk at Apple ML Research (virtual)<br>			
-			<span class="glyphicon glyphicon-star"></span>&nbsp; May 2025, guest lecture at Sungkyunkwan University<br>
--->			
-	         
-			<!-- <ul class="news"> -->
-			<ul>
-				<li style="list-style: none"><br>
-				</li>
-
-			<!-- <ul class="news"> -->
-			<li>co-organizing the <a href="https://noisy-text.github.io/2026/">Workshop on Natural User-generated Text</a> at EMNLP 2026. 
-			<!--<li>May 2026, 🏆 received the Sony Faculty Innovation Award!</li> -->
-			<li>May 2026, paper on <a href="https://openreview.net/forum?id=13lMChKB5u">multilingual reinforcement learning</a> accepted to ICML </li>
-			<li>May 2026, Jonathan to start summer intern at Bloomberg; Tarek to start summer intern at Google </li>
-			<li>Apr 2026, co-organizing the <a href="https://heal-workshop.github.io/">Human-centered Evaluation and Auditing of Language Models (AI Agents in the Loop) Workshop</a> at CHI 2026.</li>
-			<li>Apr 2026, talk at Oracle's Distinguished Lecture Series</li>
-			<li>Jan 2026, 2 paper accepted to ICLR 2026 and 1 paper to CHI 2026. Congrats to my students and collaborators!</li>
-			<li>Dec 2025, talk at NeurIPS 2025 Workshop on Efficient Reasoning (<a href="https://cocoxu.github.io/files/20251206_Reasoning_NeurIPS.pdf">slides</a>)</li>
-			<li>Sep 2025, paper on <a href="https://arxiv.org/pdf/2503.09674">LLM probabilistic reasoning</a> accepted to NeurIPS 2025. </li>
-			<li>Aug 2025, 4 papers accepted to EMNLP 2025 main conference</li>
-			<li>Aug 2025, talk at Apple ML research (virtual) "Probabilistic Reasoning and Multicultural Alignment in LLMs"</li>
-			<li>Jul 2025, talk at JPMorgan AI Research (virtual)</li>
-			<li>May 2025, talk at Sungkyunkwan University, South Korea</li>
-			<li>May 2025, keynote at PrivateNLP@NAACL "Empowering Everyday Users to Protect Their Privacy in the Age of AI". 
-			<li>Mar 2025, talk at University of Pennsylvania
-			<li>Feb 2025, talk at University of Massachusetts, Lowell (virtual)
-			<li>Feb 2025, talk at Google Research, Mountain View
-			<li>Feb 2025, talk at University of California, Berkeley
-			<li>Dec 2024, Chao Jiang successfully defended his phd thesis and will join Apple AI/ML Research 
-			<li>Oct 2024, received an NIH R01 grant! 
-			<li>Oct 2024, talk at Bloomberg's CTO Data Science Speaker Series 	
-			<li>Oct 2024, talk at Stony Brook University, New York 
-			<li>Oct 2024, 🏆 received the Google Academic Research Award! 
-			<li>Oct 2024, talk at Tokyo Institute of Technology on "Enhancing Multilingual Capabilities in LLMs" (<a href="https://cocoxu.github.io/files/20241003_Tokyo.pdf">slides</a>)
-			<li>Sep 2024, 4 long papers and 1 short paper accepted to EMNLP main conference. 
-			<li>Sep 2024, talk at MIT on "Cultural Biases, World Languages, and Privacy in Large Language Models" (<a href="https://cocoxu.github.io/files/20240919_MIT.pdf">slides</a>).  	
-			<li>Sep 2024, talk at Northeastern on "Human-AI Collaboration in Evaluating LLMs".
-			<li>Aug 2024, 🏆 our paper on multicultural LLMs won the <a href="">Best Social Impact Award at ACL 2024</a>! 
-			<li>Aug 2024, tutorial at ACL 2024 on "Automatic and Human-AI Interactive Text Generation" (<a href="https://acl2024-text-generation-tutorial.github.io/">slides</a>)
-			<li>Aug 2024, my PhD advisor <a href="https://cocoxu.github.io/files/Biography_of_Ralph_Grishman.pdf">Ralph Grishman</a> won the ACL Lifetime Achievement Award
-			<li>Aug 2024, talk at Megagon (virtual)
-			<li>July 2024, <a href="https://twitter.com/ychenNLP/status/1812132371409297634">Yang Chen</a> successfully defended his phd thesis, and will join NVIDIA as a research scientist.  
-			<li>June 2024, talk at NSF workshop on AI Text Production (virtual)
-			<li>May 2024, 6 long papers accepted to ACL 2024 main conference!  </li>
-			<li>May 2024, keynote at CHI 2024 HEAL Workshop on "Human-AI Collaboration in Evaluating LLMs" (<a href="https://cocoxu.github.io/files/20240512_CHI_workshop.pdf">slides</a>). 
-			<li>May 2024, Yao Dou will start his summer internship at Microsoft Research; Chao Jiang will intern at Apple. </li>
-			<li>Apr 2024, 🏆 <a href=
-			"https://davidheineman.com/">David Heineman</a> won the CoC Outstanding Undergraduate Research Award! </li>
-			<li>Mar 2024, <a href="https://venturebeat.com/ai/large-language-models-exhibit-significant-western-cultural-bias-study-finds/">press coverage by VentureBeat</a> on our new <a href="https://arxiv.org/abs/2305.14456">research about cultural biases in LLMs</a></li>
-			<li>Mar 2024, talk at USC and UCLA on "Amazing Multilingual Capabilities and Concerning Cultural Biases in LLMs"</li>
-			<li>Oct 2023, demo of <a href="https://arxiv.org/pdf/2308.06953.pdf">Thresh</a> 🌾 has been accepted to EMNLP 2023 -- a customizable tool for fine-grained human evaluation of LLM generated texts (e.g., MT, summarization, text revision, + more) </li>
-		        <li>Aug 2023, I was quoted in <a href="https://www.businessinsider.com/social-media-flooded-spammy-ai-content-2023-8">Business Insider</a> about AI-generated content online. </li>
-			<li>Aug 2023, Mounica Maddela defended her PhD thesis and will join Bloomberg AI's LLM group</li>
-			<li>July 2023, our paper on <a href="https://aclanthology.org/2023.acl-long.269.pdf"> multilingual text simplification</a> received Honorable Mention Award at ACL 2023! </li>
-</ul>			
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2504.00042">Beyond the Reported Cutoff: Where Large Language Models Fall Short on Financial Knowledge</a></span><br />
+  <span>Agam Shah, Liqin Ye, Sebastian Jaskowski, Wei Xu, Sudheer Chava</span><br />
+  <span class="pub-meta">COLM 2025</span>
 </div>
 
-<!--  			<li>May 2023, 5 papers accepted to ACL plus 1 findings.</li>
-			<li>Mar 2023, I am tenured and promoted to associate professor (official appointment starts from Aug 2023).</li>
-			<li>Feb 2023, talk at Johns Hopkins University "GPT-3 vs Humans: Evaluation of Natural Language Generation"</li>
-			<li>Feb 2023, I was quoted in <a href="https://www.wsj.com/articles/can-chatgpt-recommend-movies-a-film-buff-put-it-to-the-test-5e7e6516">Wall Street Journal</a> and <a href="https://www.lifewire.com/how-artificial-intelligence-is-helping-to-translate-animal-languages-7099609?utm_source=twitter&utm_medium=social&utm_campaign=shareurlbuttons">Life Wire</a> articles</li>
-			<li>Feb 2023, invited talk at University of Chicago (virtual)</li>
-			<li>Dec 2022, co-organizing <a href="https://www.taln.upf.edu/pages/tsar2022-ws/"> Workshop on Text Simplification, Accessibility, and Readability</a> at EMNLP </li>
-			<li>Oct 2022, talk at Columbia University "Capturing Language Diversity & (Mis-)Information Spreading Online"</li>
-			    <li>Oct 2022, 3 papers accepted to EMNLP: (1) <a href="https://arxiv.org/abs/2210.03235"> diverse paraphrase acquisition & generation</a>; (2) 🦕 Stanceosaurus - <a href="https://arxiv.org/abs/2210.15954">stance towards multicultural misinformation</a>; (3) arXivEdits - <a href="href="https://arxiv.org/abs/2210.15067">NLP framework for improving scientific writing</a>.</li>
-			    <li>Sep 2022, talk at Cornell Tech (<a href="https://youtu.be/OTR94_8vSWQ">video</a>) "Importance of Data and Controllability in Neural Language Generation"</li>
-			    <li>Aug 2022, my PhD student Mounica Maddela to start an internship at Meta AI; Yang Chen at Google Research.</li>
-			    <li>Mar 2022, I received the <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2144493&HistoricalAwards=false">NSF CAREER award</a>! It will support my group's research on controllable text generation. </li>
-			   <li>Aug 2021, 3 papers accepted to EMNLP: <a href="https://arxiv.org/pdf/2109.05006.pdf">split & rephrase</a>, <a href="https://arxiv.org/pdf/2109.04711.pdf">domain adaptation of pre-trained LM</a>, <a href="files/EMNLP2021findings_WikiBias.pdf">biased language</a>.   </li>
-			    <li>Aug 2021, invited talk at Stanford NLP Seminar</li>
-			    <li>Jun 2021, invited talk at UCLA's Big Data and ML Seminar</li>
-			    <li>May 2021, check out our new ACL 2021 paper on <a href="https://arxiv.org/abs/2106.02569">neural semi-CRF model for word alignment</a>. </li>
-			    <li>Spring 2021, work with my phd student Mounica Maddela, Sebastian Gehrmann (Google Research), Dhruv Kumar (Borealis AI), and others on the 💎<a href="https://gem-benchmark.github.io/">GEM Benchmark</a> for natural language generation, evaluation, and metrics.</li>
-			    <li>Apr 2021, talk at NYU NLP/Text-as-Data Speaker Series</li>
-			    <li>Mar 2021, check out our new NAACL 2021 paper on <a href="https://arxiv.org/pdf/2010.11004.pdf">controllable text generation</a>. </li>
-			    <li>Feb 2021, web demo for <a href="http://sdl898-ritter2.cse.ohio-state.edu:8153/">HashtagMaster</a> comes online! It converts hashtag into meaningful word sequence.  </li>
-			    <li>Nov 2020, invited talk at CMU LTI Colloquium (<a href="https://youtu.be/GQNzpWbwqpk">video</a>) on neural language generation</li>
- 			    <li>Nov 2020, invited talk at University of Delaware, ECE Department Seminar</li>
-			    <li>Oct 2020, invited talk at Google Research</li>
-			    <li>Oct 2020, invited talk at the University of Sheffield, NLP Seminar</li>
-			    <li>Oct 2020, invited talk at the University of Pittsburgh, NLP Seminar</li>
-			    <li>Oct 2020, invited talk at USC/ISI NL Seminar (<a href="https://youtu.be/pr1HGaE5dAE">video</a>) on "Natural Language Understanding for Noisy Text"</li>
-			    <li>Oct 2020, paper accepted at EMNLP 2020 on <a href="https://www.aclweb.org/anthology/2020.emnlp-main.382/">GigaBERT</a> for zero-shot transfer learning from English to Arabic. </li>
-			    <li>Sep 2020, invited talk at Emory University, CS Department Seminar </li>
-			    <li>Sep 2020, co-organizing two shared tasks at WNUT: (1) <a href="http://noisy-text.github.io/2020/extract_covid19_event-shared_task.html">COVID-19 Event Extraction from Twitter</a>; (2) <a href="http://noisy-text.github.io/2020/wlp-task.html">Entity & relation recognition over biology wet-lab protocols</a>. </li>
-			    <li>April 2020, three long papers accepted to ACL 2020! We are releasing (1) new high-quality dataset and Transformer-based model for <a href="publications/ACL2020_sentence_alignment.pdf">text simplification</a>; (2) fine-grained <a href="publications/ACL2020_stackoverflow_NER.pdf">named entity and code recognition for StackOverflow</a>; (3) a unified span-based neural network framework and benchmark leaderboard for 10+ NLP tasks.  </li>
-			   
-			    <li>Jan 2020, the <a href="publications/tacl2016-smt-simplification.pdf">SARI metric</a> I designed for evaluating generation models is now part of the official <a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/utils/sari_hook.py">TensorFlow/tensor2tensor</a> library. </li>
-			    
-			   
-			    <li>May 2019, paper on <a href="publications/ACL2019_HashtagMaster.pdf">"Multi-task Pairwise Neural Ranking for Hashtag Segmentation"</a> is accepted at ACL 2019. </li>
-			    <li>July 2019, releasing <a href="https://mounicam.github.io/hashtag_master">#HashtagMaster</a> - a semantic analysis tool for hashtags. </li>
-			    <li>Nov 2018, check out our EMNLP paper on <a href="publications/EMNLP2018_neural_ranking_and_word_complexity_lexicon_preprint.pdf">lexical simplification</a>.</li>
-			    
-			    <li>Jul 2018, won <a href="http://ailab.criteo.com/criteo-faculty-research-awards-2018/">Criteo Faculty Research Award</a>.</li>
-			    <li>Jun 2018, invited talk at <a href='http://midwest-ml.org/2018/'>Midwest Machine Learning Symposium</a> in Chicago.</li>
-			    <li>May 2018, talk at Twitter and Facebook. </li> 
-			    <li>Mar 2018, check out our NAACL paper on NLP for <a href="publications/NAACL_2018_wet_lab_protocols.pdf">biology lab instructions</a>. </li> 
-			    <li>Jan 2018, I was named one of the eight winners of <a href="https://www.crowdflower.com/announcing-q4-ai-everyone-winners/">CrowdFlower AI for Everyone Award</a>.</li> -->
-			    
-			    <!--  <li>January 2018, serving as area chair for <a href="http://coling2018.org">COLING 2018</a>; program committee for ACL 2018. -->
-			    <!-- <li>Dec 2017, congratulations to my phd advisor <a href="files/bio_Grishman.pdf">Ralph Grishman</a> for becoming an ACL Fellow! </li> 
-			    <li>Nov 2017, talk at IBM Thomas J. Watson Research Center
-			    <li>Jul 2017, talk at Google NLU workshop </li> 
-			    <li>Apr 2017, featured in the <a href="http://www.winlp.org/spotlights/">spotlights of Women in NLP</a></li>
-			    <li>paper with OSU student accepted to EMNLP 2016 on <a href="https://aclweb.org/anthology/D16-1030.pdf">time expressions in Twitter</a>. Congrats to <a href="https://sites.google.com/site/jeniyatabassum/">Jeniya</a>!</li>
-			    <li><a href="publications/tacl2016-smt-simplification.pdf">My 3rd TACL paper</a> is officially accepted! A state-of-the-art natural language generation approach for simplification with automatic tunable objectives. </li>-->
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2508.10421">Evaluating LLMs on Chinese Idiom Translation</a></span><br />
+  <span>Cai Yang, Yao Dou, David Heineman, Xiaofeng Wu, Wei Xu</span><br />
+  <span class="pub-meta">COLM 2025</span>
+</div>
 
-			
-<!-- 			
-			
-			<div class=".container-fluid">
-    <div class="row">
-        <div class=".img-responsive col-xs-6">
-            <h5 style="text-align: center"><strong> Talk on <a href="publications/tacl2014-extracting-paraphrases-from-twitter.pdf">Twitter Paraphrase</a> @ NAACL 2015</strong></h5>
-           <p align="center"><a href="http://techtalks.tv/talks/extracting-lexically-divergent-paraphrases-from-twitter/61539/"><img src="files/pic_naaacl2015_video.png" height="200"></a></p>
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2501.04662">On The Origin of Cultural Biases in Language Models: From Pre-training Data to Linguistic Phenomena</a></span><br />
+  <span>Tarek Naous, Wei Xu</span><br />
+  <span class="pub-meta">NAACL 2025</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2410.09013v1">The Impact of Visual Information in Chinese Characters</a></span><br />
+  <span>Xiaofeng Wu, Karl Stratos, Wei Xu</span><br />
+  <span class="pub-meta">NAACL 2025</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2410.05340">Generating CAD Code with Vision-Language Models for 3D Designs</a></span><br />
+  <span>Kamel Alrashedy, Pradyumna Tambwekar, Zulfiqar Zaidi, Megan Langwasser, Wei Xu, Matthew Gombolay</span><br />
+  <span class="pub-meta">ICLR 2025</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2412.15047">Measuring, Modeling, and Helping People Account for Privacy Risks in Online Self-Disclosures with AI</a></span><br />
+  <span>Isadora Krsek, Anubha Kabra, Yao Dou, Tarek Naous, Laura Dabbish, Alan Ritter, Wei Xu, Sauvik Das</span><br />
+  <span class="pub-meta">CSCW 2025</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="publications/AAAI_2025_Cross_genre_Authorship.pdf">CROSSNEWS: A Cross-Genre Authorship Verification and Attribution Benchmark</a></span><br />
+  <span>Marcus Ma, Duong Minh Le, Junmo Kang, Yao Dou, John Cadigan, Dayne Freitag, Alan Ritter, Wei Xu</span><br />
+  <span class="pub-meta">AAAI 2025</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2508.00217">Tabular Data Understanding with LLMs: A Survey of Recent Advances and Challenges</a></span><br />
+  <span>Xiaofeng Wu, Alan Ritter, Wei Xu</span><br />
+  <span class="pub-meta">arXiv preprint 2025</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2305.14456.pdf">Having Beer after Prayer? Measuring Cultural Bias in Large Language Models</a></span><br />
+  <span>Tarek Naous, Michael J. Ryan, Alan Ritter, Wei Xu</span><br />
+  <span class="pub-meta">ACL 2024 · 🏆 Best Social Impact Award</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2311.09538">Reducing Privacy Risks in Online Self-Disclosures with Language Models</a></span><br />
+  <span>Yao Dou, Isadora Krsek, Tarek Naous, Anubha Kabra, Sauvik Das, Alan Ritter, Wei Xu</span><br />
+  <span class="pub-meta">ACL 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2305.14592">Meta-Tuning LLMs to Leverage Lexical Knowledge for Generalizable Language Style Understanding</a></span><br />
+  <span>Ruohao Guo, Wei Xu, Alan Ritter</span><br />
+  <span class="pub-meta">ACL 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2402.12261.pdf">NEO-BENCH: Evaluating Robustness of Large Language Models with Neologisms</a></span><br />
+  <span>Jonathan Zheng, Alan Ritter, Wei Xu</span><br />
+  <span class="pub-meta">ACL 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2402.11456.pdf">FactPICO: Factuality Evaluation for Plain Language Summarization of Medical Evidence</a></span><br />
+  <span>Sebastian Antony Joseph, Lily Chen, Jan Trienes, Hannah Louisa Göke, Monika Coers, Wei Xu, Byron Wallace, Junyi Jessy Li</span><br />
+  <span class="pub-meta">ACL 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2401.16475.pdf">InfoLossQA: Characterizing and Recovering Information Loss in Text Simplification</a></span><br />
+  <span>Jan Trienes, Sebastian Joseph, Jörg Schlötterer, Christin Seifert, Kyle Lo, Wei Xu, Byron C. Wallace, Junyi Jessy Li</span><br />
+  <span class="pub-meta">ACL 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2310.03878.pdf">Automatic and Human-AI Interactive Text Generation</a></span><br />
+  <span>Yao Dou, Philippe Laban, Claire Gardent, Wei Xu</span><br />
+  <span class="pub-meta">ACL 2024 Tutorial</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2402.03131.pdf">Constrained Decoding for Cross-lingual Label Projection</a></span><br />
+  <span>Duong Minh Le, Yang Chen, Alan Ritter, Wei Xu</span><br />
+  <span class="pub-meta">ICLR 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2405.02144">MedReadMe: A Systematic Study for Fine-grained Sentence Readability in Medical Domain</a></span><br />
+  <span>Chao Jiang, Wei Xu</span><br />
+  <span class="pub-meta">EMNLP 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2407.04952">Granular Privacy Control for Geolocation with Vision Language Models</a></span><br />
+  <span>Ethan Mendes, Yang Chen, James Hays, Sauvik Das, Wei Xu, Alan Ritter</span><br />
+  <span class="pub-meta">EMNLP 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2305.14463">ReadMe++: Benchmarking Multilingual Language Models for Multi-Domain Readability Assessment</a></span><br />
+  <span>Tarek Naous, Michael J. Ryan, Anton Lavrouk, Mohit Chandra, Wei Xu</span><br />
+  <span class="pub-meta">EMNLP 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://arxiv.org/pdf/2407.15343">Improving Minimum Bayes Risk Decoding with Multi-Prompt</a></span><br />
+  <span>David Heineman, Yao Dou, Wei Xu</span><br />
+  <span class="pub-meta">EMNLP 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://www.arxiv.org/pdf/2405.13077">GPT-4 Jailbreaks Itself with Near-Perfect Success Using Self-Explanation</a></span><br />
+  <span>Govind Ramesh, Yao Dou, Wei Xu</span><br />
+  <span class="pub-meta">EMNLP 2024</span>
+</div>
+
+<div class="pub">
+  <span class="pub-title"><a href="https://aclanthology.org/2024.emnlp-demo.28.pdf">ChatHF: Collecting Rich Human Feedback from Real-time Conversations</a></span><br />
+  <span>Andrew Li, Zhenduo Wang, Ethan Mendes, Duong Minh Le, Wei Xu, Alan Ritter</span><br />
+  <span class="pub-meta">EMNLP 2024 Demo</span>
+</div>
+
+      <p class="note" style="margin-top: 18px;">
+          A more complete and up-to-date publication list is available on Google Scholar and DBLP.
+        </p>
         </div>
-        
-        <div class=".img-responsive col-xs-6">
-            <h5 style="text-align: center"><strong>Talk on <a
-				href="publications/tacl2015-text-simplification-opinion.pdf">Text Simplification</a> @ EMNLP 2015</strong></h5>
-				<iframe src="https://player.vimeo.com/video/150290363" width="356" height="200" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-        </div>
-
-    </div>
-</div>				
-	-->			
-
-
-
-
-
-		<div class="content">
-			<h5 class="text-primary" id="research">Research Highlights</h5> 
-			
-
-			<div class="projects" style="margin-left: 1em; margin-right: 1em" >
-				<div class="boxed">
-					<p><a href=
-					"pics/pic_culturalbias_2.png"><img border=
-					"1px" hspace="10" vspace="10" src=
-					"pics/pic_culturalbias_2.png" style=
-					"float: right;" width="450px"></a>
-					</p>
-
-<h5><strong>Multilingual Multicultural LLMs</strong>
-					</h5>
-
-
-<p> While LLMs have demonstrated impressive performance, their success is largely concentrated in English and other high-resource languages. In contrast, many non-English languages remain underrepresented and underserved. Moreover, these models often reflect Western cultural biases and struggle to capture the nuances of non-Western cultural contexts <a href="https://arxiv.org/pdf/2305.14456">(Naous et al., ACL 2024;</a> <a href="https://arxiv.org/pdf/2501.04662">Naous et al., NAACL 2025)</a>. We work on identifying and closing these gaps in performance and cultural adaptation. Addressing these challenges calls for a deeper analysis of pre-training data to identify and mitigate representational gaps, as well as language-routed reinforcement learning <a href="https://openreview.net/forum?id=13lMChKB5u">(Guo et al., ICML 2026)</a>, alignment <a href="https://arxiv.org/pdf/2504.05154">(Guo et al., EMNLP 2025)</a> and inference-time algorithms <a href="https://arxiv.org/pdf/2402.03131">(Le at al., ICLR 2024)</a> that can dynamically adapt model behavior to diverse linguistic and cultural contexts. </p>
-
-
-				</div>
-				<!-- end boxed-->
-
-				<div class="boxed">
-
-					<h5 style="text-align: left"><strong>Robustness and Reasoning of LLMs</strong>
-					</h5>
-
-					<p><a href="pics/pic_branch.jpeg"><img border="1px"
-					hspace="10" src="pics/pic_branch.jpeg" style=
-					"float: right;" width="400px"></a>
-					</p>
-					
-<p> Artificial General Intelligence (AGI) benchmarks seek to assess an AI system’s capacity to perform tasks that require human-level intelligence, including reasoning, learning, and adapting to novel situations <a href="https://arxiv.org/pdf/2503.09674">(Zheng et al., ACL 2024;</a> <a href="https://arxiv.org/pdf/2407.04952">Mendes et al., EMNLP 2024)</a>. While current systems fall short of true AGI, there is growing interest in moving beyond static benchmarks toward more realistic, dynamic evaluations. Our research focuses on designing real-world tasks that better reflect practical challenges faced by LLMs, and on developing innovative methods <a href="https://arxiv.org/pdf/2503.09674">(Zheng et al., arXiv 2025)</a> to enhance their robustness and performance in these complex settings. </p>					
-	
-	
-	
-	
-					
-				</div>
-				<!-- end boxed-->
-
-				<div class="boxed">
-					<p><a href=
-					"pics/pic_medical_readability.png"><img border=
-					"1px" hspace="10" src=
-					"pics/pic_medical_readability.png" style=
-					"float: right;" vspace="5" width="400px"></a>
-					</p>
-
-<h5><strong>Interdisciplinary NLP+X Research</strong>
-					</h5>
-
-
-					<p> We actively collaborate with researchers to explore impactful real-world applications of large language models in Human-Computer Interaction, Education, Security and Privacy, Healthcare, and Law <a href="https://arxiv.org/pdf/2503.09674">(Jiang et al., EMNLP 2024;</a> <a href="https://arxiv.org/pdf/2311.09538">Dou et al., ACL 2024)</a>. As LLMs continue to advance, they offer exciting new capabilities across specialized domains. There are a lot of opportunities, as LLMs often exhibit promising but inconsistent performance in domain-specific tasks, where precision, context sensitivity, and domain knowledge are critical. </p>
-
-
-
-				</div>
-				<!-- end boxed-->
-			</div>
-		</div>
-
-		
-		<div class="content" id="advise">
-			
-			<h5 class="text-primary">NLP X Lab</h5>
-			
-			<div class="projects" style="margin-left: 1em; margin-right: 1em" >
-				<div class="boxed">			
-					<p><a href=
-					"pics/pic_swan_house.png"><img border=
-					"1px" hspace="5" vspace="4" src=
-					"pics/pic_swan_house.png" style=
-					"float: left;" width="400px"></a>photos together with <a href="https://aritter.github.io/">Alan Ritter</a>'s group 
-					</p>
-					<p><a href=
-					"files/pic_dinner.png"><img border=
-					"1px" hspace="5" vspace="1" src=
-					"files/pic_dinner.png" style=
-					"float: right;" width="400px"></a>
-					</p>
-					<p><a href=
-					"files/pic_kayak.png"><img border=
-					"1px" hspace="5" vspace="4" src=
-					"files/pic_kayak.png" style=
-					"float: left;" width="400px"></a>
-					</p>
-
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>					
-													
-			</div></div>
-			
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://yao-dou.github.io/">Yao Dou</a> (CS PhD student; LLM evaluation, multi-turn interactions)<br>		
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://tareknaous.github.io/">Tarek Naous</a> (ECE ML PhD; multilingual LLM / fairness)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://jonathanqzheng.github.io/">Jonathan Zheng</a> (ML PhD; reasoning, robustness of LLM -- co-advisor: Alan Ritter) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://guochry.github.io/">Geyang Guo</a> (CS PhD; LLM alignment / RL -- co-advisor: Alan Ritter) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://duonglm38.github.io/">Duong Minh Le</a> (CS PhD; multilingual LLM -- co-advisor: Alan Ritter)<br>		
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://jm-kang.github.io/">Junmo Kang</a> (CS PhD; efficiency -- co-advisor: Alan Ritter) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://ivy-he.com/">Ivy He</a> (CS PhD; multilingual LLM -- co-advisor: Alan Ritter) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/jerry-lou-zheng/">Jerry Zheng</a> (BSMS, autumn 2025 -- human-AI interaction) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/julie-young-1177b3251/">Julie Young</a> (BSMS, autumn 2025 -- media framing) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://usneek1.github.io/">Usneek Singh</a> (CS MS, autumn 2025 -- user simulation) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Yiren Wang</a> (CS MS, autumn 2025 -- media framing) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Poorvaja Kumar</a> (CS MS, spring 2026 -- pragmatics) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/parthnanda2/">Parth Nanda</a> (CS MS, spring 2026 -- pragmatics) <br>	    
-
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Benjamin Mamut</a> (Undergrad, autumn 2025 -- LLM evaluation) <br>	
-	        &nbsp;&nbsp;&nbsp;&nbsp;<a href="">Guanjun Yan</a> (Undergrad, autumn 2025 -- ) <br>	
-	        &nbsp;&nbsp;&nbsp;&nbsp;<a href="">Alexey Plagov</a> (Undergrad, autumn 2025 -- ) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Sara Takagi</a> (Undergrad, summer 2025 -- ) <br>
-	        &nbsp;&nbsp;&nbsp;&nbsp;<a href="">Jiayu Liu</a> (Undergrad intern from UIUC, summer 2025 -- ) <br>
-	        
-				
-<!-- 
-<br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Zicong He</a> (ECE MS, summer 2025 -- ) 	        
-	      	&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Rachel Choi</a> (part-time, summer 2022 -- ) <br>  
-	      	&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Frank Chang</a> (Undergrad, autumn 2025 -- ) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Oleksandr Lavreniuk</a> (Undergrad, summer 2024 -- ) <br>	  
-	        &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/govind-ramesh-93a611202/">Govind Ramesh</a> (BSMS, winter 2022 -- ; LLM safety) <br>
--->	        
-	        
-	        
-	        
-			<p>
-			</p>
-			
-			<h5 class="text-primary">Alumni (with theses) and Visitors</h5>
-			
-			
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://chaojiang06.github.io/">Chao Jiang</a> (PhD 2025 → Apple AI/ML research) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://edchengg.github.io/">Yang Chen</a> (PhD 2024, co-advisor: Alan Ritter → Research Scientist at NVIDIA) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://mounicam.github.io/">Mounica Maddela</a> (PhD 2023 → Bloomberg AI) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=rpOgHRMAAAAJ&hl=en">Wuwei Lan</a> (PhD 2021 → Applied Scientist at Amazon → Research Scientist at Meta) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Xiaofeng Wu</a> (MS 2025 → Baidu) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://mamarcus64.github.io/">Marcus Ma</a> (MS 2024 → PhD student at USC) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://antonlavrouk.com/">Anton Lavrouk</a> (MS 2024 → Lockheed Martin  → IMC Trading) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://davidheineman.com/">David Heineman</a> (BS 2024, CoC Outstanding Undergrad Research Award → PYI at AI2 → PhD student at Stanford) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://jonathanqzheng.github.io/">Jonathan Zheng</a> (BS 2023 → PhD student at Georgia Tech) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://michryan.com/">Michael Ryan</a> (BS 2023 → PhD student at Stanford) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=qRDcttYAAAAJ&hl=zh-CN">Zirui Shao</a> (visiting PhD student from Zhejiang University, 2025) <br>
-			
-			
-			<p>
-			</p>
-			
-	 </div>
-
-		<div class="content">
-			<h5 class="text-primary" id="publications">Publications</h5>
-
-
-			<ul>	
-			
-			<h5 class="text-primary" id="publications">Preprints</h5>
-
-				<li>
-					<a href="https://www.arxiv.org/pdf/2601.04424"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Gavel: Agent Meets Checklist for Evaluating LLMs on Long-Context Legal Summarization</a> <br>
-					Yao Dou, Wei Xu<br>
-					arXiv, 2026
-				</li>
-
-				<li>
-					<a href="https://arxiv.org/pdf/2510.05291"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Camellia: Benchmarking Cultural Biases in LLMs for Asian Languages</a> <br>
-					Tarek Naous, Anagha Savit, Carlos Rafael Catalan, Geyang Guo, Jaehyeok Lee, Kyungdon Lee, Lheane Marie Dizon, Mengyu Ye, Neel Kothari, Sahajpreet Singh, Sarah Masud, Tanish Patwa, Trung Thanh Tran, Zohaib Khan, Alan Ritter, JinYeong Bak, Keisuke Sakaguchi, Tanmoy Chakraborty, Yuki Arase, Wei Xu<br>
-					arXiv, 2025
-				</li>
-
-		<h5 class="text-primary" id="publications">2026</h5>
-				<li>
-					<a href="https://openreview.net/forum?id=13lMChKB5u"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Learning to Route Languages for Multilingual Preference Optimization</a> <br>
-					Geyang Guo, Hiromi Wakaki, Yuki Mitsufuji, Alan Ritter, Wei Xu<br>
-					ICML 2026
-				</li>
-				<li>
-					<a href="https://arxiv.org/pdf/2601.21278"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">GeoRC: A Benchmark for Geolocation Reasoning Chains</a> <br>
-					Mohit Talreja, Joshua Diao, Jim Thannikary James, Radu Casapu, Tejas Santanam, Ethan Mendes, Alan Ritter, Wei Xu, James Hays<br>
-					ACL 2026
-				</li>
-
-				<li>
-					<a href="https://arxiv.org/pdf/2601.11886"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence</a> <br>
-					Kaijie Mo, Siddhartha Venkatayogi, Chantal Shaib, Ramez Kouzy, Wei Xu, Byron C. Wallace, Junyi Jessy Li<br>
-					ACL Findings 2026
-				</li>
-
-
-				<li>
-					<a href="https://arxiv.org/pdf/2510.06552"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Flipping the Dialogue: Training and Evaluating User Language Models</a> <br>
-					Tarek Naous, Philippe Laban, Wei Xu, Jennifer Neville<br>
-					ICLR 2026
-				</li>
-				
-				<li>
-					<a href="https://openreview.net/pdf?id=64Ea2Dx0JJ"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?</a> <br>
-					Ruixin Yang, Ethan Mendes, Arthur Wang, James Hays, Sauvik Das, Wei Xu, Alan Ritter<br>
-					ICLR 2026
-				</li>
-
-				<li>
-					<a href=""
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Supporting Informed Self-Disclosure: Design Principles for Presenting AI-Estimates of Privacy Risks to Users</a> <br>
-					Isadora Krsek, Meryl Ye, Wei Xu, Alan Ritter, Laura Dabbish, and Sauvik Das<br>
-					CHI 2026
-				</li>
-															    
-		<h5 class="text-primary" id="publications">2025</h5>
-
-				<li>
-					<a href="https://arxiv.org/pdf/2503.09674"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Probabilistic Reasoning with LLMs for Privacy Risk Estimation</a> <br>
-					Jonathan Zheng, Sauvik Das, Alan Ritter, Wei Xu 
-					<br>
-					NeurIPS 2025
-				</li>
-				<li>
-					<a href="https://arxiv.org/pdf/2504.05154"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">CARE: Multilingual Human Preference Learning for Cultural Awareness</a> <br>
-Geyang Guo, Tarek Naous, Hiromi Wakaki, Yukiko Nishimura, Yuki Mitsufuji, Alan Ritter, Wei Xu					<br>
-					EMNLP 2025
-				</li>
-
-				<li>
-					<a href="https://arxiv.org/pdf/2510.05444"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">SimulatorArena: Are User Simulators Reliable Proxies for Multi-Turn Evaluation of AI Assistants?</a> <br>
-Yao Dou, Michel Galley, Baolin Peng, Chris Kedzie, Weixin Cai, Alan Ritter, Chris Quirk, Wei Xu, Jianfeng Gao<br>
-					EMNLP 2025
-				</li>
-									
-				<li>
-					<a href="https://arxiv.org/pdf/2502.18583"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">What are Foundation Models Cooking in the Post-Soviet World?</a> <br>
-					Anton Lavrouk, Tarek Naous, Alan Ritter, Wei Xu
-					<br>
-					EMNLP 2025
-				</li>	
-
-				<li>
-					<a href="https://arxiv.org/pdf/2503.09598"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">How to Protect Yourself from 5G Radiation? Investigating LLM Responses to Implicit Misinformation</a> <br>
-					Ruohao Guo, Wei Xu, Alan Ritter
-					<br>
-					EMNLP 2025
-				</li>
-								
-				<li>
-					<a href="https://arxiv.org/pdf/2504.00042"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Beyond the Reported Cutoff: Where Large Language Models Fall Short on Financial Knowledge</a> <br>
-					Agam Shah, Liqin Ye, Sebastian Jaskowski, Wei Xu, Sudheer Chava
-					<br>
-					COLM 2025
-				</li>				
-
-				<li>
-					<a href="https://arxiv.org/pdf/2508.10421"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Evaluating LLMs on Chinese Idiom Translation</a><br>
-					Cai Yang, Yao Dou, David Heineman, Xiaofeng Wu, Wei Xu
-					<br>
-					COLM 2025
-				</li>		
-								
-				<li>
-					<a href="https://arxiv.org/pdf/2501.04662"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">On The Origin of Cultural Biases in Language Models: From Pre-training Data to Linguistic Phenomena</a> <br>
-					Tarek Naous, Wei Xu
-					<br>
-					NAACL 2025
-				</li>	
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2410.09013v1"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">The Impact of Visual Information in Chinese Characters</a> <br>
-					Xiaofeng Wu, Karl Stratos, Wei Xu
-					<br>
-					NAACL 2025
-				</li>	
-
-				<li>
-					<a href="https://arxiv.org/pdf/2410.05340"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Generating CAD Code with Vision-Language Models for 3D Designs</a> <br>
-					Kamel Alrashedy*, Pradyumna Tambwekar*, Zulfiqar Zaidi, Megan Langwasser, Wei Xu, Matthew Gombolay <br>
-					(* equal contribution)
-					<br>
-					ICLR 2025
-				</li>	
-				
-				<li>
-					<a href="publications/AAAI_2025_Cross_genre_Authorship.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">CROSSNEWS: A Cross-Genre Authorship Verification and Attribution Benchmark</a> <br>
-					Marcus Ma, Duong Minh Le, Junmo Kang, Yao Dou, John Cadigan, Dayne Freitag, Alan Ritter, Wei Xu
-					<br>
-					AAAI 2025
-				<li>
-					<a href="https://arxiv.org/pdf/2412.15047"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Measuring, Modeling, and Helping People Account for Privacy Risks in Online Self-Disclosures with AI</a> <br>
-					Isadora Krsek, Anubha Kabra, Yao Dou, Tarek Naous, Laura A. Dabbish, Alan Ritter, Wei Xu, Sauvik Das
-					<br>
-					CSCW 2025
-
-				<li>
-					<a href="https://arxiv.org/pdf/2508.00217"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Tabular Data Understanding with LLMs: A Survey of Recent Advances and Challenges</a> <br>
-					Xiaofeng Wu, Alan Ritter, Wei Xu<br>
-					arXiv, 2025
-				</li>
-				
-
-<h5 class="text-primary" id="publications">2024</h5>
-
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2407.04952"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Granular Privacy Control for Geolocation with Vision Language Models</a> <br>
-					Ethan Mendes, Yang Chen, James Hays, Sauvik Das, Wei Xu, Alan Ritter
-					<br>
-					EMNLP 2024 
-				</li>	
-				
-
-
-				<li>
-					<a href="https://arxiv.org/pdf/2405.02144"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">MedReadMe: A Systematic Study for Fine-grained Sentence Readability in Medical Domain</a> <br>
-					Chao Jiang, Wei Xu
-					<br>
-					EMNLP 2024 
-				</li>	
-
-				<li>
-					<a href="https://arxiv.org/pdf/2305.14463.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">ReadMe++: Benchmarking Multilingual Language Models for Multi-Domain Readability Assessment</a> <br>
-					Tarek Naous, Michael J. Ryan, Anton Lavrouk, Mohit Chandra, Wei Xu
-					<br>
-					EMNLP 2024
-				</li>	
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2407.15343"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Improving Minimum Bayes Risk Decoding with Multi-Prompt</a> <br>
-					David Heineman, Yao Dou, Wei Xu
-					<br>
-					EMNLP 2024 
-				</li>					
-
-				<li>
-					<a href="https://www.arxiv.org/pdf/2405.13077"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">GPT-4 Jailbreaks Itself with Near-Perfect Success Using Self-Explanation</a> <br>
-					Govind Ramesh, Yao Dou, Wei Xu
-					<br>
-					EMNLP 2024 
-				</li>	
-
-				<li>
-					<a href=""
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">ChatHF: Collecting Rich Human Feedback from Real-time Conversations</a> [<a href="https://tinyurl.com/ChatHF-demo">video</a>] <br>
-					Andrew Li, Zhenduo Wang, Ethan Mendes, Duong Minh Le, Wei Xu, Alan Ritter
-					<br>
-					EMNLP 2024 (Demo)
-				</li>	
-
-
-												
-				<li>
-					<a href="https://arxiv.org/pdf/2305.14456.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Having Beer after Prayer? Measuring Cultural Bias in Large Language Models</a> <br>
-					Tarek Naous, Michael J. Ryan, Alan Ritter, Wei Xu
-					<br>
-					ACL 2024 🏆 <strong>Best Social Impact Award</strong> <br> <strong>Press Coverage by <a href="https://venturebeat.com/ai/large-language-models-exhibit-significant-western-cultural-bias-study-finds/">VentureBeat</a></strong>
-				</li>	
-
-												
-				<li>
-					<a href="https://arxiv.org/pdf/2311.09538.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Reducing Privacy Risks in Online Self-Disclosures with Language Models</a> <br>
-					Yao Dou, Isadora Krsek, Tarek Naous, Anubha Kabra, Sauvik Das, Alan Ritter, Wei Xu 
-					<br>
-					ACL 2024
-				</li>
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2402.12261.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">NEO-BENCH: Evaluating Robustness of Large Language Models with Neologisms</a> <br>
-					Jonathan Zheng, Alan Ritter, Wei Xu
-					<br>
-					ACL 2024
-				</li>	
-
-				<li>
-					<a href="https://arxiv.org/pdf/2305.14592"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Meta-Tuning LLMs to Leverage Lexical Knowledge for Generalizable Language Style Understanding</a> <br>
-					Ruohao Guo, Wei Xu, Alan Ritter
-					<br>
-					ACL 2024
-				</li>	
-
-				<li>
-					<a href="https://arxiv.org/pdf/2402.11456.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">
-					FactPICO: Factuality Evaluation for Plain Language Summarization of Medical Evidence</a> <br>
-					Sebastian Antony Joseph, Lily Chen, Jan Trienes, Hannah Louisa Göke, Monika Coers, Wei Xu, Byron C Wallace, Junyi Jessy Li
-					<br>
-					ACL 2024
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2401.16475.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">InfoLossQA: Characterizing and Recovering Information Loss in Text Simplification</a> <br>
-					Jan Trienes, Sebastian Joseph, Jörg Schlötterer, Christin Seifert, Kyle Lo, Wei Xu, Byron C. Wallace, Junyi Jessy Li
-					<br>
-					ACL 2024
-				</li>
-				
-
-				<li>
-					<a href="https://arxiv.org/pdf/2310.03878.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Automatic and Human-AI Interactive Text Generation</a> (<a href="https://acl2024-text-generation-tutorial.github.io/">slides</a>) <br>
-					Yao Dou*, Philippe Laban*, Claire Gardent, Wei Xu (* equal contribution)
-					<br>
-					ACL 2024 (Tutorial)
-				</li>	
-								
-				<li>
-					<a href="https://arxiv.org/pdf/2402.03131.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Constrained Decoding for Cross-lingual Label Projection</a> <br>
-					Duong Minh Le, Yang Chen, Alan Ritter, Wei Xu
-					<br>
-					ICLR 2024
-				</li>	
-				
-
-				
-				<li>
-					<a href="https://dl.acm.org/doi/10.1145/3663548.3675645"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Design and Evaluation of an Automatic Text Simplification Prototype with Deaf and Hard-of-hearing Readers</a> <br>
-					Oliver Alonzo, Sooyeon Lee, Akhter Al Amin, Mounica Maddela, Wei Xu, Matt Huenerfauth 
-					<br>
-					ASSETS 2024
-				</li>
-
-				<li>
-					<a href="https://arxiv.org/pdf/2402.03642.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Stanceosaurus 2.0: Classifying Stance Towards Russian and Spanish Misinformation</a> <br>
-					Anton Lavrouk, Ian Ligon, Tarek Naous, Jonathan Zheng, Alan Ritter, Wei Xu<br>
-					EACL 2024 Workshop on Noisy User-generated Text 
-				</li>		
-
-				    
-		<h5 class="text-primary" id="publications">2023</h5>
-
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2308.06953.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Thresh 🌾: A Unified, Customizable and Deployable Platform for Fine-Grained Text Evaluation</a> [<a href="https://github.com/davidheineman/thresh">code/demo</a>] <br>
-					David Heineman, Yao Dou, Wei Xu
-					<br>
-					EMNLP 2023 (Demo)
-				</li>	
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2305.14458.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Dancing Between Success and Failure: Edit-level Simplification Evaluation using SALSA</a> <br>
-					David Heineman, Yao Dou, Mounica Maddela, Wei Xu
-					<br>
-					EMNLP 2023
-				</li>	
-
-				<li>
-					<a href="https://arxiv.org/pdf/2305.12532.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Multilingual Simplification of Medical Texts</a> <br>
-					Sebastian Joseph, Kathryn Kazanas, Keziah Reina, Vishnesh Ramanathan, Wei Xu, Byron Wallace, Junyi Jessy Li
-					<br>
-					EMNLP 2023
-				</li>	
-					
-
-
-				<li>
-					<a href="https://arxiv.org/pdf/2208.08374.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">A Computational Interface to Infer Strategic Intent from Unstructured Language in a Low-Data Setting
-</a><br>
-					Pradyumna Tambwekar, Lakshita Dodeja, Nathan Vaska, Wei Xu, Matthew Gombolay
-					<br>
-					EMNLP 2023 (Findings)
-				</li>	
-								    				    
-				<li>
-					<a href="https://arxiv.org/pdf/2212.09739.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">LENS 🔎 - A Learnable Evaluation Metric for Text Simplification</a> [<a href="https://github.com/Yao-Dou/LENS">code/demo</a>] <br>
-					Mounica Maddela*, Yao Dou*, David Heineman, Wei Xu (* equal contribution)<br>
-					ACL 2023
-				</li>				    
-				    
-				<li>
-					<a href="https://arxiv.org/pdf/2305.01645.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Distill or Annotate? Cost-Efficient Fine-Tuning of Compact Models</a> <br>
-					Junmo Kang, Wei Xu, Alan Ritter
-					<br>
-					ACL 2023
-				</li>	
-				    
-				<li>
-					<a href="https://arxiv.org/pdf/2305.15678.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Revisiting non-English Text Simplification: A Unified Multilingual Benchmark</a> <br>
-					Michael J. Ryan, Tarek Naous, Wei Xu
-					<br>
-					ACL 2023 🏆 <strong>Best Paper Award Honorable Mention</strong>
-				</li>	
-				    
-				<li>
-					<a href="https://arxiv.org/pdf/2305.17280.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Improved Instruction Ordering in Recipe-Grounded Conversation</a> <br>
-					Duong Minh Le, Ruohao Guo, Wei Xu, Alan Ritter
-					<br>
-					ACL 2023    <strong>Press Coverage by <a href="https://research.gatech.edu/new-chef-dataset-brings-ai-cooking">GT News</a></strong>
-				</li>	
-
-				<li>
-					<a href="https://arxiv.org/pdf/2212.09683.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Human-in-the-loop Evaluation for Early Misinformation Detection</a> <br>
-					Ethan Mendes, Yang Chen, Wei Xu, Alan Ritter
-					<br>
-					ACL 2023
-				</li>	
-				
-				<li>
-					<a href="https://arxiv.org/pdf/2211.15613.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Frustratingly Easy Label Projection for Cross-lingual Transfer</a><br>
-					Yang Chen, Chao Jiang, Alan Ritter, Wei Xu<br>
-					ACL 2023 (Findings)
-				</li>	
-				<li>
-					<a href="https://arxiv.org/pdf/2305.12463.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Teaching the Pre-trained Model to Generate Simple Texts for Text Simplification</a> <br>
-					Renliang Sun, Wei Xu, Xiaojun Wan<br>
-					ACL 2023 (Findings)
-				</li>	
-								
-				<li>
-					<a href="https://arxiv.org/pdf/2310.02224.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Can Language Models be Instructed to Protect Personal Information?</a> <br>
-					Yang Chen*, Ethan Mendes*, Sauvik Das, Wei Xu, Alan Ritter (* equal contribution)
-					<br>
-					arXiv 2310.02224 
-				</li>			    
-				    				    
-								    
-				<h5 class="text-primary" id="publications">2022 and before</h5>
-
-
-				<li>
-				    <a href="https://arxiv.org/abs/2210.03235"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Improving Large-scale Paraphrase Acquisition and Generation</a> [<a href="http://twitter-paraphrase.com/">data/leaderboard</a>] <br>
-					Yao Dou, Chao Jiang, Wei Xu<br>
-					EMNLP 2022
-				</li>
-				<li>
-					🦕 <a href="publications/EMNLP_2022_Stanceosaurus.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Stanceosaurus: Classifying Stance Towards Multicultural Misinformation</a> [<a href="https://github.com/JonathanQZheng/Stanceosaurus/">data</a>] <br>
-					Jonathan Zheng, Ashutosh Baheti, Tarek Naous, Wei Xu, Alan Ritter<br>
-					EMNLP 2022
-				</li>				
-				<li>
-				    <a href="publications/EMNLP_2022_arXiv_Edits.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">arXivEdits: Understanding the Human Revision Process in Scientific Writing</a> [<a href="https://github.com/chaojiang06/arXivEdits">data</a>] <br>
-					Chao Jiang, Wei Xu, Sam Stevens<br>
-					EMNLP 2022
-				</li>
-				<li>
-				    <a href="https://aclanthology.org/2022.tsar-1.11.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">A Dataset of Word-Complexity Judgements from Deaf and Hard-of-Hearing Adults for Text Simplification</a><br>
-					Oliver Alonzo, Sooyeon Lee, Mounica Maddela, Wei Xu, Matt Huenerfauth<br>
-					EMNLP TSAR Workshop 2022
-				</li>
-				<li>
-					<a href="https://aclanthology.org/2022.coling-1.335.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Extracting a Knowledge Base of COVID-19 Events from Social Media</a> [<a href="http://noisy-text.github.io/2020/extract_covid19_event-shared_task.html">data</a>] <br>
-					Shi Zong, Ashutosh Baheti, Wei Xu, Alan Ritter<br>
-					COLING 2022
-				</li>
-				<li>
-					<a href="https://aclanthology.org/2021.emnlp-main.500.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">BiSECT: Learning to Split and Rephrase Sentences with Bitexts</a> [<a href="https://github.com/mounicam/BiSECT">data/code</a>]  <br>
-					Joongwon Kim*, Mounica Maddela*, Reno Kriz, Wei Xu, Chris Callison-Burch (* equal contribution)<br>
-					EMNLP 2021
-				</li>
-
-
-				<li>
-					<a href="https://aclanthology.org/2021.emnlp-main.409.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Pre-train or Annotate? Domain Adaptation with a Constrained Budget</a> [<a href="https://github.com/bflashcp3f/ProcBERT">data/code</a>]<br>
-					Fan Bai, Alan Ritter, Wei Xu<br>
-					EMNLP 2021
-				</li>
-				<li>
-					<a href="files/EMNLP2021findings_WikiBias.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">WIKIBIAS: Detecting Multi-Span Subjective Biases in Language</a> [<a href="https://drive.google.com/drive/folders/1dLKpaVktAojeQ7so1_Seao_e3iLQ-Egy">data</a>] [<a href="https://github.com/cs329yangzhong/wikibias">code</a>]<br> 
-					Yang Zhong, Jingfeng Yang, Wei Xu, Diyi Yang<br>
-					EMNLP 2021 (Findings)
-				</li>
-				<li>
-					<a href="https://aclanthology.org/2021.acl-long.531.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Neural semi-Markov CRF for Monolingual Word Alignment</a> [<a href="https://github.com/chaojiang06/neural-Jacana">code/data</a>][<a href="https://chaojiang06.github.io/files/semi-crf-slides.pdf">slides</a>][<a href="https://youtu.be/TiWJ5VWWoV0">video</a>]  <br>
-					Wuwei Lan*, Chao Jiang*, Wei Xu (* equal contribution)<br>
-					ACL 2021
-				</li>
-
-				<li>
-					<a href="https://aclanthology.org/2021.naacl-main.277.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Controllable Text Simplification with Explicit Paraphrasing</a> [<a href="https://github.com/mounicam/controllable_simplification">data/code</a>][<a href="files/naacl2021_controllable_talk.pdf">slides</a>] [<a href="files/naacl2021_controllable_poster.pdf">poster</a>]<br>
-					Mounica Maddela, Fernando Alva-Manchego, Wei Xu<br>
-					NAACL 2021
-				</li>
-				
-				<li>
-					<a href="https://arxiv.org/abs/2102.01672"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">The GEM Benchmark: Natural Language Generation, its Evaluation and Metrics</a> [<a href="https://gem-benchmark.com">project website</a>] <br>
-					Sebastian Gehrmann, Tosin Adewumi, Karmanya Aggarwal, Pawan Sasanka Ammanamanchi, Aremu Anuoluwapo, Antoine Bosselut, Khyathi Raghavi Chandu, Miruna Clinciu, Dipanjan Das, Kaustubh D Dhole, Wanyu Du, Esin Durmus, Ondřej Dušek, Chris Emezue, Varun Gangal, Cristina Garbacea, Tatsunori Hashimoto, Yufang Hou, Yacine Jernite, Harsh Jhamtani, Yangfeng Ji, Shailza Jolly, Dhruv Kumar, Faisal Ladhak, Aman Madaan, Mounica Maddela, Khyati Mahajan, Saad Mahamood, Bodhisattwa Prasad Majumder, Pedro Henrique Martins, Angelina McMillan-Major, Simon Mille, Emiel van Miltenburg, Moin Nadeem, Shashi Narayan, Vitaly Nikolaev, Rubungo Andre Niyongabo, Salomey Osei, Ankur Parikh, Laura Perez-Beltrachini, Niranjan Ramesh Rao, Vikas Raunak, Juan Diego Rodriguez, Sashank Santhanam, João Sedoc, Thibault Sellam, Samira Shaikh, Anastasia Shimorina, Marco Antonio Sobrevilla Cabezudo, Hendrik Strobelt, Nishant Subramani, Wei Xu, Diyi Yang, Akhila Yerukola, Jiawei Zhou <br>
-					arXiv:2102.01672, ACL GEM Workshop 2021
-				</li>
-	
-		
-				<li>
-					<a href="https://www.aclweb.org/anthology/2020.emnlp-main.382.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">An Empirical Study of Pre-trained Transformers for
-Arabic Information Extraction</a> [<a href="https://github.com/lanwuwei/GigaBERT">pre-trained GigaBERT</a>] <br>
-					Wuwei Lan, Yang Chen, Wei Xu, Alan Ritter<br>
-					EMNLP 2020
-				</li>
-
-				<li>
-					<a href="https://aclanthology.org/2020.wnut-1.33.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">WNUT-2020 Task 1 Overview: Extracting Entities and Relations from Wet Lab Protocols</a> [<a href="https://github.com/jeniyat/WNUT_2020_NER">data</a>] <br>
-					Jeniya Tabassum, Sydney Lee, Wei Xu, Alan Ritter<br>
-					EMNLP 2020 Workshop on Noisy User-generated Text (shared-task overview)
-				</li>				
-				
-
-				<li>
-					<a href="publications/ACL2020_sentence_alignment.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Neural CRF Model for Sentence Alignment in Text Simplification</a> [<a href="https://github.com/chaojiang06/wiki-auto">code/data</a>][<a href="files/ACL2020_alignment_slide_v10.pdf">slides</a>][<a href="http://slideslive.com/38929317">video</a>] <br>
-					Chao Jiang, Mounica Maddela, Wuwei Lan, Yang Zhong, Wei Xu<br>
-					ACL 2020
-				</li>
-
-				<li>
-					<a href="publications/ACL2020_stackoverflow_NER.pdf" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Code and Named Entity Recognition in StackOverflow</a> [<a href="https://github.com/jeniyat/StackOverflowNER/">code/data</a>][<a href="files/jeniya_softner_v8.pdf">slides</a>][<a href="http://slideslive.com/38929334">video</a>]<br>
-					Jeniya Tabassum, Mounica Maddela, Wei Xu, Alan Ritter<br>
-					ACL 2020
-				</li>
-
-				<li>
-					<a href="publications/ACL2020_unified_span_framework.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Generalizing Natural Language Analysis through Span-relation Representations</a> [<a href="https://github.com/neulab/cmu-multinlp">code/data</a>] <br>
-					Zhengbao Jiang, Wei Xu, Jun Araki, Graham Neubig<br>
-					ACL 2020
-				</li>
-				<li>
-					<a href="https://www.akbc.ws/2020/assets/pdfs/ToTf_MX7Vn.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Learning Relation Entailment with Structured and Textual Information</a><br>
-					Zhengbao Jiang, Jun Araki, Donghan Yu, Ruohong Zhang, Wei Xu, Yiming Yang, Graham Neubig<br>
-					AKBC 2020
-				</li>
-													
-				<li>
-					<a href="publications/AAAI-ZhongY.9975.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Discourse Level Factors for Sentence Deletion in Text Simplification</a> [<a href="files/aaai2020_discourse_poster.pdf">poster</a>][<a href="files/aaai2020_discourse_slides.pdf">slides</a>][data - email me] <br>
-					Yang Zhong, Chao Jiang, Wei Xu, Junyi Jessy Li<br>
-					AAAI 2020
-				</li>
-				
-				
-				
-				
-				<li>
-					<a href="publications/ACL2019_HashtagMaster.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Multi-task Pairwise Neural Ranking for Hashtag Segmentation</a> [<a href="https://mounicam.github.io/hashtag_master">code/data</a>][<a href="files/acl2019-poster-final.pdf">poster</a>][<a href="bib/bib_acl2019_hashtag.txt">bib</a>][<a href="http://nlprx.cc.gatech.edu:9015/">live demo</a>]<br>
-					Mounica Maddela, Wei Xu, Daniel Preoţiuc-Pietro<br>
-					ACL 2019
-				</li>
-				<li>
-					<a href="publications/EMNLP2018_neural_ranking_and_word_complexity_lexicon_preprint.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">A Word-Complexity Lexicon  and a Neural Readability Ranking Model for Lexical Simplification</a> [<a href="https://github.com/mounicam/lexical_simplification">code/data</a>][<a href="files/2018_EMNLP_lexicon_slides.pdf">slides</a>][<a href="https://vimeo.com/306116474">video</a>][<a href="bib/bib_emnlp2018_lexical_simplification.txt">bib</a>] <br> 
-					Mounica Maddela, Wei Xu <br>
-					EMNLP 2018 
-				</li>
-				<li>
-					<a href="publications/COLING_2018_sentence_pair_modeling.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Neural Network Models for Paraphrase Identification, Semantic Textual Similarity, Natural Language Inference, and Question Answering</a> [<a href="bib/bib_coling2018_SPM.txt">bib</a>][<a href="https://github.com/lanwuwei/SPM_toolkit">code</a>][<a href="files/2018_COLING_talk.pdf">slides</a>]<br> 
-					Wuwei Lan, Wei Xu <br>
-					 COLING 2018 🏆 <strong>Best Paper Award</strong>
-				</li>
-				<li>
-					<a href="publications/Wuwei_NAACL_2018.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Character-based Neural Networks for Sentence Pair Modeling</a> [<a href="bib/bib_naacl2018_subword.txt">bib</a>][<a href="https://github.com/lanwuwei/Subword-PWIM">code</a>][<a href="files/naacl18-wuwei-poster.pdf">poster</a>]<br>
-					Wuwei Lan, Wei Xu <br>
-					 NAACL 2018 
-				</li>
-
-				<li>
-					<a href="publications/NAACL_2018_wet_lab_protocols.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">An Annotated Corpus for Machine Reading of Instructions in Wet Lab Protocols</a> [<a href="bib/bib_naacl2018_wetlab.txt">bib</a>][<a href="https://github.com/jeniyat/WNUT_2020_NER">data (improved version)</a>][<a href="files/naacl2018-poster-v2-chaitanya.pdf">poster</a>] <br>
-					Chaitanya Kulkarni, Wei Xu, Alan Ritter, Raghu Machiraju <br>
-					 NAACL 2018 
-				</li>
-										
-				<li>
-					<a href="publications/EMNLP2017_growing_dataset.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">A Continuously Growing Dataset of Sentential Paraphrases</a> [<a href="bib/bib_emnlp2017_paraphrase.txt">bib</a>][<a href="https://github.com/lanwuwei/paraphrase-dataset">data</a>][<a href="files/2017_EMNLP_URL_talk.pdf">slides</a>] <br>
-					Wuwei Lan, Siyu Qiu, Hua He, Wei Xu <br>
-					 EMNLP 2017 
-				</li>
-
-				<li>
-					<a href="publications/EMNLP_2017_Stylistic_Variations.pdf" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">From Shakespeare to Twitter: What are Language Styles all about?</a> [<a href="bib/bib_StyVa2017_style.txt">bib</a>][<a href="files/20170908_StyVa_EMNLP2017.pdf">slides</a>]<br>
-					Wei Xu <br>
-					 EMNLP 2017 Workshop on Stylistic Variation
-				</li>	
-							
-				<li>
-					<a href="https://aclweb.org/anthology/D16-1030.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">A Minimally Supervised Method for Recognizing and Normalizing Time Expressions in Twitter</a> [<a href="bib/bib_emnlp2016_temp.txt">bib</a>][<a href="files/TweeTime_emnlp_slides.pdf">slides</a>] <br>
-					Jeniya Tabassum, Alan Ritter, Wei Xu <br>
-					 EMNLP 2016 
-				</li>
-
-				<li>
-					<a href="http://noisy-text.github.io/2016/pdf/WNUT19.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Results of the WNUT16 Named Entity Recognition Shared Task</a> [<a href="bib/bib_wnut2016_sharedtask.txt">bib</a>] <br>
-					Benjamin Strauss, Bethany Toma, Alan Ritter, Marie-Catherine de Marneffe, Wei Xu <br>
-					 COLING 2016 Workshop on Noisy User-generated Text (shared-task overview)
-				</li>
-								
-				<li>
-					<a href="publications/tacl2016-smt-simplification.pdf"
-					id="smt-simple" name="smt-simple" style=
-					"font-style: italic; text-decoration: none">Optimizing Statistical Machine Translation for Text Simplification</a> [<a href="bib/bib_tacl2016_smt_simplification.txt">bib</a>][<a href="https://github.com/cocoxu/simplification/">data/code</a>][<a href="files/2016_ACL_TACL_simplification_talk.pdf">slides</a>][<a href="http://techtalks.tv/talks/optimizing-statistical-machine-translation-for-text-simplification-tacl/63216/">video</a>]<br>
-					Wei Xu, Courtney Napoles, Ellie Pavlick, Quanze Chen, Chris Callison-Burch <br>
-					<b>TACL 2016</b>, oral presentation at ACL 2016
-
-				</li>
-
-				<li>
-					<a href="publications/AAAI_2016_gender_paraphrase.pdf"
-					id="gender" name="gender" style=
-					"font-style: italic; text-decoration: none">Discovering User Attribute Stylistic Differences via Paraphrasing</a> [<a href="bib/bib_gender_paraphrase.txt">bib</a>] [<a href="http://figshare.com/articles/Paraphrase_choice_based_on_user_traits/1613525">data</a>]<br>
-					Daniel Preoţiuc-Pietro, Wei Xu, Lyle Ungar <br>
-					 AAAI 2016
-				</li>
-
-				<li>
-					<a href="publications/tacl2015-text-simplification-opinion.pdf"
-					id="opinion" name="opinion" style=
-					"font-style: italic; text-decoration: none">Problems in Current Text Simplification Research: New Data Can Help</a> [<a href="bib/bib_simplification_opinion.txt">bib</a>][<a href="https://newsela.com/data/">data</a>][<a href="publications/EMNLP_2015_TACL_simplification.pdf">slides</a>][<a href="https://vimeo.com/150290363">video</a>]  <br>
-					Wei Xu, Chris Callison-Burch, Courtney Napoles<br>
-					<b>TACL 2015</b>, oral presentation at EMNLP 2015
-				</li>
-				
-				<li>
-					<a href="publications/wnut2015_overview.pdf"
-					id="wnut" name="wnut" style=
-					"font-style: italic; text-decoration: none">Shared Tasks of the 2015 Workshop on Noisy User-generated Text: Twitter Lexical Normalization and Named Entity Recognition</a> [<a href="bib/bib_wnut2015_overview.txt">bib</a>]<br>
-					Timothy Baldwin, Marie-Catherine de Marneffe, Bo Han, Young-Bum Kim, Alan Ritter, Wei Xu<br>
-					 ACL 2015 Workshop on Noisy User-generated Text (shared-task overview)
-				</li>
-				
-				<li>
-					<a href="publications/naaclhlt2015_crowd_translation.pdf"
-					id="crowdcost" name="crowdcost" style=
-					"font-style: italic; text-decoration: none">Cost Optimization for Crowdsourcing Translation</a> [<a href="bib/bib_crowdcost.txt">bib</a>]<br>
-					Mingkun Gao, Wei Xu, Chris Callison-Burch<br>
-					 NAACL 2015
-				</li>
-
-				<li>
-					<a href="publications/semeval_pit_2015_overview.pdf"
-					id="semeval2015" name="semeval2015" style=
-					"font-style: italic; text-decoration: none">SemEval-2015 Task 1: Paraphrase and Semantic Similarity in Twitter (PIT)</a> [<a href="bib/bib_semeval2015_pit.txt">bib</a>][data & code - email me]<br>
-					Wei Xu, Chris Callison-Burch, William B. Dolan<br>
-					 SemEval 2015 (shared-task overview)
-				</li>
-
-				<li>
-					<a href="publications/tacl2014-extracting-paraphrases-from-twitter.pdf" id=
-					"multip" name="multip" style=
-					"font-style: italic; text-decoration: none">Extracting
-					Lexically Divergent Paraphrases from Twitter</a> [<a href=
-					"bib/bib_tacl2014.txt">bib</a>][<a href="
-					multip.html">code</a>][<a href="http://techtalks.tv/talks/extracting-lexically-divergent-paraphrases-from-twitter/61539/">video</a>][data - email me]<br> 
-					Wei Xu, Alan Ritter, Chris Callison-Burch, William B. Dolan, Yangfeng Ji<br>
-					<b>TACL 2014</b>, oral presentation at NAACL 2015
-				</li>
-
-
-				<li>
-					<a href="publications/poemgenerator.pdf"
-					id="crowdpoem" name="crowdpoem" style=
-					"font-style: italic; text-decoration: none">Poetry of the
-					Crowd: A Human Computation Algorithm to Convert Prose into
-					Rhyming Verse</a> [<a href="bib/bib_crowdpoem.txt">bib</a>]<br>
-					Quanze Chen, Chenyang Lei, Wei Xu, Ellie Pavlick, Chris
-					Callison-Burch<br>
-					 HCOMP 2014 (work-in-progress)
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/P14-2119.pdf" id="distantsupervision2"
-					name="distantsupervision2" style=
-					"font-style: italic; text-decoration: none">Infusion of
-					Labeled Data into Distant Supervision for Relation
-					Extraction</a> [<a href=
-					"bib/bib_guidedsupervision.txt">bib</a>]<br>
-					Maria Pershina, Bonan Min, Wei Xu, Ralph Grishman<br>
-					 ACL 2014 
-				</li>
-
-
-				<li>
-					<a href="publications/thesis-wei.pdf" id="thesis" name="thesis"
-					style=
-					"font-style: italic; text-decoration: none">Data-driven
-					Approaches for Paraphrasing Across Language Variations</a>
-					[<a href="bib/bib_thesis.txt">bib</a>]<br>
-					Wei Xu<br>
-					PhD Thesis
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/P/P13/P13-2117.pdf"
-					id="distantsupervision" name="distantsupervision" style=
-					"font-style: italic; text-decoration: none">Filling
-					Knowledge Base Gaps for Distant Supervision of Relation
-					Extraction</a> [<a href="bib/bib_filling.txt">bib</a>][<a href=
-					"ftp://cs.nyu.edu/pub/nlp/xuwei/relation/">data</a>]
-					<br>
-					Wei Xu, Raphael Hoffmann, Le Zhao, Ralph Grishman<br>
-					 ACL 2013 
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/W/W13/W13-2515.pdf"
-					id="twitterparaphrase" name="twitterparaphrase" style=
-					"font-style: italic; text-decoration: none">Gathering and
-					Generating Paraphrases from Twitter with Application to
-					Normalization</a> [<a href="bib/bib_gathering.txt">bib</a>][<a href=
-					"https://github.com/cocoxu/twitterparaphrase/">data</a>]
-					<br>
-					Wei Xu, Alan Ritter, Ralph Grishman<br>
-					 ACL 2013 Workshop on Building and Using
-					Comparable Corpora 
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/W/W13/W13-1103.pdf"
-					id="twittersummarization" name="twittersummarization"
-					style="font-style: italic; text-decoration: none">A
-					Preliminary Study of Tweet Summarization using Information
-					Extraction</a> [<a href="bib/bib_preliminary.txt">bib</a>][<a href=
-					"https://github.com/cocoxu/twittersummarization">data</a>]
-					<br>
-					Wei Xu, Ralph Grishman, Adam Meyers, Alan Ritter<br>
-					 NAACL 2013 Workshop on Language Analysis in
-					Social Media 
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/C/C12/C12-1177.pdf"
-					id="shakespeare" name="shakespeare" style=
-					"font-style: italic; text-decoration: none">Paraphrasing
-					for Style</a> [<a href="bib/bib_paraphrasestyle.txt">bib</a>][<a href=
-					"https://github.com/cocoxu/Shakespeare">data/code</a>]<br>
-					Wei Xu, Alan Ritter, Bill Dolan, Ralph Grishman, Colin
-					Cherry<br>
-					 COLING 2012
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/D/D11/D11-1119.pdf"
-					style=
-					"font-style: italic; text-decoration: none">Exploiting
-					Syntactic and Distributional Information for Spelling
-					Correction with Web-Scale N-gram Models</a> [<a 
-					href="bib/bib_ngramspelling.txt">bib</a>]<br>
-					Wei Xu, Joel Tetreault, Martin Chodorow, Ralph Grishman, Le
-					Zhao<br>
-					 EMNLP 2011
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/I/I11/I11-1117.pdf"
-					style="font-style: italic; text-decoration: none">Passage
-					Retrieval for Information Extraction using Distant
-					Supervision</a><br>
-					Wei Xu, Ralph Grishman, Le Zhao<br>
-					 IJCNLP 2011
-				</li>
-
-
-				<li>
-					<a href=
-					"http://www.nist.gov/tac/publications/2011/participant.papers/NYU.proceedings.pdf"
-					style="font-style: italic; text-decoration: none">New York
-					University 2011 System for KBP Slot Filing</a><br>
-					Ang Sun, Ralph Grishman, Wei Xu, Bonan Min<br>
-					 TAC 2011
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/P/P09/P09-1048.pdf"
-					style="font-style: italic; text-decoration: none">Who,
-					What, When, Where, Why? Comparing Multiple Approaches to
-					the Cross-Lingual 5W Task</a><br>
-					Kristen Parton, Kathleen R. McKeown, Bob Coyne, Mona T.
-					Diab, Ralph Grishman, Dilek Hakkani-Tür, Mary Harper, Heng
-					Ji, Wei Yun Ma, Adam Meyers, Sara Stolbach, Ang Sun, Gokhan
-					Tur, Wei Xu, Sibel Yaman<br>
-					 ACL 2009
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/W/W09/W09-2809.pdf"
-					style="font-style: italic; text-decoration: none">A
-					Parse-and-Trim Approach with Information Significance for
-					Chinese Sentence Compression</a><br>
-					Wei Xu, Ralph Grishman<br>
-					 ACL Workshop on Language Generation
-					and Summarisation 2009
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/W/W09/W09-3019.pdf"
-					style=
-					"font-style: italic; text-decoration: none">Transducing
-					Logical Relations from Automatic and Manual
-					Annotation</a><br>
-					Adam Meyers, Michiko Kosaka, Heng Ji, Nianwen Xue, Mary
-					Harper, Ang Sun, Wei Xu, Shasha Liao<br>
-					 ACL Workshop on Linguistic Annotation
-					2009
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/W/W09/W09-2423.pdf"
-					style="font-style: italic; text-decoration: none">Automatic
-					Recognition of Logical Relations for English, Chinese and
-					Japanese in the GLARF Framework</a><br>
-					Adam Meyers, Michiko Kosaka, Nianwen Xue, Heng Ji, Ang Sun,
-					Shasha Liao, Wei Xu<br>
-					 SemEval 2009
-				</li>
-
-
-				<li>
-					<a href="publications/PACLIC07_Using.pdf" style=
-					"font-style: italic; text-decoration: none">Using Non-Local
-					Features to Improve Named Entity Recognition Recall</a><br>
-					Xinnian Mao, Wei Xu, Yuan Dong, Haila Wang<br>
-					 PACLIC 2007
-				</li>
-
-
-				<li>
-					<a style="font-style: italic; text-decoration: none">Domain
-					Extension of Chinese Named Entity Recognition</a><br>
-					Wei Xu, Bin Fu, Liu Liu, Chunfa Yuan, Wenjie Li<br>
-					Frontiers of Content Computing 2007
-				</li>
-
-
-				<li>
-					<a href="http://aclweb.org/anthology/P/P06/P06-1047.pdf"
-					style=
-					"font-style: italic; text-decoration: none">Extractive
-					Summarization using Inter- and Intra- Event
-					Relevance</a><br>
-					Wenjie Li, Wei Xu, Mingli Wu, Chunfa Yuan, Qin Lu<br>
-					 ACL 2006
-				</li>
-
-
-				<li>
-					<a href="publications/CICLing05_deriving.pdf" style=
-					"font-style: italic; text-decoration: none">Deriving Event
-					Relevance from the Ontology Constructed with Formal Concept
-					Analysis</a><br>
-					Wei Xu, Wenjie Li, Mingli Wu, Wei Li, Chunfa Yuan<br>
-					 CICLing 2006
-				</li>
-
-
-				<li>
-					<a href="publications/ICCPOL06_Building.pdf" style=
-					"font-style: italic; text-decoration: none">Building
-					Document Graphs for Multiple News Articles Summarization:
-					An Event-Based Approach</a><br>
-					Wei Xu, Wenjie Li, Mingli Wu, Wei Li, Chunfa Yuan, Kam-Fai
-					Wong<br>
-					 ICCPOL 2006
-				</li>
-
-
-				<li>
-					<a style="font-style: italic; text-decoration: none">The
-					Hong Kong Polytechnic University at ACE2005</a><br>
-					Wenjie Li, Wei Li, Mingli Wu, Wei Xu<br>
-					 ACE 2005
-				</li>
-			</ul>
-		</div>
-
-		<div class="content" id="teach">
-			<h5 class="text-primary">Teaching</h5>
-			
-			Current and Upcoming Offering:<br>
-			<ul>
-            <li><a href="https://cocoxu.github.io/CS8803-LLM-spring2026/about/">CS 8803-LLM (Georgia Tech) - Large Language Models</a> (a research-oriented class - Spring 2026)</li>
-			<li><a href="">CS 4650 (Georgia Tech) - Natural Language Processing</a> (undergraduate level - Autumn 2026)</li>
-
-			</ul>
-			Previous Offerings:<br>
-			<ul>
-			<li><a href="https://cocoxu.github.io/CS8803-LLM-fall2024/about/">CS 8803-LLM (Georgia Tech) - Large Language Models</a> (a new research-oriented class - Autumn 2024)</li>
-			<li><a href="">CS 8803-NLP (Georgia Tech) - Advanced NLP </a> (a research-oriented class - Autumn 2023)</li>
-			<li><a href="https://cocoxu.github.io/CS7650_fall2025/about/">CS 7650 (Georgia Tech) - Natural Language Processing</a> (graduate level - Autumn 2025, 2022, 2021; Spring 2024)</li>		
-			<li><a href="https://cocoxu.github.io/CS4650_spring2025/">CS 4650 (Georgia Tech) - Natural Language Processing</a> (undergraduate level - Spring 2025, 2023, 2022, 2021)</li>
-			<li><a href="">Speech and Language Processing</a> (Spring 2020, 2017)</li>		
-			<li><a href="http://socialmedia-class.org/">Social Media and Text Analytics</a> (Autumn 2019, 2017, 2016)</li>	
-
-			</ul>
-
-			<p>
-			</p>
-		</div>		
-<!-- 		
-		<div class="content" id="">
-			
-			<h5 class="text-primary">Alumni and student collaborators</h5>
-
-			PhD Thesis Committee:<br>
-
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://sarahwie.github.io/">Sarah Wiegreffe</a> (PhD @GaTech, 2022; interpretability/explainable AI - advisor: Mark Riedl)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.cc.gatech.edu/~ypinter3/">Yuval Pinter</a> (PhD @GaTech, 2021; interpretability/semantics/morphology - advisor: Jacob Eisenstein)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=VVtltoEAAAAJ&hl=en">Sanqiang Zhao</a> (PhD @UPitt, 2021; text simplification - advisor: Daqing He)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://viczong.github.io/">Shi Zong</a> (PhD @OSU, 2020; computational social science - advisor: Alan Ritter)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Kai Cao</a> (PhD @NYU, 2017; information extraction - advisor: Ralph Grishman)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://cims.nyu.edu/~pershina/">Maria Pershina</a> (PhD @NYU, 2014; information extraction <a href="http://aclweb.org/anthology/P14-2119.pdf">ACL'14</a> - advisor: Ralph Grishman)<br>
-			
-		
-			<br>
-			Former Student Advisees:<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://web.cse.ohio-state.edu/~lanw/">Wuwei Lan</a> (PhD @OSU, 2021; semantics <a href="https://arxiv.org/abs/2106.02569">ACL'21</a> <a href="https://www.aclweb.org/anthology/2020.emnlp-main.382.pdf">EMNLP'20</a><a href="publications/EMNLP2017_growing_dataset.pdf">'17</a> <a href="publications/COLING_2018_sentence_pair_modeling.pdf">COLING'18</a> <a href="publications/Wuwei_NAACL_2018.pdf">NAACL'18</a> → researcher at Amazon) <br>	
-    		&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://sites.google.com/site/jeniyatabassum/">Jeniya Tabassum</a> (PhD @OSU, 2021; social media <a href="publications/ACL2020_stackoverflow_NER.pdf">ACL'20</a> <a href="https://aclweb.org/anthology/D16-1030.pdf">EMNLP'16</a> - co-advisor: Alan Ritter → lecturer at OSU) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/chaitanya2334/">Chaitanya Kulkarni</a> (PhD @OSU; biology protocols <a href="publications/NAACL_2018_wet_lab_protocols.pdf">NAACL'18b</a> - advisor: Raghu Machiraju) <br>			
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://yangzhongcs.com/">Yang Zhong</a> (MS @OSU, 2021; stylistics <a href="">EMNLP-F'21</a> <a href="publications/AAAI-ZhongY.9975.pdf">AAAI'20</a> → phd at UPitt) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://uiucgmk.github.io/">Mingkun Gao</a> (MS @UPenn; crowdsourcing/MT <a href="publications/naaclhlt2015_crowd_translation.pdf">NAACL'15</a> - advisor: Chris Callison-Burch → phd at UIUC)<br>		
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/siyuqiu/">Siyu Qiu</a> (MS @UPenn; semantics <a href="publications/EMNLP2017_growing_dataset.pdf">EMNLP'17</a> → Hulu)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/piyush-ghai/">Piyush Ghai</a> (MS @OSU; semantics → Amazon) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/daniel-joongwon-kim/">Daniel Joongwon Kim</a> (Undergrad @UPenn; generation <a href="publications/naaclhlt2015_crowd_translation.pdf">EMNLP'21</a> - advisor: Chris Callison-Burch → phd at UW)<br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://homes.cs.washington.edu/~cqz/">Jim Chen</a> (Undergrad @UPenn; crowdsourcing <a href="publications/poemgenerator.pdf">HCOMP'14</a> <a href="publications/tacl2016-smt-simplification.pdf">TACL'16</a> - advisor: Chris Callison-Burch → phd at UW)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/ray-lei-684a7658">Ray Lei</a> (Undergrad @UPenn; crowdsourcing <a href="publications/poemgenerator.pdf">HCOMP'14</a> → Microsoft)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.lti.cs.cmu.edu/people/222218315/wenchao-du">Wenchao Du</a> (Undergrad @UWaterloo; dialog <a href="https://arxiv.org/abs/1612.02801">AAAI'17 SAP</a> - advisor: Pascal Poupart → MS at CMU LTI)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/sydney-lee-951571186">Sydney Lee</a> (Undergrad @OSU; linguistic annotation <a href="publications/WNUT2020_wlp.pdf">WNUT'20</a> → Capital One) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Sam Stevens</a> (Undergrad @OSU; scientific writing → phd at OSU) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/alex-c-soong/">Alexandra Soong</a> (Undergrad, spring-winter 2022) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Daniel Szoke</a> (Undergrad; offensive language) <br>		
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/sarah-flanagan-76a0b412a/">Sarah Flanagan</a> (Undergrad; linguistic annotation) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/andrew-duffy-2642a716a/">Andrew Duffy</a> (Undergrad; ; linguistic annotation) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/kenneth-koepcke-4a13bb1a9/">Kenneth Koepcke</a> (Undergrad; linguistic annotation) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://scholar.google.com/citations?user=7-hDyxYAAAAJ&hl=en">Renliang Sun</a> (Graduate intern, Peking Univ., summer/fall 2022; training BART/RoBERTa variations) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Srushti Nandu</a> (Undergrad intern, summer 2021 - spring 2022; social media) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/panya-bhinder-45b461220/">Panya Bhinder</a> (High school intern, summer 2020) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Solomon Wood</a> (High school intern, spring 2020) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Muji Lai</a> (High school intern, spring 2022) <br>				
-					
-
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/jyz/">Jonathan Zhou</a> (Undergrad, spring 2022) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Jaewook Lee</a> (Undergraduate @OSU, autumn 2019 - spring 2020) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Ethan Lee</a> (Undergraduate @OSU, autumn 2019 - spring 2020) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Sam Stevens</a> (Undergraduate @OSU, autumn 2019 - spring 2020) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"">Yulu Qin</a> (Undergraduate  @OSU, summer 2020) <br>	
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/lillian-chow">Lillian Chow</a> (Undergraduate @OSU, summer 2018 - spring 2019) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/raleigh-potluri/">Raleigh Potluri</a> (Undergraduate @OSU, autumn 2018 - summer 2019) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/piyush-ghai/">Piyush Ghai</a> (Masters student @OSU; semantics → Amazon) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/pravar-mahajan-a6870970">Pravar Mahajan</a> (Masters student @OSU; social media → IBM Research Almaden → Google) <br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://www.linkedin.com/in/ruihan-tong-94399b113">Rita Tong</a> (Undergraduate @OSU → Master's student @UWisconsin-Madison)<br>		
-
-
-			<p>
-			</p>
-			
-		</div>
-			-- >
-<!-- 
-
-		<div class="content">
-			<h5 class="text-primary" id="service">Professional Service</h5>
-			
-
-			Senior Area Chair: &nbsp;&nbsp; <a href="">NAACL (2022)</a>, <a href="https://2021.naacl.org/committees/program/">NAACL (2021)</a>, 
-			<a href="https://acl2020.org/committees/program">ACL (2020)</a> <br>
-			Area Chair: 
-			&nbsp;&nbsp;<a href="https://2020.emnlp.org/">EMNLP (2021, 2020, 2018, 2016)</a>, <a href="https://acl2019.org/">ACL (2019)</a>, <a href="https://aaai.org/Conferences/AAAI-20/">AAAI (2020)</a>, <a href="https://acl2019.org/EN/index.xhtml.html">NAACL (2019)</a>, <a href="http://coling2018.org">COLING (2018)</a> <br>
-			Workshop Chair: 
-			&nbsp;&nbsp;<a href="http://acl2017.org">ACL (2017)</a> <br>
-			Publicity Chair:
-			&nbsp;&nbsp;<a href="https://www.emnlp-ijcnlp2019.org/organization">EMNLP (2019)</a>, <a href="http://naacl.org/naacl-hlt-2016/org.html">NAACL (2018, 2016)</a> <br>
-			
-			Session Chair:
-			&nbsp;&nbsp;ACL (2016), EMNLP (2015), NAACL (2015), AAAI (2015), ACL (2014)<br>  
-			
-			Organizer:<br>
-			&nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://gem-benchmark.com/workshop">Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)</a> at ACL 2021<br>
-			&nbsp;&nbsp;&nbsp;&nbsp; - <a href="http://noisy-text.github.io">Workshop on Noisy User-generated Text (W-NUT)</a> at ACL 2015, COLING 2016, EMNLP 2017, 2018, 2019, 2020<br>
-			&nbsp;&nbsp;&nbsp;&nbsp; - <a href=
-			"http://alt.qcri.org/semeval2015/task1/"> SemEval 2015 shared-task: Paraphrases and Semantic Similarity in Twitter</a><br>
-			&nbsp;&nbsp;&nbsp;&nbsp; - <a href=
-			"http://www.mascsll.org/"> 2016 Mid-Atlantic
- Student Colloquium on Speech, Language and Learning</a><br>
-			Program Committee:<br>
-			&nbsp;&nbsp;&nbsp;&nbsp; ACL (2021, 2018, 2017, 2015, 2014, 2013), NAACL (2018, 2015), EMNLP (2017, 2016, 2015, 2014)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; WWW (2016, 2015), COLING (2016, 2014), AAAI (2016, 2015, 2012), KDD (2015)<br>
-
-
-&nbsp;&nbsp;&nbsp;&nbsp; Women and Underrepresented Minorities in NLP Workshop (2017)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; EMNLP Workshop on Stylistic Variation (2017)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; ACL Workshop on Natural Language Processing and Computational Social Science (2017, 2016)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; WWW Workshop on #Microposts (2016)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; ACL Workshop on Social Factors in Natural Language Processing (2016)<br>
-&nbsp;&nbsp;&nbsp;&nbsp; EACL Workshop on Language Analysis in Social Media (2014)<br>
-		
-			Journal Reviewer:<br>
-			&nbsp;&nbsp;&nbsp;&nbsp; Transactions of the Association for Computational Linguistics (TACL)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp; Journal of Artificial Intelligence Research (JAIR) <br>
-			
-
-
-			<p>
-			</p>
-		</div>
-
-		<div class="content" id="talk">
-			<h5 class="text-primary">Invited Talks</h5>
-
-
-			<ul>
-
-				<li>
-					<i>Importance of Data and Controllability in Neural Language Generation</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Aug 2021, Stanford University (NLP Seminar)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Jun 2021, University of California, Los Angeles (Big Data and ML Seminar)<br>
-					
-				</li>	
-
-				<li>
-					<i>Importance of Data and Linguistics in Neural Language Generation</i> [<a href="https://youtu.be/GQNzpWbwqpk">video recording</a>]<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Apr 2021, New York University (NLP and Text-as-Data Speaker Series)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Nov 2020, Carnegie Mellon University (LTI Colloquium)<br>
-				</li>	
-
-				<li>
-					<i>Natural Language Understanding for Noisy Text</i> [<a href="https://youtu.be/pr1HGaE5dAE">video recording</a>]<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Oct 2020, 
-University of Sheffield (NLP Seminar)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Oct 2020, 
-USC Information Sciences Institute (NL Seminar)<br>
-				</li>	
-
-				<li>
-					<i>Natural Language Generation towards Social Good</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Oct 2020, Google<br>
-				</li>
-								
-				<li>
-					<i>Automatic Text Simplification</i> [<a href="files/20201027_simplification_UPitt.pdf">slides</a>]<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Oct 2020, University of Pittsburgh, Pittsburgh, PA (NLP Seminar)<br>
-				</li>	
-
-				<li>
-					<i>Understanding and Generating Human Language</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Nov 2020, University of Delaware, Newark, DE (ECE Department Seminar)<br>					
-					&nbsp;&nbsp;&nbsp;&nbsp; Sep 2020, Emory University, Atlanta, GA (CS Department Seminar)<br>
-				</li>		
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2020, University of Maryland, College Park, MD<br>
-							
-				</li>
-					&nbsp;&nbsp;&nbsp;&nbsp; Jan 2020, University of Massachusetts, Amherst, MA<br>
-				</li>
-					&nbsp;&nbsp;&nbsp;&nbsp; Dec 2019, Georgia Institute of Technology, Atlanta, GA<br>
-				</li>
-				<li>
-					<i>Learning for Unlimited Human Language</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Dec 2018, Peking University, Beijing, China<br>
-				</li>
-				</li>
-				<li>
-					<i>Learning Large-scale Paraphrases for Natural Language Understanding and Generation</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Jun 2018, Midwest Machine Learning Symposium, Chicago, IL<br>
-				</li>
-					&nbsp;&nbsp;&nbsp;&nbsp; May 2018, Facebook, Menlo Park, CA<br>
-				</li>
-					&nbsp;&nbsp;&nbsp;&nbsp; May 2018, Twitter, San Francisco, CA<br>
-				</li>
-				    &nbsp;&nbsp;&nbsp;&nbsp; May 2018, Stanford Research Institute, Menlo Park, CA<br>
-				</li>
-					&nbsp;&nbsp;&nbsp;&nbsp; Nov 2017, IBM Thomas J. Watson Research Center, New York<br>
-				</li>
-				<li>
-					<i>How AI Understand Language?</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Mar 2018, Women in Analytics Conference (Main-stage Panel)<br>
-				</li>
-				<li>
-					<i>Can Paraphrase be a Ultimate
-Solution for NLU and NLG?</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; July 2017, Google Research, New York, NY<br>
-				</li>
-				    
-				<li>
-					<i>Paraphrase ≈ Monolingual Translation</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Aug 2016, Amazon, Berlin, Germany<br>
-				</li>
-
-				<li>
-					<i>Multiple-instance Learning from Unlimited Text</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Dec 2016, Microsoft Research Asia, Beijing, China<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Sep 2016, University of Delaware, Newark, DE<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; May 2016, University of Edinburgh, Edinburgh, United Kingdom<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Apr 2016, Ohio State University, Columbus, OH<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Apr 2016, University of North Carolina, Chapel Hill, NC<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Mar 2016, Arizona State University, Tempe, AZ<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Mar 2016, Vanderbilt University, Nashville, TN<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Mar 2016, Imperial College London, London, United Kingdom<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Mar 2016, University of Waterloo, Waterloo, ON, Canada (CS Seminar)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2016, Indiana University, Bloomington, IN (Computer Science Colloquium Series)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2016, Washington University, St Louis, MI (Computer Science & Engineering Colloquia Series)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2016, Simon Fraser University, Vancouver, BC, Canada<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2016, University of Alberta, Edmonton, AB , Canada (Special Lecture)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2016, Yale University, New Haven, CT (CS Talk)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Oct 2015, University of Maryland, College Park, MD (CLIP Colloquium)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Oct 2015, Ohio State University, Columbus, OH (Clippers Seminar)<br>
-				</li>
-				
-				<li>
-					<i>Large-scale Paraphrase Acquisition from Twitter</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; May 2015, DARPA DEFT PI Meeting, Boulder, CO<br>
-				</li>
-				
-			    <li>
-					<i>Learning and Generating Paraphrases from Twitter and Beyond</i><br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Apr 2015, Carnegie Mellon University, Pittsburgh, PA<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Apr 2015, Columbia University, New York, NY  (NLP Talk)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2015, Johns Hopkins University, Baltimore, MD (CLSP Colloquium)<br>	
-				</li>
-						
-				<li>
-					<i>Paraphrases in Twitter</i> [<a href="http://www.cis.upenn.edu/~xwe/files/weixu_talk_atTwitter_2015.pdf">slides</a>]<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2015, Twitter, San Francisco, CA<br>
-				</li>
-				
-				<li>
-	
-					<i>Modeling Lexically Divergent Paraphrases in Twitter (and
-					Shakespeare!)</i> [<a href=
-					"http://www.cs.cmu.edu/~nlp-lunch/posters/CL-NLP%202014-11-03%20Wei%20Xu.pdf">poster</a>]<br>                 &nbsp;&nbsp;&nbsp;&nbsp; Mar 2015, The City University of New York, New York, NY (NLP Seminar)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2015, IBM Research - Almaden, San Jose, CA<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2015, UC Berkeley, Berkeley, CA<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Feb 2015, UT Austin, Austin, TX (Forum for Artificial Intelligence)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Dec 2014, Yahoo! Research, New York, NY<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Nov 2014, Carnegie Mellon
-					University, Pittsburgh, PA (CL+NLP Lunch Seminar)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp; Aug 2014, Microsoft Research,
-					Redmond, WA (Visiting Speaker Series)<br>
-				</li>
-
-
-				<li><i>Incremental Information Extraction</i><br>
-				&nbsp;&nbsp;&nbsp;&nbsp; Apr 2012, Stanford Research Institute, Palo Alto, CA<br>
-				&nbsp;&nbsp;&nbsp;&nbsp; May 2011, IARPA's
-				KDD PI Meeting, San Diego, CA<br></li>
-
-
-				<li><i>Information Extraction Research</i><br>
-				&nbsp;&nbsp;&nbsp;&nbsp; Jan 2011, University of Washington,
-				Seattle, WA<br></li>
-
-
-				<li><i>Event-based Summarization</i><br>
-				&nbsp;&nbsp;&nbsp;&nbsp; Nov 2009, Thomson Reuters, Eagan,
-				MN<br>
-				&nbsp;&nbsp;&nbsp;&nbsp; Mar 2007, France Telecom, Beijing,
-				China<br></li>
-			</ul>
-		</div>
-
-
-		<div class="content">
-			<h5 class="text-primary" id="collaborator">Collaborators</h5>
-			I am a big believer of collaborations and have been happy to work
-			and co-author with:<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://www.cis.upenn.edu/~ccb/">Chris Callison-Burch</a> (UPenn)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"https://sites.google.com/site/colinacherry/">Colin Cherry</a>
-			(National Research Council Canada)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://research.microsoft.com/en-us/people/billdol/">Bill
-			Dolan</a> (Microsoft Research)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://jiyfeng.github.io/">Yangfeng Ji</a> (Gatech &#8594; U of Washington)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://raphaelhoffmann.com/">Raphael Hoffmann</a> (U of Washington &#8594;
-			<a href="http://www.allenai.org/">AI2</a> Incubator)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"www4.comp.polyu.edu.hk/~cswjli/">Wenjie Li</a> (Hong Kong
-			Polytechnic University)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://nlp.cs.nyu.edu/people/meyers.html">Adam Meyers</a>
-			(NYU)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://cs.jhu.edu/~napoles/">Courtney Napoles</a>
-			(JHU)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://sites.sas.upenn.edu/danielpr/">Daniel Preoţiuc-Pietro</a> (UPenn &#8594; Bloomberg)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://aritter.github.io/">Alan
-			Ritter</a> (U of Washington &#8594; Ohio State U)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://www.cs.rochester.edu/~tetreaul/">Joel Tetreault</a> (ETS
-			&#8594; Yahoo! Research &#8594; Grammarly)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href=
-			"http://www.cis.upenn.edu/~ungar/">Lyle Ungar</a> (UPenn)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a 
-			href="https://www.cs.washington.edu/people/faculty/lsz">Luke Zettlemoyer</a> 
-			(U of Washington)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.cs.cmu.edu/~lezhao/">Le
-			Zhao</a> (CMU &#8594; Google)<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;and many others ...<br>
-			<br>
-		
-			<p>
-			</p>
-		</div>
--->	
-		<div class="content">
-			<h5 class="text-primary">Service</h5>
-
-		    <p>
-		    
-		    <ul>
-		    <li>Executive board member: NAACL (2023-2024); nomination committee (2025) </li>
-		    <li>Best paper award committee: ACL (2026); EMNLP (2024, 2022)</li>
-		    <li>Senior area chair: NAACL (2025, 2022, 2021); EMNLP (2026, 2024, 2022); ACL (2026, 2020)</li> 
-		    <li>Area chair: COLM (2024); ACL (2023, 2019); EMNLP (2021, 2020, 2018, 2016); AAAI (2020); NAACL (2019); COLING (2018)</li>
-		    <li>Workshop chair: ACL (2017)</li>
-		    <li>Publicity chair: ACL (2026), EMNLP (2019), NAACL (2018, 2016)</li>
-		    </ul>
-			 <!-- I am or was an executive board member of NAACL (2023-2024), a best paper award committee member for EMNLP 2022 and 2024, a senior area chair for EMNLP 2024 (resource and evaluation), 2022 (generation); NAACL 2025 (generation), 2022 (machine learning for NLP), 2021 (generation), and ACL 2020 (generation), and an area chair for COLM 2024, ACL 2023 (semantics), EMNLP 2021 (computational social science), EMNLP 2020 (generation), AAAI 2020 (NLP), ACL 2019 (semantics), NAACL 2019 (generation), EMNLP 2018 (social media), COLING 2018 (semantics), EMNLP 2016 (generation), a workshop chair for ACL 2017, and the publicity chair for ACL 2026, EMNLP 2019, NAACL 2018 and 2016. -->	
-			</p>
-		</div>
-			
-		<div class="content">
-			<h5 class="text-primary">Miscellaneous</h5>
-
-
-			<p>When I have spare time, I enjoy visiting art museums, hiking, biking, and snowboarding. </p>
-
-
-			<p>I wrote <a href="https://cocoxu.github.io/files/Biography_of_Ralph_Grishman.pdf">a biography of my phd advisor Ralph Grishman</a> along with some early history of Information Extraction research in 2017. Ralph was named an ACL Fellow and later received the ACL Lifetime Achievement Award. </p>
-
-			<p>I also photographed and made a list of the <a href="bestdressed_2016_2017.html">best
-			dressed NLP researchers in 2016/17</a> , <a href="bestdressed_2015.html">2015</a> and <a href="bestdressed.html">2014</a>.</p>
-
-			<p>
-			</p>
-		</div>
-		
-		<script type="text/javascript">
-
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-52356331-1']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
-		</script>
-	
+      </details>
+    </section>
+
+    <section id="students">
+      <h2>Students</h2>
+      <p>
+        I co-direct an AI/NLP research group at Georgia Tech. We work on LLMs, multilinguality, evaluation, text generation, and interdisciplinary AI applications.
+      </p>
+      <div class="student-list">
+        <ul>
+          <li><a href="https://yao-dou.github.io/">Yao Dou</a> (CS Ph.D.)</li>
+          <li><a href="https://tareknaous.github.io/">Tarek Naous</a> (ECE ML Ph.D.)</li>
+          <li><a href="https://jonathanqzheng.github.io/">Jonathan Zheng</a> (ML Ph.D.) co-advisor Alan Ritter</li>
+          <li><a href="https://guochry.github.io/">Geyang Guo</a> (CS Ph.D.) co-advisor Alan Ritter</li>
+          <li><a href="https://duonglm38.github.io/">Duong Minh Le</a> (CS Ph.D.) co-advisor Alan Ritter</li>
+          <li><a href="https://ivy-he.com/">Ivy He </a> (CS Ph.D.) co-advisor Alan Ritter</li>
+          <li><a href="https://jm-kang.github.io/">Junmo Kang</a> (CS Ph.D.) co-advisor Alan Ritter</li>
+          <li><a href="https://usneek1.github.io/">Usneek Singh</a> (CS M.S.)</li>
+          <li><a href="https://cocoxu.github.io/">Yiren Wang</a> (CS M.S.)</li>
+          <li><a href="https://www.linkedin.com/in/benjaminmamut/">Benjamin Mamut</a> (Undergraduate)</li>
+          <li><a href="https://www.linkedin.com/in/guanjun-yan-71350a36a/">Guanjun Yan</a> (Undergraduate)</li>
+          <li><a href="https://www.linkedin.com/in/alexey-plagov/">Alexey Plagov</a> (Undergraduate)</li>
+          <li><a href="https://www.linkedin.com/in/sara-takagi-333225322/">Sara Takagi</a> (Undergraduate)</li>
+          <li><a href="">Patrisiya Rumyantseva</a> (Undergraduate)</li>
+          
+        </ul>
+      </div>
+      
+      <div class="student-photos">
+        <img src="pic_kayak.png" alt="Lab kayaking outing" />
+        <img src="pic_dinner.png" alt="Lab dinner" />
+        <img src="pic_swan_house.png" alt="Lab gathering" />
+      </div>
+
+      <p class="note" style="margin-top: 10px; font-size: 13.5px; line-height: 1.7; color: #666;">
+        Group photos with <a href="#">Alan Ritter</a>'s lab.
+      </p>
+
+      <p class="note" style="margin-top: 18px; font-size: 14.5px; line-height: 1.8; color: #555;">
+        Alumni: <a href="https://chaojiang06.github.io/">Chao Jiang</a> (Ph.D. '25, Apple),
+        <a href="https://edchengg.github.io/">Yang Chen</a> (Ph.D. '23, NVIDIA),
+        <a href="https://mounicam.github.io/">Mounica Maddela</a> (Ph.D. '23, Bloomberg),
+        <a href="https://scholar.google.com/citations?user=rpOgHRMAAAAJ&hl=en">Wuwei Lan</a> (Ph.D. '21, Meta),
+        <a href="#">Julie Young</a> (M.S. '26, Microsoft),
+        <a href="#">Xiaofeng Wu</a> (M.S. '25, Baidu),
+        <a href="#">Marcus Ma </a> (M.S. '24, PhD student at Stanford),
+        <a href="#">Anton Lavrouk</a> (M.S. '24, IMC Trading),
+        <a href="#">David Heineman </a> (B.S. '24, PhD student at Stanford · CoC Outstanding Undergrad Research Award),
+        <a href="#">Jonathan Zheng</a> (B.S. '23, PhD student at Stanford),
+        <a href="#">Michael Ryan</a> (B.S. '23, PhD student at Georgia Tech),
+        <a href="#">Zirui Shao</a> (visiting PhD student from Zhejiang University '25)
+      </p>
+
+
+
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul>
+        <li>CS 4650 / 7650: Natural Language Processing</li>
+        <li>CS 8803: Large Language Models</li>
+        <li>Advanced topics in NLP, LLMs, and human-centered AI</li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2>Service & Awards</h2>
+
+      <p>
+        Program Co-Chair for EMNLP (2027). Senior Area Chair for ACL, EMNLP, NAACL, and related conferences. Executive Board Member, NAACL (2023–2024). Best Paper Award Committee, ACL (2026) and EMNLP (2024, 2022). Co-organizer of workshops on text generation, evaluation, and user-centered NLP.
+      </p>
+
+      <div class="awards-highlight" style="margin-top: 18px; margin-bottom: 0; max-width: 760px;">
+        Sony Faculty Innovation Award (2026) · ACL Best Social Impact Paper Award (2024) · Google Academic Research Award (2024) · NSF CAREER Award (2022)
+      </div>
+
+      
+    
+    </section>
+
+    <section id="miscellaneous">
+      <h2>Miscellaneous</h2>
+      <p>
+        When I have spare time, I enjoy visiting art museums, attending live performances, hiking, biking, and snowboarding.
+      </p>
+      <p class="note" style="margin-top: 10px; font-size: 13.5px; line-height: 1.7; color: #666; max-width: 820px;">
+        Back in 2017, I wrote a biography of my Ph.D. advisor <a href="https://cocoxu.github.io/files/Biography_of_Ralph_Grishman.pdf">Ralph Grishman</a> along with some early history of Information Extraction research. Ralph was named an ACL Fellow and later received the ACL Lifetime Achievement Award in 2024.
+      </p>
+    </section>
+
+    <footer>
+      Last updated: May 2026.
+    </footer>
+  </main>
 </body>
 </html>
